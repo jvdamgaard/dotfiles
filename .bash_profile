@@ -6,8 +6,7 @@ for f in $(command ls ~/.node-completion); do
   test -f "$f" && . "$f"
 done
 # }}}
-[[ -s /Users/jakob/.nvm/nvm.sh ]] && . /Users/jakob/.nvm/nvm.sh # This loads NVM
-
+[[ -s $HOME/.nvm/nvm.sh ]] && . $HOME/.nvm/nvm.sh # This loads NVM
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
@@ -88,6 +87,12 @@ function download() {
     ) 
 }
 
+#Add spacer to dock
+function dockSpacer() {
+    defaults write com.apple.dock persistent-apps -array-add '{tile-data={}; tile-type="spacer-tile";}'
+    killall Dock
+} 
+
 # Use Git’s colored diff when available
 hash git &>/dev/null
 if [ $? -eq 0 ]; then
@@ -145,9 +150,8 @@ function parse_git_branch() {
 export PS1="\[$RESET\]\$ \[$MAGENTA\]\w/ \$([[ -n \$(git branch 2> /dev/null) ]] && echo \"\")\[$GREEN\]\$(parse_git_branch)\[$RESET\]"
 
 
-
-# update alle systems for web development
-function update() {
+# update node
+function updateNode() {
 
     # latest node 0.10 version
     echo "Updating node.js"
@@ -162,12 +166,19 @@ function update() {
     echo "Updating all global npm packages"
     npm -g update
 
-    # brew update
+}
+
+# update homebrew
+function updateBrew() {
     echo "Updating brew"
     brew update
 
     echo "Updating all brew packages"
     brew upgrade
+}
+
+# update ruby
+function updateRuby() {
 
     # update ruby
     echo "Updating ruby"
@@ -175,13 +186,35 @@ function update() {
     rvm reload
     gem update --system
 
-    # compass
-    echo "Updating compass"
-    gem update compass
+    # gems
+    echo "Updating gems"
+    gem update
+
 }
 
-# Install all services from scratch
-function init() {
+# update dot files
+function updateDotFiles() {
+    (
+        cd ~/Repos/dotfiles/
+        source bootstrap.sh
+    )
+}
+
+# update Sublime Text 3 packages
+function initST3Packages() {
+    
+}
+
+# update alle systems for web development
+function updateAll() {
+
+    updateNode
+    updateBrew
+    updateRuby
+    updateDotFiles
+}
+
+function initNode() {
 
     # node version manager
     echo "Installing node.js"
@@ -203,18 +236,27 @@ function init() {
     npm install -g generator-webapp
     npm install -g generator-ember
 
+}
+
+function initRuby() {
+
     # rvm
     echo "Installing rvm"
-    curl -L https://get.rvm.io | bash -s stable
+    \curl -L https://get.rvm.io | bash
 
     echo "Installing ruby"
     rvm get stable
     rvm reload
+    rvm install 2.0.0
     gem update --system
 
     # compass
     echo "Installing compass"
     gem install compass
+
+}
+
+function initBrew() {
 
     # homebrew
     echo "Installing HomeBrew"
@@ -224,6 +266,9 @@ function init() {
     # MongoDB
     echo "Installing MongoDB"
     brew install mongodb
+}
+
+function initPrograms() {
 
     # sublime text
     echo "Downloading Sublime Text"
@@ -245,9 +290,37 @@ function init() {
     echo "Downloading DropBox"
     download https://d1ilhw0800yew8.cloudfront.net/client/Dropbox%202.0.26.dmg
 
+    # font prep
+    echo "Downloading Font Prep"
+    download http://cdn.bitbucket.org/briangonzalez/fontprep-build/downloads/FontPrep_3.0.3.dmg
+
     open ~/Downloads/
 
     # xCode
     open "https://itunes.apple.com/us/app/xcode/id497799835?ls=1&mt=12#"
 
+}
+
+function initST3PackageSync() {
+    read -p "For making synchronization of Sublime Text 3 packages both ST3 and Dropbox must be installed. Are ST3 and Dropbox installed? (y/n) " -n 1
+    echo
+    if [[ $REPLY =~ ^[Yy]$ ]]; then
+        rm -r ~/Library/Application\ Support/Sublime\ Text\ 3/Installed\ Packages
+        rm -r ~/Library/Application\ Support/Sublime\ Text\ 3/Pristine\ Packages
+        rm -r ~/Library/Application\ Support/Sublime\ Text\ 3/Packages
+
+        ln -s ~/Dropbox/appsync/Sublime\ Text\ 3/Installed\ Packages ~/Library/Application\ Support/Sublime\ Text\ 3/Installed\ Packages
+        ln -s ~/Dropbox/appsync/Sublime\ Text\ 3/Pristine\ Packages ~/Library/Application\ Support/Sublime\ Text\ 3/Pristine\ Packages
+        ln -s ~/Dropbox/appsync/Sublime\ Text\ 3/Packages ~/Library/Application\ Support/Sublime\ Text\ 3/Packages
+    fi
+}
+
+# Install all services and programs from scratch
+function initAll() {
+    initNode
+    initRuby
+    initBrew
+    initPrograms
+    initDotFiles
+    initST3PackageSync
 }
