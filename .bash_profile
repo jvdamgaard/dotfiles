@@ -200,11 +200,6 @@ function updateDotFiles() {
     )
 }
 
-# update Sublime Text 3 packages
-function initST3Packages() {
-    
-}
-
 # update alle systems for web development
 function updateAll() {
 
