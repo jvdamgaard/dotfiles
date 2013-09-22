@@ -53,7 +53,7 @@ alias stf='open -a "Sublime Text" .'
 
 function stp() {
     local project=${PWD##*/}
-    open ~/Sites/${project}.sublime-project
+    subl --project ${project}.sublime-project
 }
 
 # Create a new directory and enter it
@@ -307,6 +307,7 @@ function initST3PackageSync() {
         ln -s ~/Dropbox/appsync/Sublime\ Text\ 3/Installed\ Packages ~/Library/Application\ Support/Sublime\ Text\ 3/Installed\ Packages
         ln -s ~/Dropbox/appsync/Sublime\ Text\ 3/Pristine\ Packages ~/Library/Application\ Support/Sublime\ Text\ 3/Pristine\ Packages
         ln -s ~/Dropbox/appsync/Sublime\ Text\ 3/Packages ~/Library/Application\ Support/Sublime\ Text\ 3/Packages
+        ln -s ~/Dropbox/appsync/Sublime\ Text\ 3/Projects ~/Library/Application\ Support/Sublime\ Text\ 3/Projects
     fi
 }
 
