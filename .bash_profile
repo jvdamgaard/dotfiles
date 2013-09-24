@@ -1,3 +1,6 @@
+export PATH=/bin:/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:$PATH
+export EDITOR='subl -w'
+
 # {{{
 # Node Completion - Auto-generated, do not touch.
 shopt -s progcomp
@@ -230,6 +233,8 @@ function initNode() {
     npm install -g yo
     npm install -g generator-webapp
     npm install -g generator-ember
+    echo " - Node Jitsu"
+    npm install -g jitsu
 
 }
 
@@ -296,7 +301,7 @@ function initPrograms() {
 
 }
 
-function initST3PackageSync() {
+function initST3() {
     read -p "For making synchronization of Sublime Text 3 packages both ST3 and Dropbox must be installed. Are ST3 and Dropbox installed? (y/n) " -n 1
     echo
     if [[ $REPLY =~ ^[Yy]$ ]]; then
@@ -308,6 +313,9 @@ function initST3PackageSync() {
         ln -s ~/Dropbox/appsync/Sublime\ Text\ 3/Pristine\ Packages ~/Library/Application\ Support/Sublime\ Text\ 3/Pristine\ Packages
         ln -s ~/Dropbox/appsync/Sublime\ Text\ 3/Packages ~/Library/Application\ Support/Sublime\ Text\ 3/Packages
         ln -s ~/Dropbox/appsync/Sublime\ Text\ 3/Projects ~/Library/Application\ Support/Sublime\ Text\ 3/Projects
+
+        # subl cli
+        ln -s /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl /usr/local/bin/subl
     fi
 }
 
@@ -318,5 +326,5 @@ function initAll() {
     initBrew
     initPrograms
     initDotFiles
-    initST3PackageSync
+    initST3
 }
