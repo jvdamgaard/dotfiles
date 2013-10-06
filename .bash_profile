@@ -1,4 +1,4 @@
-export PATH=/bin:/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:$PATH
+export PATH=/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/sbin:$PATH
 export EDITOR='subl -w'
 
 # {{{
@@ -54,6 +54,13 @@ export LS_COLORS='no=00:fi=00:di=01;34:ln=01;36:pi=40;33:so=01;35:do=01;35:bd=40
 alias gs='grunt server'
 alias gb='grunt build --force'
 alias gt='grunt test'
+
+# Node shotcuts
+function na() {
+    local path="${1:-}"
+	sleep 1 && open "http://localhost:8000/${path}" &
+	node app
+}
 
 # programs
 alias st='open -a "Sublime Text"'
@@ -168,12 +175,18 @@ function updateNode() {
 
     # update npm
     echo "Updating npm"
-    curl https://npmjs.org/install.sh | sh
+    npm update npm -g
 
     # update all global node packages
     echo "Updating all global npm packages"
     npm -g update
 
+}
+
+# hard update npm
+function updateNPM() {
+	echo "Updating npm"
+	curl https://npmjs.org/install.sh | sh
 }
 
 # update homebrew
