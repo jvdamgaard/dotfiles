@@ -312,6 +312,15 @@ function initPrograms() {
     echo "Downloading Font Prep"
     download http://cdn.bitbucket.org/briangonzalez/fontprep-build/downloads/FontPrep_3.0.3.dmg
 
+    echo "Install FontForge"
+    brew install fontforge
+    download http://xquartz.macosforge.org/downloads/SL/XQuartz-2.7.4.dmg
+    download http://fuuko.libferris.com/osx/packages/201310/05_0907/FontForge.app.zip
+
+    echo "Install ImageOptim"
+    download http://imageoptim.com/ImageOptim.tbz2
+
+
     open ~/Downloads/
 
     # xCode
