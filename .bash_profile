@@ -241,6 +241,10 @@ function initNode() {
     nvm install 0.10
     nvm alias default 0.10
 
+}
+
+function initNPM() {
+
     # npm
     echo "Latest npm"
     curl https://npmjs.org/install.sh | sh
