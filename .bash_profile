@@ -217,7 +217,7 @@ function updateRuby() {
 function updateDotFiles() {
     (
         cd ~/Repos/dotfiles/
-        source bootstrap.sh
+        source bootstrap.sh --force
     )
 }
 
