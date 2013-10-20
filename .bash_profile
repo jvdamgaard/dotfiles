@@ -297,8 +297,10 @@ function initPrograms() {
     download http://c758482.r82.cf2.rackcdn.com/Sublime%20Text%20Build%203047.dmg
 
     # google chrome canary
-    echo "Downloading Google Chrome Canary"
+    echo "Downloading Browsers"
     download https://storage.googleapis.com/chrome-canary/GoogleChromeCanary.dmg
+    donwload https://dl.google.com/chrome/mac/stable/GGRO/googlechrome.dmg
+    download http://download-installer.cdn.mozilla.net/pub/mozilla.org/firefox/releases/24.0/mac/da/Firefox%2024.0.dmg
 
     # github
     echo "Downloading GitHub Client"
@@ -323,6 +325,9 @@ function initPrograms() {
 
     echo "Install ImageOptim"
     download http://imageoptim.com/ImageOptim.tbz2
+
+    echo "Install Wunderlist"
+    open "http://www.appstore.com/mac/Wunderlist"
 
 
     open ~/Downloads/
@@ -353,9 +358,9 @@ function initST3() {
 # Install all services and programs from scratch
 function initAll() {
     initNode
+    initNPM
     initRuby
     initBrew
     initPrograms
-    initDotFiles
     initST3
 }
