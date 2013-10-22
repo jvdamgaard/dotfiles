@@ -255,8 +255,8 @@ function initNPM() {
     npm install -g yo
     npm install -g generator-webapp
     npm install -g generator-ember
-    echo " - Node Jitsu"
-    npm install -g jitsu
+    # echo " - Node Jitsu"
+    # npm install -g jitsu
 
 }
 
@@ -325,6 +325,9 @@ function initPrograms() {
 
     echo "Install ImageOptim"
     download http://imageoptim.com/ImageOptim.tbz2
+
+    echo "Install PhantomJS"
+    brew install phantomjs
 
     echo "Install Wunderlist"
     open "http://www.appstore.com/mac/Wunderlist"
