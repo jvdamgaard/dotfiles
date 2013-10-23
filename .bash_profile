@@ -336,7 +336,7 @@ function initPrograms() {
     open ~/Downloads/
 
     # xCode
-    open "https://itunes.apple.com/us/app/xcode/id497799835?ls=1&mt=12#"
+    open "https://itunes.apple.com/us/app/xcode/"
 
 }
 
