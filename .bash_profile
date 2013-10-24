@@ -54,6 +54,7 @@ export LS_COLORS='no=00:fi=00:di=01;34:ln=01;36:pi=40;33:so=01;35:do=01;35:bd=40
 alias gs='grunt server'
 alias gb='grunt build --force'
 alias gt='grunt test'
+alias gd='grunt docs'
 
 # Node shotcuts
 function na() {
@@ -288,6 +289,12 @@ function initBrew() {
     # MongoDB
     echo "Installing MongoDB"
     brew install mongodb
+
+    echo "Install FontForge"
+    brew install fontforge
+
+    echo "Install PhantomJS"
+    brew install phantomjs
 }
 
 function initPrograms() {
@@ -318,25 +325,24 @@ function initPrograms() {
     echo "Downloading Font Prep"
     download http://cdn.bitbucket.org/briangonzalez/fontprep-build/downloads/FontPrep_3.0.3.dmg
 
-    echo "Install FontForge"
-    brew install fontforge
+    echo "Downloading FontForge dependencies"
     download http://xquartz.macosforge.org/downloads/SL/XQuartz-2.7.4.dmg
     download http://fuuko.libferris.com/osx/packages/201310/05_0907/FontForge.app.zip
 
-    echo "Install ImageOptim"
+    echo "Downloading ImageOptim"
     download http://imageoptim.com/ImageOptim.tbz2
 
-    echo "Install PhantomJS"
-    brew install phantomjs
+    echo "Download spotify"
+    download http://download.spotify.com/SpotifyInstaller.zip
 
-    echo "Install Wunderlist"
+    echo "App Store - Wunderlist"
     open "http://www.appstore.com/mac/Wunderlist"
+
+    echo "App Store - XCode"
+    open "https://itunes.apple.com/us/app/xcode/"
 
 
     open ~/Downloads/
-
-    # xCode
-    open "https://itunes.apple.com/us/app/xcode/"
 
 }
 
