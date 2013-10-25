@@ -1,14 +1,6 @@
 export PATH=/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/sbin:$PATH
 export EDITOR='subl -w'
 
-# {{{
-# Node Completion - Auto-generated, do not touch.
-shopt -s progcomp
-for f in $(command ls ~/.node-completion); do
-  f="$HOME/.node-completion/$f"
-  test -f "$f" && . "$f"
-done
-# }}}
 [[ -s $HOME/.nvm/nvm.sh ]] && . $HOME/.nvm/nvm.sh # This loads NVM
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
@@ -231,11 +223,15 @@ function updateAll() {
     updateDotFiles
 }
 
-function initNode() {
+function initNode-step1() {
 
     # node version manager
     echo "Installing node.js"
     curl https://raw.github.com/creationix/nvm/master/install.sh | sh
+
+}
+
+function initNode-step2() {
 
     # latest node.js
     echo "Getting latest stable node.js version"
@@ -261,11 +257,15 @@ function initNPM() {
 
 }
 
-function initRuby() {
+function initRuby-step1() {
 
     # rvm
     echo "Installing rvm"
     \curl -L https://get.rvm.io | bash
+
+}
+
+function initRuby-step2() {
 
     echo "Installing ruby"
     rvm get stable
@@ -279,7 +279,26 @@ function initRuby() {
 
 }
 
+function removeMacPorts() {
+    sudo port -fp uninstall installed
+    
+    sudo rm -rf \
+    /opt/local \
+    /Applications/DarwinPorts \
+    /Applications/MacPorts \
+    /Library/LaunchDaemons/org.macports.* \
+    /Library/Receipts/DarwinPorts*.pkg \
+    /Library/Receipts/MacPorts*.pkg \
+    /Library/StartupItems/DarwinPortsStartup \
+    /Library/Tcl/darwinports1.0 \
+    /Library/Tcl/macports1.0 \
+    ~/.macports
+}
+
 function initBrew() {
+
+    echo “Removing MacPorts”
+    removeMacPorts
 
     # homebrew
     echo "Installing HomeBrew"
@@ -290,38 +309,29 @@ function initBrew() {
     echo "Installing MongoDB"
     brew install mongodb
 
-    echo "Install FontForge"
-    brew install fontforge
-
     echo "Install PhantomJS"
     brew install phantomjs
 }
 
 function initPrograms() {
 
-    # sublime text
     echo "Downloading Sublime Text"
     download http://c758482.r82.cf2.rackcdn.com/Sublime%20Text%20Build%203047.dmg
 
-    # google chrome canary
     echo "Downloading Browsers"
     download https://storage.googleapis.com/chrome-canary/GoogleChromeCanary.dmg
-    donwload https://dl.google.com/chrome/mac/stable/GGRO/googlechrome.dmg
+    download https://dl.google.com/chrome/mac/stable/GGRO/googlechrome.dmg
     download http://download-installer.cdn.mozilla.net/pub/mozilla.org/firefox/releases/24.0/mac/da/Firefox%2024.0.dmg
 
-    # github
     echo "Downloading GitHub Client"
-    download https://central.github.com/mac/latest
+    download https://github-central.s3.amazonaws.com/mac/GitHub%20for%20Mac%20162.zip
 
-    # fireworks
     echo "Downloading Fireworks"
     download https://ccmdls.adobe.com/AdobeProducts/FWKS/12/osx10/AAMmetadataLS16/CreativeCloudInstaller.dmg
 
-    # dropbox
     echo "Downloading DropBox"
     download https://d1ilhw0800yew8.cloudfront.net/client/Dropbox%202.0.26.dmg
 
-    # font prep
     echo "Downloading Font Prep"
     download http://cdn.bitbucket.org/briangonzalez/fontprep-build/downloads/FontPrep_3.0.3.dmg
 
@@ -341,35 +351,57 @@ function initPrograms() {
     echo "App Store - XCode"
     open "https://itunes.apple.com/us/app/xcode/"
 
-
     open ~/Downloads/
 
 }
 
 function initST3() {
-    read -p "For making synchronization of Sublime Text 3 packages both ST3 and Dropbox must be installed. Are ST3 and Dropbox installed? (y/n) " -n 1
-    echo
-    if [[ $REPLY =~ ^[Yy]$ ]]; then
-        rm -r ~/Library/Application\ Support/Sublime\ Text\ 3/Installed\ Packages
-        rm -r ~/Library/Application\ Support/Sublime\ Text\ 3/Pristine\ Packages
-        rm -r ~/Library/Application\ Support/Sublime\ Text\ 3/Packages
+    rm -r ~/Library/Application\ Support/Sublime\ Text\ 3/Installed\ Packages
+    rm -r ~/Library/Application\ Support/Sublime\ Text\ 3/Pristine\ Packages
+    rm -r ~/Library/Application\ Support/Sublime\ Text\ 3/Packages
 
-        ln -s ~/Dropbox/appsync/Sublime\ Text\ 3/Installed\ Packages ~/Library/Application\ Support/Sublime\ Text\ 3/Installed\ Packages
-        ln -s ~/Dropbox/appsync/Sublime\ Text\ 3/Pristine\ Packages ~/Library/Application\ Support/Sublime\ Text\ 3/Pristine\ Packages
-        ln -s ~/Dropbox/appsync/Sublime\ Text\ 3/Packages ~/Library/Application\ Support/Sublime\ Text\ 3/Packages
-        ln -s ~/Dropbox/appsync/Sublime\ Text\ 3/Projects ~/Library/Application\ Support/Sublime\ Text\ 3/Projects
+    ln -s ~/Dropbox/appsync/Sublime\ Text\ 3/Installed\ Packages ~/Library/Application\ Support/Sublime\ Text\ 3/Installed\ Packages
+    ln -s ~/Dropbox/appsync/Sublime\ Text\ 3/Pristine\ Packages ~/Library/Application\ Support/Sublime\ Text\ 3/Pristine\ Packages
+    ln -s ~/Dropbox/appsync/Sublime\ Text\ 3/Packages ~/Library/Application\ Support/Sublime\ Text\ 3/Packages
+    ln -s ~/Dropbox/appsync/Sublime\ Text\ 3/Projects ~/Library/Application\ Support/Sublime\ Text\ 3/Projects
 
-        # subl cli
-        ln -s /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl /usr/local/bin/subl
-    fi
+    echo “sub cli”
+    ln -s /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl /usr/local/bin/subl
+
+    echo “Xcode cli”
+    xcode-select --install
 }
 
 # Install all services and programs from scratch
-function initAll() {
-    initNode
+function init-step1() {
+    initNode-step1
+    initRuby-step1
+    echo “------------------------------------------------"
+    echo “Restart terminal and run command ‘initAll-step2’”
+    echo “------------------------------------------------"
+    say “Step 1 finished. Restart terminal”
+}
+
+function initAll-step2() {
+    initNode-step2
     initNPM
-    initRuby
+    initRuby-step2
     initBrew
     initPrograms
+    echo “---------------------------------------------------------"
+    echo “Install all downloaded programs. Then run ‘initAll-step3’”
+    echo “---------------------------------------------------------"
+    say “Step 2 finished. Install all programs”
+}
+
+function initAll-step3() {
+
+    echo "Install FontForge"
+    brew install fontforge
+
     initST3
+    echo “----"
+    echo “Done”
+    echo “----"
+    say “Done”
 }
