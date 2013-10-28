@@ -309,8 +309,11 @@ function initBrew() {
     echo "Installing MongoDB"
     brew install mongodb
 
-    echo "Install PhantomJS"
+    echo "Installing PhantomJS"
     brew install phantomjs
+
+    echo "Installing ImageMagick"
+    brew install ImageMagick
 }
 
 function initPrograms() {
@@ -342,8 +345,34 @@ function initPrograms() {
     echo "Downloading ImageOptim"
     download http://imageoptim.com/ImageOptim.tbz2
 
-    echo "Download spotify"
+    echo "Downloading spotify"
     download http://download.spotify.com/SpotifyInstaller.zip
+
+    echo "Downloading VLC"
+    download http://get.videolan.org/vlc/2.1.0/macosx/vlc-2.1.0.dmg
+
+    echo "Downloading Dash"
+    download http://kapeli.com/Dash.zip
+
+    echo "Downloading Alfred App"
+    download http://cachefly.alfredapp.com/Alfred_2.1_218.zip
+
+    echo "Downloading Alfred App workflows"
+    open https://github.com/zenorocha/alfred-workflows
+    download http://zno.io/RcAe # sublime text
+    download http://zno.io/RcdI # package managers
+    download http://zno.io/Rcex # can i use
+    download http://zno.io/RcFz # colors
+    download http://zno.io/Rc3p # dash
+    download http://zno.io/RcJ3 # can i use
+    download http://zno.io/RcPe # github
+    download http://zno.io/RceO # stack overflow
+
+    echo "Downloading ShiftIt"
+    download https://github.com/downloads/fikovnik/ShiftIt/ShiftIt-develop-1.6.zip
+
+    echo "Downloading Stay"
+    download http://cordlessdog.com/stay/versions/Stay%201.2.3.zip
 
     echo "App Store - Wunderlist"
     open "http://www.appstore.com/mac/Wunderlist"
