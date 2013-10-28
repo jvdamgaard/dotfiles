@@ -358,15 +358,14 @@ function initPrograms() {
     download http://cachefly.alfredapp.com/Alfred_2.1_218.zip
 
     echo "Downloading Alfred App workflows"
-    open https://github.com/zenorocha/alfred-workflows
-    download http://zno.io/RcAe # sublime text
-    download http://zno.io/RcdI # package managers
-    download http://zno.io/Rcex # can i use
-    download http://zno.io/RcFz # colors
-    download http://zno.io/Rc3p # dash
-    download http://zno.io/RcJ3 # can i use
-    download http://zno.io/RcPe # github
-    download http://zno.io/RceO # stack overflow
+    download https://raw.github.com/zenorocha/alfred-workflows/master/sublime-text/sublime-text.alfredworkflow # sublime text
+    download https://raw.github.com/zenorocha/alfred-workflows/master/package-managers/package-managers.alfredworkflow # package managers
+    download https://raw.github.com/zenorocha/alfred-workflows/master/caniuse/caniuse.alfredworkflow # can i use
+    download https://raw.github.com/zenorocha/alfred-workflows/master/colors/colors.alfredworkflow # colors
+    download https://raw.github.com/zenorocha/alfred-workflows/master/dash/dash.alfredworkflow # dash
+    download https://raw.github.com/zenorocha/alfred-workflows/master/github/github.alfredworkflow # github
+    download https://raw.github.com/zenorocha/alfred-workflows/master/stack-overflow/stack-overflow.alfredworkflow # stack overflow
+    download https://raw.github.com/ruedap/alfred2-font-awesome-workflow/master/Font%20Awesome.alfredworkflow # font-awesome
 
     echo "Downloading ShiftIt"
     download https://github.com/downloads/fikovnik/ShiftIt/ShiftIt-develop-1.6.zip
