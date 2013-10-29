@@ -42,13 +42,14 @@ alias lsd='ls -l ${colorflag} | grep "^d"'
 alias ls="command ls ${colorflag}"
 export LS_COLORS='no=00:fi=00:di=01;34:ln=01;36:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arj=01;31:*.taz=01;31:*.lzh=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.gz=01;31:*.bz2=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.avi=01;35:*.fli=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.ogg=01;35:*.mp3=01;35:*.wav=01;35:'
 
-# Yeoman shotcuts
+# Grunt shotcuts
 alias gs='grunt server'
 alias gb='grunt build --force'
 alias gt='grunt test'
 alias gd='grunt docs'
 
 # Node shotcuts
+alias id='npm install && bower install'
 function na() {
     local path="${1:-}"
 	sleep 1 && open "http://localhost:8000/${path}" &
@@ -159,10 +160,11 @@ export PS1="\[$RESET\]\$ \[$MAGENTA\]\w/ \$([[ -n \$(git branch 2> /dev/null) ]]
 
 # update alle systems for web development
 function update() {
-	type="${1:-help}"
+	local t="${1:-help}"
 
 	# Update home brew
-	if [ "$1" == "help" ]; then
+	if [ ${t} == "help" ]; then
+		echo " "
 		echo "------------------------------------------------------------------"
 		echo "Update params:"
 		echo " - all             : Update all"
@@ -173,10 +175,11 @@ function update() {
 		echo " - npm             : update all global node packages"
 		echo " - dot / dotfiles  : update dot files"
 		echo "------------------------------------------------------------------"
+		echo " "
 	fi
 
 	# Update home brew
-	if [ "$1" == "brew" ] || "$1" == "homebrew" ] || [ "$1" == "all" ]; then
+	if [ ${t} == "brew" ] || [ ${t} == "homebrew" ] || [ ${t} == "all" ]; then
 		echo "Updating brew"
 		brew update
 		echo "Updating all brew packages"
@@ -184,28 +187,28 @@ function update() {
 	fi
 
 	# Update ruby
-	if [ "$1" == "ruby" ] || [ "$1" == "all" ]; then
+	if [ ${t} == "ruby" ] || [ ${t} == "all" ]; then
 		echo "Updating ruby"
 		rvm get stable
 		rvm reload
 	fi
 
 	# Update ruby gems
-	if [ "$1" == "ruby" ] || "$1" == "gems" ] || "$1" == "gem" ] || [ "$1" == "all" ]; then
+	if [ ${t} == "ruby" ] || [ ${t} == "gems" ] || [ ${t} == "gem" ] || [ ${t} == "all" ]; then
 		echo "Updating gems"
 		gem update --system
 		gem update
 	fi
 
 	# Update node
-	if [ "$1" == "node" ] || "$1" == "npm" ]; then
+	if [ ${t} == "node" ] || [ ${t} == "npm" ]; then
 		echo "Updating node"
 		gem update --system
 		gem update node
 	fi
 
 	# Update npm packages
-	if [ "$1" == "npm" ] || [ "$1" == "all" ]; then
+	if [ ${t} == "npm" ] || [ ${t} == "all" ]; then
 		echo "Updating npm"
 		npm update npm -g
 		echo "Updating all global npm packages"
@@ -213,7 +216,7 @@ function update() {
 	fi
 
 	# Update dot files
-	if [ "$1" == "dot" ] || "$1" == "dotfiles" ] || [ "$1" == "all" ]; then
+	if [ ${t} == "dot" ] || [ ${t} == "dotfiles" ] || [ ${t} == "all" ]; then
 		(
 		    cd ~/Repos/dotfiles/
 		    source bootstrap.sh --force
@@ -226,7 +229,7 @@ function init() {
 	step="${1:-help}"
 
 	# Step 1
-	if [ "$1" == "step1" ]; then
+	if [ ${step} == "step1" ]; then
 
 		# Ruby
 			echo "Installing rvm"
@@ -347,13 +350,15 @@ function init() {
 		    open "https://msdn.microsoft.com/da-dk/subscriptions/securedownloads/#searchTerm=Office%20for%20Mac%202011%20Home%20and%20Business&ProductFamilyId=0&MyProducts=true&Languages=da&Architectures=mac&FileExtensions=.dmg&PageSize=10&PageIndex=0&FileId=0"
 
 		# Step 1 finished
+			echo " "
 			echo "------------------------------------------------------------------"
 			echo "Install programs. Restart terminal and run command ‘init step2’"
 			echo "------------------------------------------------------------------"
+			echo " "
 			say "Step 1 finished. Install programs and restart terminal"
 
 	# Step 2
-	elif [ "$1" == "step2" ]; then
+	elif [ ${step} == "step2" ]; then
 
 		# XCode command-line tools
 			echo "Xode cli"
@@ -390,19 +395,23 @@ function init() {
 			ln -s /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl /usr/local/bin/subl
 
 	    # Step 2 finished
+	    	echo " "
 		    echo "------------------------------------------------------------------"
 		    echo "Done"
 		    echo "------------------------------------------------------------------"
+		    echo " "
 		    say "Done"
 
 	# Help
 	else 
+		echo " "
 		echo "------------------------------------------------------------------"
 		echo "Init mac by installing all programs"
-		echo "1. Run command ´sudo init step1´"
-		echo "2. Install all downloaded programs"
-		echo "3. Restart terminal"
-		echo "4. Run command ´sudo init step2"
+		echo " 1. Run command ´sudo init step1´"
+		echo " 2. Install all downloaded programs"
+		echo " 3. Restart terminal"
+		echo " 4. Run command ´sudo init step2"
 		echo "------------------------------------------------------------------"
+		echo " "
 	fi
 }
