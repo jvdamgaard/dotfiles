@@ -159,12 +159,7 @@ export PS1="\[$RESET\]\$ \[$MAGENTA\]\w/ \$([[ -n \$(git branch 2> /dev/null) ]]
 
 
 # update node
-function updateNode() {
-
-    # latest node 0.10 version
-    echo "Updating node.js"
-    nvm install 0.10
-    nvm alias default 0.10
+function updateNPM() {
 
     # update npm
     echo "Updating npm"
@@ -174,12 +169,6 @@ function updateNode() {
     echo "Updating all global npm packages"
     npm -g update
 
-}
-
-# hard update npm
-function updateNPM() {
-	echo "Updating npm"
-	curl https://npmjs.org/install.sh | sh
 }
 
 # update homebrew
@@ -215,36 +204,13 @@ function updateDotFiles() {
 }
 
 # update alle systems for web development
-function updateAll() {
-
-    updateNode
+function update() {
     updateBrew
     updateRuby
     updateDotFiles
 }
 
-function initNode-step1() {
-
-    # node version manager
-    echo "Installing node.js"
-    curl https://raw.github.com/creationix/nvm/master/install.sh | sh
-
-}
-
-function initNode-step2() {
-
-    # latest node.js
-    echo "Getting latest stable node.js version"
-    nvm install 0.10
-    nvm alias default 0.10
-
-}
-
 function initNPM() {
-
-    # npm
-    echo "Latest npm"
-    curl https://npmjs.org/install.sh | sh
 
     # yeoman
     echo "Installing globale node.js packages"
@@ -305,7 +271,9 @@ function initBrew() {
     ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"
     brew update
 
-    # MongoDB
+    echo "Installing Nodejs"
+    brew install node
+
     echo "Installing MongoDB"
     brew install mongodb
 
@@ -401,30 +369,21 @@ function initST3() {
 }
 
 # Install all services and programs from scratch
-function init-step1() {
-    initNode-step1
+function init() {
     initRuby-step1
-    echo “------------------------------------------------"
-    echo “Restart terminal and run command ‘initAll-step2’”
-    echo “------------------------------------------------"
-    say “Step 1 finished. Restart terminal”
-}
-
-function initAll-step2() {
-    initNode-step2
-    initNPM
-    initRuby-step2
     initBrew
+    initNPM
     initPrograms
-    echo “---------------------------------------------------------"
-    echo “Install all downloaded programs. Then run ‘initAll-step3’”
-    echo “---------------------------------------------------------"
-    say “Step 2 finished. Install all programs”
+    echo “------------------------------------------------------------------"
+    echo “Install programs. Restart terminal and run command ‘initAll-step2’”
+    echo “------------------------------------------------------------------"
+    say “Step 1 finished. Install programs and restart terminal”
 }
 
-function initAll-step3() {
+function init-step2() {
+    initRuby-step2
 
-    echo "Install FontForge"
+    echo "Installing FontForge"
     brew install fontforge
 
     initST3
