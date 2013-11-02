@@ -49,7 +49,10 @@ alias gt='grunt test'
 alias gd='grunt docs'
 
 # Node shotcuts
-alias id='npm install && bower install'
+function id() {
+	npm install
+	bower install
+}
 function na() {
     local path="${1:-}"
 	sleep 1 && open "http://localhost:8000/${path}" &
@@ -330,6 +333,8 @@ function init() {
 		    download https://raw.github.com/zenorocha/alfred-workflows/master/github/github.alfredworkflow # github
 		    download https://raw.github.com/zenorocha/alfred-workflows/master/stack-overflow/stack-overflow.alfredworkflow # stack overflow
 		    download https://raw.github.com/ruedap/alfred2-font-awesome-workflow/master/Font%20Awesome.alfredworkflow # font-awesome
+		    download https://github.com/sebietter/Wunderlist-2-for-Alfred/raw/master/Wunderlist%202.alfredworkflow # wunderlist
+		    download https://www.dropbox.com/s/wy8f22acqk5jf3l/Launch%20apps%20for%20web%20development.alfredworkflow # launch web app by jakob viskum damgaard
 
 		    echo "Downloading ShiftIt"
 		    download https://github.com/downloads/fikovnik/ShiftIt/ShiftIt-develop-1.6.zip
