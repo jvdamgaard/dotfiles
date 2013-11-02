@@ -316,7 +316,7 @@ function init() {
 		    download http://download.spotify.com/SpotifyInstaller.zip
 
 		    echo "Downloading VLC"
-		    download http://get.videolan.org/vlc/2.1.0/macosx/vlc-2.1.0.dmg
+		    open http://get.videolan.org/vlc/2.1.0/macosx/vlc-2.1.0.dmg
 
 		    echo "Downloading Dash"
 		    download http://kapeli.com/Dash.zip
