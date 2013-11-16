@@ -342,6 +342,9 @@ function init() {
 		    echo "Downloading Stay"
 		    download http://cordlessdog.com/stay/versions/Stay%201.2.3.zip
 
+		    echo "Downloading DashLane"
+		    download https://d3mfqat9ni8wb5.cloudfront.net/releases/2.2.5/2.2.5.48458/Dashlane.dmg
+
 		    open ~/Downloads/
 
 		# Open webpages for download of programs
