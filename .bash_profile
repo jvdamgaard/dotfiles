@@ -206,8 +206,8 @@ function update() {
 	# Update node
 	if [ ${t} == "node" ] || [ ${t} == "npm" ]; then
 		echo "Updating node"
-		gem update --system
-		gem update node
+		nvm install 0.10
+		nvm alias default 0.10
 	fi
 
 	# Update npm packages
@@ -254,98 +254,80 @@ function init() {
 			/Library/Tcl/macports1.0 \
 			~/.macports
 
-		# HomeBrew
-			echo "Installing HomeBrew"
-			ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"
-			brew update
-
 		# NodeJS
 			echo "Installing Nodejs"
-			brew install node
-
-		# Mongo B
-			echo "Installing MongoDB"
-			brew install mongodb
-
-		# PhantomJS
-			echo "Installing PhantomJS"
-			brew install phantomjs
-
-		# ImageMagick
-			echo "Installing ImageMagick"
-			brew install ImageMagick
-
-		# NPM packages
-			echo "Installing globale node.js packages"
-		    echo " - Yeoman"
-		    npm install -g yo
-		    npm install -g generator-webapp
-		    npm install -g generator-ember
-		    # echo " - Node Jitsu"
-		    # npm install -g jitsu
+			# brew install node
+			curl https://raw.github.com/creationix/nvm/master/install.sh | sh
 
 		# Download programs
 			echo "Downloading Sublime Text"
-		    download http://c758482.r82.cf2.rackcdn.com/Sublime%20Text%20Build%203047.dmg
+		    download "http://c758482.r82.cf2.rackcdn.com/Sublime%20Text%20Build%203047.dmg"
 
 		    echo "Downloading Browsers"
-		    download https://storage.googleapis.com/chrome-canary/GoogleChromeCanary.dmg
-		    download https://dl.google.com/chrome/mac/stable/GGRO/googlechrome.dmg
-		    download http://download-installer.cdn.mozilla.net/pub/mozilla.org/firefox/releases/24.0/mac/da/Firefox%2024.0.dmg
+		    download "https://storage.googleapis.com/chrome-canary/GoogleChromeCanary.dmg"
+		    download "https://dl.google.com/chrome/mac/stable/GGRO/googlechrome.dmg"
+		    download "http://download-installer.cdn.mozilla.net/pub/mozilla.org/firefox/releases/24.0/mac/da/Firefox%2024.0.dmg"
 
 		    echo "Downloading GitHub Client"
-		    download https://github-central.s3.amazonaws.com/mac/GitHub%20for%20Mac%20162.zip
+		    download "https://github-central.s3.amazonaws.com/mac/GitHub%20for%20Mac%20162.zip"
 
 		    echo "Downloading Fireworks"
-		    download https://ccmdls.adobe.com/AdobeProducts/FWKS/12/osx10/AAMmetadataLS16/CreativeCloudInstaller.dmg
+		    download "https://ccmdls.adobe.com/AdobeProducts/FWKS/12/osx10/AAMmetadataLS16/CreativeCloudInstaller.dmg"
 
 		    echo "Downloading DropBox"
-		    download https://d1ilhw0800yew8.cloudfront.net/client/Dropbox%202.0.26.dmg
+		    download "https://d1ilhw0800yew8.cloudfront.net/client/Dropbox%202.0.26.dmg"
 
 		    echo "Downloading Font Prep"
-		    download http://cdn.bitbucket.org/briangonzalez/fontprep-build/downloads/FontPrep_3.0.3.dmg
+		    download "http://cdn.bitbucket.org/briangonzalez/fontprep-build/downloads/FontPrep_3.0.3.dmg"
 
 		    echo "Downloading FontForge dependencies"
-		    download http://xquartz.macosforge.org/downloads/SL/XQuartz-2.7.4.dmg
-		    download http://fuuko.libferris.com/osx/packages/201310/05_0907/FontForge.app.zip
+		    download "http://xquartz.macosforge.org/downloads/SL/XQuartz-2.7.4.dmg"
+		    download "http://fuuko.libferris.com/osx/packages/201310/05_0907/FontForge.app.zip"
 
 		    echo "Downloading ImageOptim"
-		    download http://imageoptim.com/ImageOptim.tbz2
+		    download "http://imageoptim.com/ImageOptim.tbz2"
 
 		    echo "Downloading spotify"
-		    download http://download.spotify.com/SpotifyInstaller.zip
+		    download "http://download.spotify.com/SpotifyInstaller.zip"
 
 		    echo "Downloading VLC"
-		    open http://get.videolan.org/vlc/2.1.0/macosx/vlc-2.1.0.dmg
+		    open "http://get.videolan.org/vlc/2.1.0/macosx/vlc-2.1.0.dmg"
 
 		    echo "Downloading Dash"
-		    download http://kapeli.com/Dash.zip
+		    download "http://kapeli.com/Dash.zip"
 
 		    echo "Downloading Alfred App"
-		    download http://cachefly.alfredapp.com/Alfred_2.1_218.zip
+		    download "http://cachefly.alfredapp.com/Alfred_2.1_218.zip"
 
 		    echo "Downloading Alfred App workflows"
-		    download https://raw.github.com/zenorocha/alfred-workflows/master/sublime-text/sublime-text.alfredworkflow # sublime text
-		    download https://raw.github.com/zenorocha/alfred-workflows/master/package-managers/package-managers.alfredworkflow # package managers
-		    download https://raw.github.com/zenorocha/alfred-workflows/master/caniuse/caniuse.alfredworkflow # can i use
-		    download https://raw.github.com/zenorocha/alfred-workflows/master/colors/colors.alfredworkflow # colors
-		    download https://raw.github.com/zenorocha/alfred-workflows/master/dash/dash.alfredworkflow # dash
-		    download https://raw.github.com/zenorocha/alfred-workflows/master/github/github.alfredworkflow # github
-		    download https://raw.github.com/zenorocha/alfred-workflows/master/stack-overflow/stack-overflow.alfredworkflow # stack overflow
-		    download https://raw.github.com/ruedap/alfred2-font-awesome-workflow/master/Font%20Awesome.alfredworkflow # font-awesome
-		    download https://github.com/sebietter/Wunderlist-2-for-Alfred/raw/master/Wunderlist%202.alfredworkflow # wunderlist
-		    download https://www.dropbox.com/s/wy8f22acqk5jf3l/Launch%20apps%20for%20web%20development.alfredworkflow # launch web app by jakob viskum damgaard
+		    download "https://raw.github.com/zenorocha/alfred-workflows/master/sublime-text/sublime-text.alfredworkflow" # sublime text
+		    download "https://raw.github.com/zenorocha/alfred-workflows/master/package-managers/package-managers.alfredworkflow" # package managers
+		    download "https://raw.github.com/zenorocha/alfred-workflows/master/caniuse/caniuse.alfredworkflow" # can i use
+		    download "https://raw.github.com/zenorocha/alfred-workflows/master/colors/colors.alfredworkflow" # colors
+		    download "https://raw.github.com/zenorocha/alfred-workflows/master/dash/dash.alfredworkflow" # dash
+		    download "https://raw.github.com/zenorocha/alfred-workflows/master/github/github.alfredworkflow" # github
+		    download "https://raw.github.com/zenorocha/alfred-workflows/master/stack-overflow/stack-overflow.alfredworkflow" # stack overflow
+		    download "https://raw.github.com/ruedap/alfred2-font-awesome-workflow/master/Font%20Awesome.alfredworkflow" # font-awesome
+		    download "https://raw.github.com/sebietter/Wunderlist-2-for-Alfred/master/Wunderlist%202.alfredworkflow" # wunderlist
+		    download "https://www.dropbox.com/s/wy8f22acqk5jf3l/Launch%20apps%20for%20web%20development.alfredworkflow" # launch web app by jakob viskum damgaard
+		    download "https://raw.github.com/dingyi/Alfred-Workflows/master/Domainr/Domainr.alfredworkflow" # domainr
+		    download "https://raw.github.com/zenorocha/alfred-workflows/master/encode-decode/encode-decode.alfredworkflow" # encode/decode
+		    download "https://raw.github.com/zenorocha/alfred-workflows/master/ip-address/ip-address.alfredworkflow" #ip lookup
+		    download "https://raw.github.com/zenorocha/alfred-workflows/master/kill-process/kill-process.alfredworkflow" # kill process
+		    download "https://raw.github.com/zenorocha/alfred-workflows/master/ios-simulator/ios-simulator.alfredworkflow" # ios simulator
+		    download "https://raw.github.com/untoldwind/alfred2-layout/master/Layout.alfredworkflow" # layout
+
 
 		    echo "Downloading ShiftIt"
-		    download https://github.com/downloads/fikovnik/ShiftIt/ShiftIt-develop-1.6.zip
+		    download "https://github.com/downloads/fikovnik/ShiftIt/ShiftIt-develop-1.6.zip"
 
 		    echo "Downloading Stay"
-		    download http://cordlessdog.com/stay/versions/Stay%201.2.3.zip
+		    download "http://cordlessdog.com/stay/versions/Stay%201.2.3.zip"
 
 		    echo "Downloading DashLane"
-		    download https://d3mfqat9ni8wb5.cloudfront.net/releases/2.2.5/2.2.5.48458/Dashlane.dmg
+		    download "https://d3mfqat9ni8wb5.cloudfront.net/releases/2.2.5/2.2.5.48458/Dashlane.dmg"
 
-		    open ~/Downloads/
+		    open "~/Downloads/"
 
 		# Open webpages for download of programs
 		    echo "App Store - Wunderlist"
@@ -379,10 +361,39 @@ function init() {
 	    	rvm reload
 	    	rvm install 2.0.0
 
-	    # Rubt gems
+	    # Ruby gems
 	    	gem update --system
 	    	echo "Installing compass"
 	    	gem install compass
+
+	    # HomeBrew
+	    	echo "Installing HomeBrew"
+	    	ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go/install)"
+	    	brew update
+
+	    # Mongo B
+	    	echo "Installing MongoDB"
+	    	brew install mongodb
+
+	    # PhantomJS
+	    	echo "Installing PhantomJS"
+	    	brew install phantomjs
+
+	    # ImageMagick
+	    	echo "Installing ImageMagick"
+	    	brew install ImageMagick
+
+	    # Node with nvm
+	    	nvm install 0.10
+	    	nvm alias default 0.10
+
+	    # NPM packages
+	    	echo "Installing globale node.js packages"
+	        echo " - Yeoman"
+	        npm install -g yo
+	        npm install -g generator-webapp
+	        npm install -g generator-ember
+	        npm install -g jitsu
 
 	    # Font Forge
 		    echo "Installing FontForge"
@@ -390,13 +401,9 @@ function init() {
 
 		# Sublime Text symlink
 			echo "Sync Sublime Text 3 settings from DropBox"
-			rm -r ~/Library/Application\ Support/Sublime\ Text\ 3/Installed\ Packages
-			rm -r ~/Library/Application\ Support/Sublime\ Text\ 3/Pristine\ Packages
-			rm -r ~/Library/Application\ Support/Sublime\ Text\ 3/Packages
+			rm -r ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User
 
-			ln -s ~/Dropbox/appsync/Sublime\ Text\ 3/Installed\ Packages ~/Library/Application\ Support/Sublime\ Text\ 3/Installed\ Packages
-			ln -s ~/Dropbox/appsync/Sublime\ Text\ 3/Pristine\ Packages ~/Library/Application\ Support/Sublime\ Text\ 3/Pristine\ Packages
-			ln -s ~/Dropbox/appsync/Sublime\ Text\ 3/Packages ~/Library/Application\ Support/Sublime\ Text\ 3/Packages
+			ln -s ~/Dropbox/appsync/Sublime\ Text\ 3/Packages/User ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User
 			ln -s ~/Dropbox/appsync/Sublime\ Text\ 3/Projects ~/Library/Application\ Support/Sublime\ Text\ 3/Projects
 
 			echo "subl cli"
@@ -415,10 +422,10 @@ function init() {
 		echo " "
 		echo "------------------------------------------------------------------"
 		echo "Init mac by installing all programs"
-		echo " 1. Run command ´sudo init step1´"
+		echo " 1. Run command ´init step1´"
 		echo " 2. Install all downloaded programs"
 		echo " 3. Restart terminal"
-		echo " 4. Run command ´sudo init step2"
+		echo " 4. Run command ´init step2"
 		echo "------------------------------------------------------------------"
 		echo " "
 	fi
