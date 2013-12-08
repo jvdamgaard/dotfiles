@@ -63,6 +63,12 @@ function na() {
 alias st='open -a "Sublime Text"'
 alias stf='open -a "Sublime Text" .'
 
+# git
+function gitReset() {
+	git reset --hard
+	git clean -f -d -x
+}
+
 function stp() {
     local project=${PWD##*/}
     subl --project ${project}.sublime-project
