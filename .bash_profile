@@ -47,6 +47,7 @@ alias gs='grunt server'
 alias gb='grunt build --force'
 alias gt='grunt test'
 alias gd='grunt docs'
+alias ga='grunt app'
 
 # Node shotcuts
 function id() {
@@ -210,18 +211,21 @@ function update() {
 	fi
 
 	# Update node
-	if [ ${t} == "node" ] || [ ${t} == "npm" ]; then
+	if [ ${t} == "node" ] || [ ${t} == "all" ]; then
 		echo "Updating node"
 		nvm install 0.10
 		nvm alias default 0.10
 	fi
 
 	# Update npm packages
-	if [ ${t} == "npm" ] || [ ${t} == "all" ]; then
+	if [ ${t} == "npm" ] || [ ${t} == "node" || [ ${t} == "all" ]; then
 		echo "Updating npm"
-		npm update npm -g
+		npm install npm -g
 		echo "Updating all global npm packages"
-		npm -g update
+        npm install -g yo
+        npm install -g generator-webapp
+        npm install -g jitsu
+        npm install -g npm-check-updates
 	fi
 
 	# Update dot files
@@ -261,8 +265,7 @@ function init() {
 			~/.macports
 
 		# NodeJS
-			echo "Installing Nodejs"
-			# brew install node
+			echo "Installing Nodejs with nvm"
 			curl https://raw.github.com/creationix/nvm/master/install.sh | sh
 
 		# Download programs
@@ -400,6 +403,7 @@ function init() {
 	        npm install -g generator-webapp
 	        npm install -g generator-ember
 	        npm install -g jitsu
+	        npm install -g npm-check-updates
 
 	    # Font Forge
 		    echo "Installing FontForge"
