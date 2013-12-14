@@ -181,7 +181,7 @@ function update() {
 		echo " - brew / homebrew : update all brews"
 		echo " - ruby            : update ruby and gems"
 		echo " - gems / gem      : update all ruby gems"
-		echo " - node            : update node and all npm's"
+		echo " - node            : update node and all global npm's"
 		echo " - npm             : update all global node packages"
 		echo " - dot / dotfiles  : update dot files"
 		echo "------------------------------------------------------------------"
@@ -213,12 +213,13 @@ function update() {
 	# Update node
 	if [ ${t} == "node" ] || [ ${t} == "all" ]; then
 		echo "Updating node"
+		nvm uninstall default
 		nvm install 0.10
 		nvm alias default 0.10
 	fi
 
 	# Update npm packages
-	if [ ${t} == "npm" ] || [ ${t} == "node" || [ ${t} == "all" ]; then
+	if [ ${t} == "npm" ] || [ ${t} == "node" ] || [ ${t} == "all" ]; then
 		echo "Updating npm"
 		npm install npm -g
 		echo "Updating all global npm packages"
