@@ -227,6 +227,7 @@ function update() {
         npm install -g generator-webapp
         npm install -g jitsu
         npm install -g npm-check-updates
+        npm install -g doxx
 	fi
 
 	# Update dot files
@@ -374,7 +375,7 @@ function init() {
 	    # Ruby gems
 	    	gem update --system
 	    	echo "Installing compass"
-	    	gem install compass
+	    	gem install sass --pre
 
 	    # HomeBrew
 	    	echo "Installing HomeBrew"
@@ -393,18 +394,8 @@ function init() {
 	    	echo "Installing ImageMagick"
 	    	brew install ImageMagick
 
-	    # Node with nvm
-	    	nvm install 0.10
-	    	nvm alias default 0.10
-
-	    # NPM packages
-	    	echo "Installing globale node.js packages"
-	        echo " - Yeoman"
-	        npm install -g yo
-	        npm install -g generator-webapp
-	        npm install -g generator-ember
-	        npm install -g jitsu
-	        npm install -g npm-check-updates
+	    # Node adn npm packages
+	    	update node
 
 	    # Font Forge
 		    echo "Installing FontForge"
