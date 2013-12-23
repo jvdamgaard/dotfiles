@@ -100,17 +100,17 @@ function gz() {
 
 # Download file
 function download() {
-    ( 
-    	cd ~/Downloads/ 
+    (
+    	cd ~/Downloads/
     	curl -O -# $1
-    ) 
+    )
 }
 
 #Add spacer to dock
 function dockSpacer() {
     defaults write com.apple.dock persistent-apps -array-add '{tile-data={}; tile-type="spacer-tile";}'
     killall Dock
-} 
+}
 
 # Use Git’s colored diff when available
 hash git &>/dev/null
@@ -253,7 +253,7 @@ function init() {
 		# Remove MacPorts
 			echo "Removing MacPorts"
 			sudo port -fp uninstall installed
-			
+
 			sudo rm -rf \
 			/opt/local \
 			/Applications/DarwinPorts \
@@ -331,9 +331,6 @@ function init() {
 
 		    echo "Downloading ShiftIt"
 		    download "https://github.com/downloads/fikovnik/ShiftIt/ShiftIt-develop-1.6.zip"
-
-		    echo "Downloading Stay"
-		    download "http://cordlessdog.com/stay/versions/Stay%201.2.3.zip"
 
 		    echo "Downloading DashLane"
 		    download "https://d3mfqat9ni8wb5.cloudfront.net/releases/2.2.5/2.2.5.48458/Dashlane.dmg"
@@ -420,7 +417,7 @@ function init() {
 		    say "Done"
 
 	# Help
-	else 
+	else
 		echo " "
 		echo "------------------------------------------------------------------"
 		echo "Init mac by installing all programs"
