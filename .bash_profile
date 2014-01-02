@@ -1,7 +1,7 @@
 export PATH=/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/sbin:$PATH
 export EDITOR='subl -w'
 
-[[ -s $HOME/.nvm/nvm.sh ]] && . $HOME/.nvm/nvm.sh # This loads NVM
+# [[ -s $HOME/.nvm/nvm.sh ]] && . $HOME/.nvm/nvm.sh # This loads NVM
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
@@ -213,21 +213,21 @@ function update() {
 	# Update node
 	if [ ${t} == "node" ] || [ ${t} == "all" ]; then
 		echo "Updating node"
-		nvm uninstall default
-		nvm install 0.10
-		nvm alias default 0.10
+		n stable
 	fi
 
 	# Update npm packages
 	if [ ${t} == "npm" ] || [ ${t} == "node" ] || [ ${t} == "all" ]; then
 		echo "Updating npm"
-		npm install npm -g
+		sudo npm install npm -g
 		echo "Updating all global npm packages"
-        npm install -g yo
-        npm install -g generator-webapp
-        npm install -g jitsu
-        npm install -g npm-check-updates
-        npm install -g doxx
+		sudo npm install -g n
+        sudo npm install -g yo
+        sudo npm install -g generator-webapp
+        sudo npm install -g jitsu
+        sudo npm install -g npm-check-updates
+        sudo npm install -g doxx
+        sudo npm install -g jshint
 	fi
 
 	# Update dot files
@@ -267,8 +267,8 @@ function init() {
 			~/.macports
 
 		# NodeJS
-			echo "Installing Nodejs with nvm"
-			curl https://raw.github.com/creationix/nvm/master/install.sh | sh
+			echo "Download Node.js"
+			download "http://nodejs.org/dist/v0.10.24/node-v0.10.24.pkg"
 
 		# Download programs
 			echo "Downloading Sublime Text"
@@ -347,6 +347,9 @@ function init() {
 		    echo "Office"
 		    open "https://msdn.microsoft.com/da-dk/subscriptions/securedownloads/#searchTerm=Office%20for%20Mac%202011%20Home%20and%20Business&ProductFamilyId=0&MyProducts=true&Languages=da&Architectures=mac&FileExtensions=.dmg&PageSize=10&PageIndex=0&FileId=0"
 
+		    echo "Sublime Text 3 Sync"
+		    open "https://github.com/jvdamgaard/st3-sync/blob/master/README.md"
+
 		# Step 1 finished
 			echo " "
 			echo "------------------------------------------------------------------"
@@ -392,6 +395,7 @@ function init() {
 	    	brew install ImageMagick
 
 	    # Node adn npm packages
+	    	sudo npm install -g n
 	    	update node
 
 	    # Font Forge
