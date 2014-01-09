@@ -1,8 +1,6 @@
 export PATH=/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/sbin:$PATH
 export EDITOR='subl -w'
 
-# [[ -s $HOME/.nvm/nvm.sh ]] && . $HOME/.nvm/nvm.sh # This loads NVM
-
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
 . ~/.bash/z.sh
@@ -42,30 +40,10 @@ alias lsd='ls -l ${colorflag} | grep "^d"'
 alias ls="command ls ${colorflag}"
 export LS_COLORS='no=00:fi=00:di=01;34:ln=01;36:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arj=01;31:*.taz=01;31:*.lzh=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.gz=01;31:*.bz2=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.avi=01;35:*.fli=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.ogg=01;35:*.mp3=01;35:*.wav=01;35:'
 
-# Node shotcuts
-function id() {
-	npm install
-	bower install
-}
-function na() {
-    local path="${1:-}"
-	sleep 1 && open "http://localhost:8000/${path}" &
-	node app
-}
-
-# programs
-alias st='open -a "Sublime Text"'
-alias stf='open -a "Sublime Text" .'
-
 # git
 function gitReset() {
 	git reset --hard
 	git clean -f -d -x
-}
-
-function stp() {
-    local project=${PWD##*/}
-    subl --project ${project}.sublime-project
 }
 
 # Create a new directory and enter it
@@ -286,16 +264,6 @@ function init() {
 		    echo "Downloading DropBox"
 		    download "https://d1ilhw0800yew8.cloudfront.net/client/Dropbox%202.0.26.dmg"
 
-		    echo "Downloading Font Prep"
-		    download "http://cdn.bitbucket.org/briangonzalez/fontprep-build/downloads/FontPrep_3.0.3.dmg"
-
-		    echo "Downloading FontForge dependencies"
-		    download "http://xquartz.macosforge.org/downloads/SL/XQuartz-2.7.4.dmg"
-		    download "http://fuuko.libferris.com/osx/packages/201310/05_0907/FontForge.app.zip"
-
-		    echo "Downloading ImageOptim"
-		    download "http://imageoptim.com/ImageOptim.tbz2"
-
 		    echo "Downloading spotify"
 		    download "http://download.spotify.com/SpotifyInstaller.zip"
 
@@ -345,9 +313,6 @@ function init() {
 		    echo "Office"
 		    open "https://msdn.microsoft.com/da-dk/subscriptions/securedownloads/#searchTerm=Office%20for%20Mac%202011%20Home%20and%20Business&ProductFamilyId=0&MyProducts=true&Languages=da&Architectures=mac&FileExtensions=.dmg&PageSize=10&PageIndex=0&FileId=0"
 
-		    echo "Sublime Text 3 Sync"
-		    open "https://github.com/jvdamgaard/st3-sync/blob/master/README.md"
-
 		# Step 1 finished
 			echo " "
 			echo "------------------------------------------------------------------"
@@ -396,19 +361,19 @@ function init() {
 	    	sudo npm install -g n
 	    	update node
 
-	    # Font Forge
-		    echo "Installing FontForge"
-		    brew install fontforge
-
-		# Sublime Text symlink
-			echo "Sync Sublime Text 3 settings from DropBox"
-			rm -r ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User
-
-			ln -s ~/Dropbox/appsync/Sublime\ Text\ 3/Packages/User ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User
-			ln -s ~/Dropbox/appsync/Sublime\ Text\ 3/Projects ~/Library/Application\ Support/Sublime\ Text\ 3/Projects
-
+        # Sublime as a command line tool
 			echo "subl cli"
 			ln -s /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl /usr/local/bin/subl
+
+        # Sync sublime settings
+            echo "Sublime Text 3 Sync"
+            (
+                cd ~/Library/Application\ Support/Sublime\ Text\ 3//Packages/
+                rm -r user
+                mkdir user && cd user
+                git clone git@github.com:jvdamgaard/st3-sync.git .
+            )
+            open "https://github.com/jvdamgaard/st3-sync/blob/master/README.md"
 
 	    # Step 2 finished
 	    	echo " "
