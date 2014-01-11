@@ -1,4 +1,4 @@
-export PATH=/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/sbin:$PATH
+export PATH=/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/sbin:~/npm/bin:$PATH
 export EDITOR='subl -w'
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
@@ -195,15 +195,9 @@ function update() {
 	# Update npm packages
 	if [ ${t} == "npm" ] || [ ${t} == "node" ] || [ ${t} == "all" ]; then
 		echo "Updating npm"
-		sudo npm install npm -g
+		npm install npm -g
 		echo "Updating all global npm packages"
-		sudo npm install -g n
-        sudo npm install -g yo
-        sudo npm install -g generator-webapp
-        sudo npm install -g jitsu
-        sudo npm install -g npm-check-updates
-        sudo npm install -g doxx
-        sudo npm install -g jshint
+		npm install -g n yo generator-webapp jitsu npm-check-updates doxx jshint
 	fi
 
 	# Update dot files
@@ -357,8 +351,11 @@ function init() {
 	    	echo "Installing ImageMagick"
 	    	brew install ImageMagick
 
-	    # Node adn npm packages
-	    	sudo npm install -g n
+        # NPM settings: path for global node modules
+            npm config set prefix ~/npm
+
+	    # Node and npm packages
+	    	npm install -g n
 	    	update node
 
         # Sublime as a command line tool
