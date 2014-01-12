@@ -365,12 +365,12 @@ function init() {
         # Sync sublime settings
             echo "Sublime Text 3 Sync"
             (
-                cd ~/Library/Application\ Support/Sublime\ Text\ 3//Packages/
-                rm -r user
-                mkdir user && cd user
-                git clone git@github.com:jvdamgaard/st3-sync.git .
+                rm -r ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User
+                cd ~/Repos
+                git clone git@github.com:jvdamgaard/st3-sync.git
+                ln -s ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User ~/Repos/st3-sync
             )
-            open "https://github.com/jvdamgaard/st3-sync/blob/master/README.md"
+            open "https://sublime.wbond.net/installation"
 
 	    # Step 2 finished
 	    	echo " "
