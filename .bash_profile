@@ -366,9 +366,8 @@ function init() {
             echo "Sublime Text 3 Sync"
             (
                 rm -r ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User
-                cd ~/Repos
-                git clone git@github.com:jvdamgaard/st3-sync.git
-                ln -s ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User ~/Repos/st3-sync
+		git clone git@github.com:jvdamgaard/st3-sync.git ~/Repos/st3-sync
+		ln -s ~/Repos/st3-sync ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User
             )
             open "https://sublime.wbond.net/installation"
 
