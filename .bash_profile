@@ -197,7 +197,7 @@ function update() {
 		echo "Updating npm"
 		npm install npm -g
 		echo "Updating all global npm packages"
-		npm install -g n yo generator-webapp jitsu npm-check-updates doxx jshint
+		npm install -g n yo generator-webapp jitsu npm-check-updates doxx jshint jscs
 	fi
 
 	# Update dot files
@@ -366,8 +366,8 @@ function init() {
             echo "Sublime Text 3 Sync"
             (
                 rm -r ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User
-		git clone git@github.com:jvdamgaard/st3-sync.git ~/Repos/st3-sync
-		ln -s ~/Repos/st3-sync ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User
+        		git clone git@github.com:jvdamgaard/st3-sync.git ~/Repos/st3-sync
+        		ln -s ~/Repos/st3-sync ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User
             )
             open "https://sublime.wbond.net/installation"
 
