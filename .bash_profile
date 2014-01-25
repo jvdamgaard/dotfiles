@@ -197,7 +197,7 @@ function update() {
 		echo "Updating npm"
 		npm install npm -g
 		echo "Updating all global npm packages"
-		npm install -g n yo generator-webapp jitsu npm-check-updates doxx jshint jscs
+		npm install -g bower doxx generator-webapp grunt-cli jitsu jscs jshint n npm-check-updates yo
 	fi
 
 	# Update dot files
@@ -238,7 +238,7 @@ function init() {
 
 		# NodeJS
 			echo "Download Node.js"
-			download "http://nodejs.org/dist/v0.10.24/node-v0.10.24.pkg"
+			download "http://nodejs.org/dist/v0.10.25/node-v0.10.25.pkg"
 
 		# Download programs
 			echo "Downloading Sublime Text"
@@ -280,7 +280,6 @@ function init() {
 		    download "https://raw.github.com/zenorocha/alfred-workflows/master/stack-overflow/stack-overflow.alfredworkflow" # stack overflow
 		    download "https://raw.github.com/ruedap/alfred2-font-awesome-workflow/master/Font%20Awesome.alfredworkflow" # font-awesome
 		    download "https://raw.github.com/sebietter/Wunderlist-2-for-Alfred/master/Wunderlist%202.alfredworkflow" # wunderlist
-		    download "https://www.dropbox.com/s/wy8f22acqk5jf3l/Launch%20apps%20for%20web%20development.alfredworkflow" # launch web app by jakob viskum damgaard
 		    download "https://raw.github.com/dingyi/Alfred-Workflows/master/Domainr/Domainr.alfredworkflow" # domainr
 		    download "https://raw.github.com/zenorocha/alfred-workflows/master/encode-decode/encode-decode.alfredworkflow" # encode/decode
 		    download "https://raw.github.com/zenorocha/alfred-workflows/master/ip-address/ip-address.alfredworkflow" #ip lookup
@@ -288,12 +287,8 @@ function init() {
 		    download "https://raw.github.com/zenorocha/alfred-workflows/master/ios-simulator/ios-simulator.alfredworkflow" # ios simulator
 		    download "https://raw.github.com/untoldwind/alfred2-layout/master/Layout.alfredworkflow" # layout
 
-
 		    echo "Downloading ShiftIt"
 		    download "https://github.com/downloads/fikovnik/ShiftIt/ShiftIt-develop-1.6.zip"
-
-		    echo "Downloading DashLane"
-		    download "https://d3mfqat9ni8wb5.cloudfront.net/releases/2.2.5/2.2.5.48458/Dashlane.dmg"
 
 		    open "~/Downloads/"
 
@@ -322,34 +317,16 @@ function init() {
 			echo "Xode cli"
 			xcode-select --install
 
-
 	    # Ruby with rvm
 	    	echo "Installing ruby"
 	    	rvm get stable
 	    	rvm reload
 	    	rvm install 2.0.0
 
-	    # Ruby gems
-	    	gem update --system
-	    	echo "Installing compass"
-	    	gem install sass --pre
-
 	    # HomeBrew
 	    	echo "Installing HomeBrew"
 	    	ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go/install)"
 	    	brew update
-
-	    # Mongo B
-	    	echo "Installing MongoDB"
-	    	brew install mongodb
-
-	    # PhantomJS
-	    	echo "Installing PhantomJS"
-	    	brew install phantomjs
-
-	    # ImageMagick
-	    	echo "Installing ImageMagick"
-	    	brew install ImageMagick
 
         # NPM settings: path for global node modules
             npm config set prefix ~/npm
