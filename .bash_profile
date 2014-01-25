@@ -210,20 +210,50 @@ function update() {
 	fi
 
     if [ ${t} == "alfred" ] || [ ${t} == "all" ]; then
+        echo "Downloading Alfred 2 workflows"
+        echo "Sublime Text"
         download "https://raw.github.com/zenorocha/alfred-workflows/master/sublime-text/sublime-text.alfredworkflow" # sublime text
+
+        echo "Package Manager"
         download "https://raw.github.com/zenorocha/alfred-workflows/master/package-managers/package-managers.alfredworkflow" # package managers
+
+        echo "Can I Use"
         download "https://raw.github.com/zenorocha/alfred-workflows/master/caniuse/caniuse.alfredworkflow" # can i use
+
+        echo "Colors"
         download "https://raw.github.com/zenorocha/alfred-workflows/master/colors/colors.alfredworkflow" # colors
+
+        echo "Dash"
         download "https://raw.github.com/zenorocha/alfred-workflows/master/dash/dash.alfredworkflow" # dash
+
+        echo "Github"
         download "https://raw.github.com/zenorocha/alfred-workflows/master/github/github.alfredworkflow" # github
+
+        echo "Stack Overflow"
         download "https://raw.github.com/zenorocha/alfred-workflows/master/stack-overflow/stack-overflow.alfredworkflow" # stack overflow
+
+        echo "Font-Awesome"
         download "https://raw.github.com/ruedap/alfred2-font-awesome-workflow/master/Font%20Awesome.alfredworkflow" # font-awesome
+
+        echo "Wunderlist"
         download "https://raw.github.com/sebietter/Wunderlist-2-for-Alfred/master/Wunderlist%202.alfredworkflow" # wunderlist
+
+        echo "Domainr"
         download "https://raw.github.com/dingyi/Alfred-Workflows/master/Domainr/Domainr.alfredworkflow" # domainr
+
+        echo "Encode/Decode"
         download "https://raw.github.com/zenorocha/alfred-workflows/master/encode-decode/encode-decode.alfredworkflow" # encode/decode
+
+        echo "IP Address"
         download "https://raw.github.com/zenorocha/alfred-workflows/master/ip-address/ip-address.alfredworkflow" #ip lookup
+
+        echo "Kill Process"
         download "https://raw.github.com/zenorocha/alfred-workflows/master/kill-process/kill-process.alfredworkflow" # kill process
+
+        echo "iOs Simuator"
         download "https://raw.github.com/zenorocha/alfred-workflows/master/ios-simulator/ios-simulator.alfredworkflow" # ios simulator
+
+        echo "Layout"
         download "https://raw.github.com/untoldwind/alfred2-layout/master/Layout.alfredworkflow" # layout
     fi
 }
