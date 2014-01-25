@@ -154,12 +154,13 @@ function update() {
 		echo "------------------------------------------------------------------"
 		echo "Update params:"
 		echo " - all             : Update all"
+        echo " - alfred          : Downlaod all Alfred 2 workflows for update"
+        echo " - dot / dotfiles  : update dot files"
 		echo " - brew / homebrew : update all brews"
-		echo " - ruby            : update ruby and gems"
 		echo " - gems / gem      : update all ruby gems"
 		echo " - node            : update node and all global npm's"
 		echo " - npm             : update all global node packages"
-		echo " - dot / dotfiles  : update dot files"
+        echo " - ruby            : update ruby and gems"
 		echo "------------------------------------------------------------------"
 		echo " "
 	fi
@@ -207,6 +208,24 @@ function update() {
 		    source bootstrap.sh --force
 		)
 	fi
+
+    if [ ${t} == "alfred" ] || [ ${t} == "all" ]; then
+        download "https://raw.github.com/zenorocha/alfred-workflows/master/sublime-text/sublime-text.alfredworkflow" # sublime text
+        download "https://raw.github.com/zenorocha/alfred-workflows/master/package-managers/package-managers.alfredworkflow" # package managers
+        download "https://raw.github.com/zenorocha/alfred-workflows/master/caniuse/caniuse.alfredworkflow" # can i use
+        download "https://raw.github.com/zenorocha/alfred-workflows/master/colors/colors.alfredworkflow" # colors
+        download "https://raw.github.com/zenorocha/alfred-workflows/master/dash/dash.alfredworkflow" # dash
+        download "https://raw.github.com/zenorocha/alfred-workflows/master/github/github.alfredworkflow" # github
+        download "https://raw.github.com/zenorocha/alfred-workflows/master/stack-overflow/stack-overflow.alfredworkflow" # stack overflow
+        download "https://raw.github.com/ruedap/alfred2-font-awesome-workflow/master/Font%20Awesome.alfredworkflow" # font-awesome
+        download "https://raw.github.com/sebietter/Wunderlist-2-for-Alfred/master/Wunderlist%202.alfredworkflow" # wunderlist
+        download "https://raw.github.com/dingyi/Alfred-Workflows/master/Domainr/Domainr.alfredworkflow" # domainr
+        download "https://raw.github.com/zenorocha/alfred-workflows/master/encode-decode/encode-decode.alfredworkflow" # encode/decode
+        download "https://raw.github.com/zenorocha/alfred-workflows/master/ip-address/ip-address.alfredworkflow" #ip lookup
+        download "https://raw.github.com/zenorocha/alfred-workflows/master/kill-process/kill-process.alfredworkflow" # kill process
+        download "https://raw.github.com/zenorocha/alfred-workflows/master/ios-simulator/ios-simulator.alfredworkflow" # ios simulator
+        download "https://raw.github.com/untoldwind/alfred2-layout/master/Layout.alfredworkflow" # layout
+    fi
 }
 
 # Install all services and programs from scratch
@@ -271,21 +290,7 @@ function init() {
 		    download "http://cachefly.alfredapp.com/Alfred_2.1_218.zip"
 
 		    echo "Downloading Alfred App workflows"
-		    download "https://raw.github.com/zenorocha/alfred-workflows/master/sublime-text/sublime-text.alfredworkflow" # sublime text
-		    download "https://raw.github.com/zenorocha/alfred-workflows/master/package-managers/package-managers.alfredworkflow" # package managers
-		    download "https://raw.github.com/zenorocha/alfred-workflows/master/caniuse/caniuse.alfredworkflow" # can i use
-		    download "https://raw.github.com/zenorocha/alfred-workflows/master/colors/colors.alfredworkflow" # colors
-		    download "https://raw.github.com/zenorocha/alfred-workflows/master/dash/dash.alfredworkflow" # dash
-		    download "https://raw.github.com/zenorocha/alfred-workflows/master/github/github.alfredworkflow" # github
-		    download "https://raw.github.com/zenorocha/alfred-workflows/master/stack-overflow/stack-overflow.alfredworkflow" # stack overflow
-		    download "https://raw.github.com/ruedap/alfred2-font-awesome-workflow/master/Font%20Awesome.alfredworkflow" # font-awesome
-		    download "https://raw.github.com/sebietter/Wunderlist-2-for-Alfred/master/Wunderlist%202.alfredworkflow" # wunderlist
-		    download "https://raw.github.com/dingyi/Alfred-Workflows/master/Domainr/Domainr.alfredworkflow" # domainr
-		    download "https://raw.github.com/zenorocha/alfred-workflows/master/encode-decode/encode-decode.alfredworkflow" # encode/decode
-		    download "https://raw.github.com/zenorocha/alfred-workflows/master/ip-address/ip-address.alfredworkflow" #ip lookup
-		    download "https://raw.github.com/zenorocha/alfred-workflows/master/kill-process/kill-process.alfredworkflow" # kill process
-		    download "https://raw.github.com/zenorocha/alfred-workflows/master/ios-simulator/ios-simulator.alfredworkflow" # ios simulator
-		    download "https://raw.github.com/untoldwind/alfred2-layout/master/Layout.alfredworkflow" # layout
+		    update alfred
 
 		    echo "Downloading ShiftIt"
 		    download "https://github.com/downloads/fikovnik/ShiftIt/ShiftIt-develop-1.6.zip"
