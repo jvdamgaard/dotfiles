@@ -191,14 +191,15 @@ function update() {
 	if [ ${t} == "node" ] || [ ${t} == "all" ]; then
 		echo "Updating node"
 		n stable
+        npm config set prefix ~/npm
 	fi
 
 	# Update npm packages
 	if [ ${t} == "npm" ] || [ ${t} == "node" ] || [ ${t} == "all" ]; then
 		echo "Updating npm"
-		npm install npm -g
+		sudo npm install npm -g
 		echo "Updating all global npm packages"
-		npm install -g bower doxx generator-webapp grunt-cli jitsu jscs jshint n npm-check-updates yo
+		sudo npm install -g bower doxx generator-webapp grunt-cli jitsu jscs jshint n npm-check-updates yo
 	fi
 
 	# Update dot files
@@ -209,6 +210,7 @@ function update() {
 		)
 	fi
 
+    # Download alfred workflows
     if [ ${t} == "alfred" ] || [ ${t} == "all" ]; then
         echo "Downloading Alfred 2 workflows"
         echo "Sublime Text"
@@ -255,6 +257,21 @@ function update() {
 
         echo "Layout"
         download "https://raw.github.com/untoldwind/alfred2-layout/master/Layout.alfredworkflow" # layout
+
+        echo "ALmost white theme"
+        download "http://cl.ly/3i1R0D2z4239/download/Almost%20white%20v2.1.alfredappearance"
+
+        echo "Google Translate"
+        download "http://cl.ly/MAI3/download/Translation.alfredworkflow"
+
+        echo "TinyPNG"
+        download "https://dl.dropboxusercontent.com/u/2377432/alfredv2/tinypng/TinyPNG.alfredworkflow"
+
+        echo "Alleyoop"
+        download "https://raw.github.com/phyllisstein/Workflows/master/Alleyoop%203/Alleyoop.alfredworkflow"
+
+        echo "Search Chrome Bookmarks"
+        download "https://s3-us-west-2.amazonaws.com/droplr.storage/files/acc_578/gkwy?AWSAccessKeyId=AKIAJSVQN3Z4K7MT5U2A&Expires=1391549929&Signature=2qC4Ho4YcPJGrBoQCBd%2BJ1Xx2IM%3D&response-content-disposition=attachment%3B%20filename%3DChrome%20Bookmarks.alfredworkflow%3B"
     fi
 }
 
@@ -363,11 +380,7 @@ function init() {
 	    	ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go/install)"
 	    	brew update
 
-        # NPM settings: path for global node modules
-            npm config set prefix ~/npm
-
 	    # Node and npm packages
-	    	npm install -g n
 	    	update node
 
         # Sublime as a command line tool
