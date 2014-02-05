@@ -213,6 +213,7 @@ function update() {
     # Download alfred workflows
     if [ ${t} == "alfred" ] || [ ${t} == "all" ]; then
         echo "Downloading Alfred 2 workflows"
+
         echo "Sublime Text"
         download "https://raw.github.com/zenorocha/alfred-workflows/master/sublime-text/sublime-text.alfredworkflow" # sublime text
 
@@ -230,9 +231,6 @@ function update() {
 
         echo "Github"
         download "https://raw.github.com/zenorocha/alfred-workflows/master/github/github.alfredworkflow" # github
-
-        echo "Stack Overflow"
-        download "https://raw.github.com/zenorocha/alfred-workflows/master/stack-overflow/stack-overflow.alfredworkflow" # stack overflow
 
         echo "Font-Awesome"
         download "https://raw.github.com/ruedap/alfred2-font-awesome-workflow/master/Font%20Awesome.alfredworkflow" # font-awesome
@@ -259,10 +257,10 @@ function update() {
         download "https://raw.github.com/untoldwind/alfred2-layout/master/Layout.alfredworkflow" # layout
 
         echo "ALmost white theme"
-        download "http://cl.ly/3i1R0D2z4239/download/Almost%20white%20v2.1.alfredappearance"
+        download "http://f.cl.ly/items/352h1L0J3a0r2s2P3V2F/Almost%20white%20v2.1.alfredappearance"
 
         echo "Google Translate"
-        download "http://cl.ly/MAI3/download/Translation.alfredworkflow"
+        download "https://raw.github.com/thomashempel/AlfredGoogleTranslateWorkflow/master/GoogleTranslate.alfredworkflow"
 
         echo "TinyPNG"
         download "https://dl.dropboxusercontent.com/u/2377432/alfredv2/tinypng/TinyPNG.alfredworkflow"
@@ -271,7 +269,7 @@ function update() {
         download "https://raw.github.com/phyllisstein/Workflows/master/Alleyoop%203/Alleyoop.alfredworkflow"
 
         echo "Search Chrome Bookmarks"
-        download "https://s3-us-west-2.amazonaws.com/droplr.storage/files/acc_578/gkwy?AWSAccessKeyId=AKIAJSVQN3Z4K7MT5U2A&Expires=1391549929&Signature=2qC4Ho4YcPJGrBoQCBd%2BJ1Xx2IM%3D&response-content-disposition=attachment%3B%20filename%3DChrome%20Bookmarks.alfredworkflow%3B"
+        download "https://raw.github.com/mdreizin/alfred-workflows/master/chrome-bookmarks/zip/chrome-bookmarks.alfredworkflow"
     fi
 }
 
