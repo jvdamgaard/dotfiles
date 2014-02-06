@@ -265,11 +265,11 @@ function update() {
         echo "TinyPNG"
         download "https://dl.dropboxusercontent.com/u/2377432/alfredv2/tinypng/TinyPNG.alfredworkflow"
 
-        echo "Alleyoop"
-        download "https://raw.github.com/phyllisstein/Workflows/master/Alleyoop%203/Alleyoop.alfredworkflow"
-
         echo "Search Chrome Bookmarks"
         download "https://raw.github.com/mdreizin/alfred-workflows/master/chrome-bookmarks/zip/chrome-bookmarks.alfredworkflow"
+
+        echo "Reminders"
+        download "https://dl.dropboxusercontent.com/u/103385/Reminders.alfredworkflow"
     fi
 }
 
