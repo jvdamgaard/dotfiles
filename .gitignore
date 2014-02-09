@@ -35,3 +35,23 @@
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+# Node.js #
+###########
+lcov.info
+*.seed
+*.log
+*.csv
+*.dat
+*.out
+*.pid
+*.gz
+
+lib-cov/
+pids/
+logs/
+results/
+build/
+.grunt/
+
+node_modules/

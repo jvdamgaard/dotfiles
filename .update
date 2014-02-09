@@ -1,0 +1,138 @@
+# update all systems for web development
+function update() {
+    local t="${1:-help}"
+
+    # Update home brew
+    if [ ${t} == "help" ]; then
+        echo " "
+        echo "------------------------------------------------------------------"
+        echo "Update params:"
+        echo " - all             : Update all"
+        echo " - alfred          : Downlaod all Alfred 2 workflows for update"
+        echo " - dot / dotfiles  : update dot files"
+        echo " - brew / homebrew : update all brews"
+        echo " - gems / gem      : update all ruby gems"
+        echo " - node            : update node and all global npm's"
+        echo " - npm             : update all global node packages"
+        echo " - ruby            : update ruby and gems"
+        echo " - system          : OS X Software Updates"
+        echo "------------------------------------------------------------------"
+        echo " "
+    fi
+
+    # Update system
+    if [ ${t} == "system" ] || [ ${t} == "all" ]; then
+        echo "Updating system"
+        sudo softwareupdate -i -a
+    fi
+
+    # Update home brew
+    if [ ${t} == "brew" ] || [ ${t} == "homebrew" ] || [ ${t} == "all" ]; then
+        echo "Updating brew"
+        brew update
+        echo "Updating all brew packages"
+        brew upgrade
+        brew cleanup
+    fi
+
+    # Update ruby
+    if [ ${t} == "ruby" ] || [ ${t} == "all" ]; then
+        echo "Updating ruby"
+        rvm get stable
+        rvm reload
+    fi
+
+    # Update ruby gems
+    if [ ${t} == "ruby" ] || [ ${t} == "gems" ] || [ ${t} == "gem" ] || [ ${t} == "all" ]; then
+        echo "Updating gems"
+        gem update --system
+        gem update
+    fi
+
+    # Update node
+    if [ ${t} == "node" ] || [ ${t} == "all" ]; then
+        echo "Updating node"
+        n stable
+        npm config set prefix ~/npm
+    fi
+
+    # Update npm packages
+    if [ ${t} == "npm" ] || [ ${t} == "node" ] || [ ${t} == "all" ]; then
+        echo "Updating npm"
+        npm update npm -g
+        echo "Updating all global npm packages"
+        npm update -g
+    fi
+
+    # Update dot files
+    if [ ${t} == "dot" ] || [ ${t} == "dotfiles" ] || [ ${t} == "all" ]; then
+        (
+            cd ~/Repos/dotfiles/
+            source bootstrap.sh --force
+        )
+    fi
+
+    # Download alfred workflows
+    if [ ${t} == "alfred" ] || [ ${t} == "all" ]; then
+        echo "Downloading Alfred 2 workflows"
+
+        echo "Sublime Text"
+        download "https://raw.github.com/zenorocha/alfred-workflows/master/sublime-text/sublime-text.alfredworkflow" # sublime text
+
+        echo "Package Manager"
+        download "https://raw.github.com/zenorocha/alfred-workflows/master/package-managers/package-managers.alfredworkflow" # package managers
+
+        echo "Can I Use"
+        download "https://raw.github.com/zenorocha/alfred-workflows/master/caniuse/caniuse.alfredworkflow" # can i use
+
+        echo "Colors"
+        download "https://raw.github.com/zenorocha/alfred-workflows/master/colors/colors.alfredworkflow" # colors
+
+        echo "Dash"
+        download "https://raw.github.com/zenorocha/alfred-workflows/master/dash/dash.alfredworkflow" # dash
+
+        echo "Github"
+        download "https://raw.github.com/zenorocha/alfred-workflows/master/github/github.alfredworkflow" # github
+
+        echo "Font-Awesome"
+        download "https://raw.github.com/ruedap/alfred2-font-awesome-workflow/master/Font%20Awesome.alfredworkflow" # font-awesome
+
+        echo "Wunderlist"
+        download "https://raw.github.com/sebietter/Wunderlist-2-for-Alfred/master/Wunderlist%202.alfredworkflow" # wunderlist
+
+        echo "Domainr"
+        download "https://raw.github.com/dingyi/Alfred-Workflows/master/Domainr/Domainr.alfredworkflow" # domainr
+
+        echo "Encode/Decode"
+        download "https://raw.github.com/zenorocha/alfred-workflows/master/encode-decode/encode-decode.alfredworkflow" # encode/decode
+
+        echo "IP Address"
+        download "https://raw.github.com/zenorocha/alfred-workflows/master/ip-address/ip-address.alfredworkflow" #ip lookup
+
+        echo "Kill Process"
+        download "https://raw.github.com/zenorocha/alfred-workflows/master/kill-process/kill-process.alfredworkflow" # kill process
+
+        echo "iOs Simuator"
+        download "https://raw.github.com/zenorocha/alfred-workflows/master/ios-simulator/ios-simulator.alfredworkflow" # ios simulator
+
+        echo "Layout"
+        download "https://raw.github.com/untoldwind/alfred2-layout/master/Layout.alfredworkflow" # layout
+
+        echo "ALmost white theme"
+        download "http://f.cl.ly/items/352h1L0J3a0r2s2P3V2F/Almost%20white%20v2.1.alfredappearance"
+
+        echo "Google Translate"
+        download "https://raw.github.com/thomashempel/AlfredGoogleTranslateWorkflow/master/GoogleTranslate.alfredworkflow"
+
+        echo "TinyPNG"
+        download "https://dl.dropboxusercontent.com/u/2377432/alfredv2/tinypng/TinyPNG.alfredworkflow"
+
+        echo "Search Chrome Bookmarks"
+        download "https://raw.github.com/mdreizin/alfred-workflows/master/chrome-bookmarks/zip/chrome-bookmarks.alfredworkflow"
+
+        echo "Reminders"
+        download "https://dl.dropboxusercontent.com/u/103385/Reminders.alfredworkflow"
+
+        open ~/Downloads
+    fi
+}
