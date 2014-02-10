@@ -55,10 +55,11 @@ brew cask install github 2> /dev/null
 brew cask install spotify 2> /dev/null
 brew cask install dash 2> /dev/null
 brew cask install alfred 2> /dev/null
-brew cask install shiftit 2> /dev/nullt
+brew cask install shiftit 2> /dev/null
+brew cask install sketch 2> /dev/null
 
-echo "  * Adove Creative Cloud"
-downloadAndOpen "https://ccmdls.adobe.com/AdobeProducts/KCCC/1/osx10/CreativeCloudInstaller.dmg"
+# echo "  * Adove Creative Cloud"
+# downloadAndOpen "https://ccmdls.adobe.com/AdobeProducts/KCCC/1/osx10/CreativeCloudInstaller.dmg"
 
 echo "  * Office"
 open "https://msdn.microsoft.com/da-dk/subscriptions/securedownloads/#searchTerm=Office%20for%20Mac%202011%20Home%20and%20Business&ProductFamilyId=0&MyProducts=true&Languages=da&Architectures=mac&FileExtensions=.dmg&PageSize=10&PageIndex=0&FileId=0"
