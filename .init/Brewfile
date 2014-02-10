@@ -18,5 +18,9 @@ install wget --enable-iri
 install git
 install node
 
+# Brew Cask for installing native apps
+tap phinze/homebrew-cask
+install brew-cask
+
 # Remove outdated versions from the cellar
 cleanup

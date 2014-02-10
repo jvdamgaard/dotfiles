@@ -1,4 +1,4 @@
-# Add `~/bin` and `~/npm/bin` to the `$PATH`
+
 export PATH=$HOME/bin:$HOME/npm/bin:$PATH
 
 # Load the shell dotfiles, and then some:
