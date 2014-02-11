@@ -66,10 +66,7 @@ function update() {
 
     # Update dot files
     if [ ${t} == "dot" ] || [ ${t} == "dotfiles" ] || [ ${t} == "all" ]; then
-        (
-            cd ~/Repos/dotfiles/
-            source bootstrap.sh --force
-        )
+        source ~/Repos/dotfiles/bootstrap.sh --force
     fi
 
     # Download alfred workflows

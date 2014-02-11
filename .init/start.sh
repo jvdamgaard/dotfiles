@@ -57,6 +57,8 @@ brew cask install dash 2> /dev/null
 brew cask install alfred 2> /dev/null
 brew cask install shiftit 2> /dev/null
 brew cask install sketch 2> /dev/null
+brew cask install skype 2> /dev/null
+brew cask install cheatsheet 2> /dev/null
 
 # echo "  * Adove Creative Cloud"
 # downloadAndOpen "https://ccmdls.adobe.com/AdobeProducts/KCCC/1/osx10/CreativeCloudInstaller.dmg"
