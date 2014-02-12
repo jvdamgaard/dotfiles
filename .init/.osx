@@ -13,7 +13,7 @@ echo "# GENERAL UI/UX"
 echo "  * Disable the sound effects on boot"
 sudo nvram SystemAudioVolume=" "
 
-echo "Menu bar: hide the Time Machine, Volume, User, and Bluetooth icons"
+echo "  * Menu bar: hide the Time Machine, Volume, User, and Bluetooth icons"
 for domain in ~/Library/Preferences/ByHost/com.apple.systemuiserver.*; do
     defaults write "${domain}" dontAutoLoad -array \
         "/System/Library/CoreServices/Menu Extras/TimeMachine.menu" \
@@ -31,7 +31,7 @@ defaults write com.apple.LaunchServices LSQuarantine -bool false
 
 
 echo " "
-echo "# SSD_SPECIFIC TWEAKS"
+echo "# SSD SPECIFIC TWEAKS"
 
 echo "  * Disable local Time Machine snapshots"
 sudo tmutil disablelocal
@@ -119,8 +119,8 @@ echo "# TERMINAL"
 echo "  * Only use UTF-8 in Terminal.app"
 defaults write com.apple.terminal StringEncodings -array 4
 
-echo "  * Use Monokai theme by default in Terminal.app"
-open "${HOME}/init/Monokai.terminal"
+echo "  * Use Tomorrow Nigth theme by default in Terminal.app"
+open "${HOME}/init/Tomorrow Night.terminal"
 sleep 1 # Wait a bit to make sure the theme is loaded
 defaults write com.apple.terminal "Default Window Settings" -string "Jakob"
 defaults write com.apple.terminal "Startup Window Settings" -string "Jakob"

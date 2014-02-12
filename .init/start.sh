@@ -37,7 +37,7 @@ echo "  * Installing Brews"
 brew bundle ~/init/Brewfile
 
 echo "  * Install global npm's"
-sudo npm install -g bower doxx generator-webapp grunt-cli jitsu jscs jshint n npm-check-updates yo
+sudo npm install -g bower doxx generator-webapp grunt-cli jitsu jscs jshint npm-check-updates yo
 
 
 echo ""
@@ -60,8 +60,8 @@ brew cask install sketch 2> /dev/null
 brew cask install skype 2> /dev/null
 brew cask install cheatsheet 2> /dev/null
 
-# echo "  * Adove Creative Cloud"
-# downloadAndOpen "https://ccmdls.adobe.com/AdobeProducts/KCCC/1/osx10/CreativeCloudInstaller.dmg"
+echo "  * Adove Creative Cloud"
+downloadAndOpen "https://ccmdls.adobe.com/AdobeProducts/KCCC/1/osx10/CreativeCloudInstaller.dmg"
 
 echo "  * Office"
 open "https://msdn.microsoft.com/da-dk/subscriptions/securedownloads/#searchTerm=Office%20for%20Mac%202011%20Home%20and%20Business&ProductFamilyId=0&MyProducts=true&Languages=da&Architectures=mac&FileExtensions=.dmg&PageSize=10&PageIndex=0&FileId=0"

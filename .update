@@ -7,15 +7,16 @@ function update() {
         echo " "
         echo "------------------------------------------------------------------"
         echo "Update params:"
-        echo " - all             : Update all"
-        echo " - alfred          : Downlaod all Alfred 2 workflows for update"
+        echo " - all             : apdate all"
+        echo " - alfred          : downlaod all Alfred 2 workflows for update"
         echo " - dot / dotfiles  : update dot files"
         echo " - brew / homebrew : update all brews"
         echo " - gems / gem      : update all ruby gems"
         echo " - node            : update node and all global npm's"
         echo " - npm             : update all global node packages"
         echo " - ruby            : update ruby and gems"
-        echo " - system          : OS X Software Updates"
+        echo " - sublime         : update Sublime Text settings"
+        echo " - system          : update Os X software"
         echo "------------------------------------------------------------------"
         echo " "
     fi
@@ -52,21 +53,32 @@ function update() {
     # Update node
     if [ ${t} == "node" ] || [ ${t} == "all" ]; then
         echo "Updating node"
-        n stable
+        brew upgrade node
         npm config set prefix ~/npm
     fi
 
     # Update npm packages
     if [ ${t} == "npm" ] || [ ${t} == "node" ] || [ ${t} == "all" ]; then
         echo "Updating npm"
-        npm update npm -g
+        sudo npm update npm -g
+        npm config set prefix ~/npm
         echo "Updating all global npm packages"
-        npm update -g
+        sudo npm update -g
     fi
 
     # Update dot files
     if [ ${t} == "dot" ] || [ ${t} == "dotfiles" ] || [ ${t} == "all" ]; then
+        echo "Updating dot files"
         source ~/Repos/dotfiles/bootstrap.sh --force
+    fi
+
+    # Update dot files
+    if [ ${t} == "sublime" ] || [ ${t} == "all" ]; then
+        echo "Updating Sublime Text settings"
+        (
+            cd ~/Repos/st3-sync
+            git pull
+        )
     fi
 
     # Download alfred workflows
