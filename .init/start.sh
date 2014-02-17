@@ -37,6 +37,7 @@ echo "  * Installing Brews"
 brew bundle ~/.init/Brewfile
 
 echo "  * Install global npm's"
+npm config set prefix ~/npm
 sudo npm install -g bower doxx generator-webapp grunt-cli jitsu jscs jshint npm-check-updates yo yeoman
 
 
