@@ -34,10 +34,10 @@ echo "  * Installing HomeBrew"
 ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go/install)"
 
 echo "  * Installing Brews"
-brew bundle ~/init/Brewfile
+brew bundle ~/.init/Brewfile
 
 echo "  * Install global npm's"
-sudo npm install -g bower doxx generator-webapp grunt-cli jitsu jscs jshint npm-check-updates yo
+sudo npm install -g bower doxx generator-webapp grunt-cli jitsu jscs jshint npm-check-updates yo yeoman
 
 
 echo ""
