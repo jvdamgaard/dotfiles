@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # OsX settings
-source ~/init/.osx
+source ~/.init/.osx
 
 
 echo " "
