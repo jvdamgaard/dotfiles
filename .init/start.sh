@@ -48,7 +48,6 @@ echo "  * Install native apps"
 brew cask install dropbox 2> /dev/null
 brew cask install google-chrome 2> /dev/null
 brew cask install firefox 2> /dev/null
-brew cask install sublime-text 2> /dev/null
 brew cask install vlc 2> /dev/null
 brew cask install wunderlist 2> /dev/null
 brew cask install github 2> /dev/null
@@ -58,6 +57,21 @@ brew cask install alfred 2> /dev/null
 brew cask install shiftit 2> /dev/null
 brew cask install skype 2> /dev/null
 brew cask install cheatsheet 2> /dev/null
+
+downloadAndOpen "http://xquartz-dl.macosforge.org/SL/XQuartz-2.7.5.dmg"
+
+open "/Applications/Alfred 2.app"
+open "/Applications/CheatSheet.app"
+open "/Applications/Dash.app"
+open "/Applications/Dropbox.app"
+open "/Applications/GitHub.app"
+open "/Applications/Google Chrome.app"
+open "/Applications/Dash.app"
+open "/Applications/Skype.app"
+open "/Applications/Spotify.app"
+
+"  * Sublime Text 3"
+downloadAndOpen "http://c758482.r82.cf2.rackcdn.com/Sublime%20Text%20Build%203059.dmg"
 
 echo "  * Adove Creative Cloud"
 downloadAndOpen "https://ccmdls.adobe.com/AdobeProducts/KCCC/1/osx10/CreativeCloudInstaller.dmg"
@@ -80,13 +94,17 @@ read -p "Install all downloaded applications and extensions. Press any key when 
 echo "  * Install X-Code CLI"
 xcode-select --install
 
+open "/Applications/Color Maker.app"
+open "/Applications/ShiftIt.app"
+
 echo "  * subl cli"
-ln -s /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl /bin/subl
+sudo ln -s /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl /bin/subl
+subl
 
 echo "  * Sublime Text 3 - Package Control"
 (
     cd ~/Library/Application\ Support/Sublime\ Text\ 3/Installed\ Packages
-    curl -O -# "https://sublime.wbond.net/Package%20Control.sublime-package"
+    curl -O -# "https://sublime.wbond.net/Package Control.sublime-package"
 )
 
 echo "  * Sublime Text 3 Sync"
