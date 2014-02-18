@@ -57,6 +57,8 @@ brew cask install alfred 2> /dev/null
 brew cask install shiftit 2> /dev/null
 brew cask install skype 2> /dev/null
 brew cask install cheatsheet 2> /dev/null
+brew cask install fontprep 2> /dev/null
+brew cask install sublime-text3 2> /dev/null
 
 downloadAndOpen "http://xquartz-dl.macosforge.org/SL/XQuartz-2.7.5.dmg"
 
@@ -70,8 +72,8 @@ open "/Applications/Dash.app"
 open "/Applications/Skype.app"
 open "/Applications/Spotify.app"
 
-"  * Sublime Text 3"
-downloadAndOpen "http://c758482.r82.cf2.rackcdn.com/Sublime%20Text%20Build%203059.dmg"
+# "  * Sublime Text 3"
+# downloadAndOpen "http://c758482.r82.cf2.rackcdn.com/Sublime%20Text%20Build%203059.dmg"
 
 echo "  * Adove Creative Cloud"
 downloadAndOpen "https://ccmdls.adobe.com/AdobeProducts/KCCC/1/osx10/CreativeCloudInstaller.dmg"
@@ -80,7 +82,7 @@ echo "  * Office"
 open "https://msdn.microsoft.com/da-dk/subscriptions/securedownloads/#searchTerm=Office%20for%20Mac%202011%20Home%20and%20Business&ProductFamilyId=0&MyProducts=true&Languages=da&Architectures=mac&FileExtensions=.dmg&PageSize=10&PageIndex=0&FileId=0"
 
 echo "  * App Store Apps"
-open /Applications/App\ Store.app
+open "/Applications/App Store.app"
 
 echo "  * Download Alfred App workflows"
 update alfred
