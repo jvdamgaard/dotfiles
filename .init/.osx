@@ -10,8 +10,11 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 echo ""
 echo "# GENERAL UI/UX"
 
-echo "  * Disable the sound effects on boot"
-sudo nvram SystemAudioVolume=" "
+echo "  * Mute the sound effects on boot"
+sudo chmod u+x ~/.bash/mute-on.sh
+sudo chmod u+x ~/.bash/mute-off.sh
+sudo defaults write com.apple.loginwindow LogoutHook ~/.bash/mute-on.sh
+sudo defaults write com.apple.loginwindow LoginHook ~/.bash/mute-off.sh
 
 echo "  * Menu bar: hide the Time Machine, Volume, User, and Bluetooth icons"
 for domain in ~/Library/Preferences/ByHost/com.apple.systemuiserver.*; do
@@ -33,9 +36,6 @@ defaults write com.apple.LaunchServices LSQuarantine -bool false
 echo " "
 echo "# SSD SPECIFIC TWEAKS"
 
-echo "  * Disable local Time Machine snapshots"
-sudo tmutil disablelocal
-
 echo "  * Disable the sudden motion sensor as it’s not useful for SSDs"
 sudo pmset -a sms 0
 
@@ -47,12 +47,6 @@ echo "  * Trackpad: enable tap to click for this user and for the login screen"
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
 defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
-
-echo "  * Trackpad: map bottom right corner to right-click"
-defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadCornerSecondaryClick -int 2
-defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadRightClick -bool true
-defaults -currentHost write NSGlobalDomain com.apple.trackpad.trackpadCornerClickBehavior -int 1
-defaults -currentHost write NSGlobalDomain com.apple.trackpad.enableSecondaryClick -bool true
 
 
 echo ""
@@ -79,9 +73,6 @@ defaults write com.apple.dock tilesize -int 36
 
 echo "  * Don’t automatically rearrange Spaces based on most recent use"
 defaults write com.apple.dock mru-spaces -bool false
-
-echo "  * Add iOS Simulator to Launchpad"
-sudo ln -sf /Applications/Xcode.app/Contents/Applications/iPhone\ Simulator.app /Applications/iOS\ Simulator.app
 
 
 echo ""

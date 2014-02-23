@@ -142,6 +142,9 @@ function update() {
         echo "Reminders"
         download "https://dl.dropboxusercontent.com/u/103385/Reminders.alfredworkflow"
 
+        echo "MailTo"
+        download "https://github.com/packal/repository/raw/master/net.deanishe.alfred-mailto/mailto.alfredworkflow"
+
         open ~/Downloads
     fi
 }
