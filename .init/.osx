@@ -11,10 +11,12 @@ echo ""
 echo "# GENERAL UI/UX"
 
 echo "  * Mute the sound effects on boot"
+# mute on log out
 sudo chmod u+x ~/.bash/mute-on.sh
-sudo chmod u+x ~/.bash/mute-off.sh
 sudo defaults write com.apple.loginwindow LogoutHook ~/.bash/mute-on.sh
-sudo defaults write com.apple.loginwindow LoginHook ~/.bash/mute-off.sh
+# mute on log in
+# sudo chmod u+x ~/.bash/mute-off.sh
+# sudo defaults write com.apple.loginwindow LoginHook ~/.bash/mute-off.sh
 
 echo "  * Menu bar: hide the Time Machine, Volume, User, and Bluetooth icons"
 for domain in ~/Library/Preferences/ByHost/com.apple.systemuiserver.*; do
@@ -64,6 +66,9 @@ defaults write com.apple.finder ShowPathbar -bool true
 echo "  * Disable the warning when changing a file extension"
 defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
 
+echo "  * Allow text selection in the Quick Look window"
+defaults write com.apple.finder QLEnableTextSelection -bool true
+
 
 echo ""
 echo "# DOCK"
@@ -81,6 +86,7 @@ echo "# HOT CORNERS"
 echo "  * Bottom right screen corner → Desktop"
 defaults write com.apple.dock wvous-br-corner -int 4
 defaults write com.apple.dock wvous-br-modifier -int 0
+
 echo "  * Top right screen corner → Mission Control"
 defaults write com.apple.dock wvous-tr-corner -int 2
 defaults write com.apple.dock wvous-tr-modifier -int 0

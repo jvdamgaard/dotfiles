@@ -38,7 +38,7 @@ brew bundle ~/.init/Brewfile
 
 echo "  * Install global npm's"
 npm config set prefix ~/npm
-sudo npm install -g bower doxx generator-webapp grunt-cli jitsu jscs jshint npm-check-updates yo yeoman
+sudo npm install -g bower doxx generator-webapp grunt-cli jitsu jscs jshint npm-check-updates yo yeoman node-inspector
 
 
 echo ""
@@ -59,6 +59,18 @@ brew cask install skype 2> /dev/null
 brew cask install cheatsheet 2> /dev/null
 brew cask install fontprep 2> /dev/null
 brew cask install sublime-text3 2> /dev/null
+brew cask install imageoptim 2> /dev/null
+brew cask install utorrent 2> /dev/null
+brew cask install filezilla 2> /dev/null
+
+# Quick look plugins
+brew cask install qlcolorcode 2> /dev/null
+brew cask install qlstephen 2> /dev/null
+brew cask install qlmarkdown 2> /dev/null
+brew cask install quicklook-json 2> /dev/null
+brew cask install quicklook-csv 2> /dev/null
+brew cask install betterzipql 2> /dev/null
+brew cask install webp-quicklook 2> /dev/null
 
 downloadAndOpen "http://xquartz-dl.macosforge.org/SL/XQuartz-2.7.5.dmg"
 

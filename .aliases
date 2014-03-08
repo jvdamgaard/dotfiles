@@ -1,10 +1,11 @@
-# Easier navigation: ., .., ..., ...., .....
+# Easier navigation
 alias .="cd ~"
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
 
+# Shortcuts for most used folders
 alias r="cd ~/Repos"
 alias d="cd ~/Documents/Dropbox"
 
@@ -48,7 +49,9 @@ alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && k
 # Make Grunt print stack traces by default
 command -v grunt > /dev/null && alias grunt="grunt --stack"
 
+# Apps
 alias g='grunt'
+alias a='atom'
 
 # Reload the shell (i.e. invoke as a login shell)
 alias reload="exec $SHELL -l"
