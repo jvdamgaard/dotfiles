@@ -145,6 +145,9 @@ function update() {
         echo "MailTo"
         download "https://github.com/packal/repository/raw/master/net.deanishe.alfred-mailto/mailto.alfredworkflow"
 
+        echo "Toggle WI-FI"
+        download "https://github.com/aiyodk/Alfred-Extensions/raw/master/AlfredApp_2.x/Wi-Fi-Toggle/Wi-Fi-Toggle.alfredworkflow"
+
         open ~/Downloads
     fi
 }

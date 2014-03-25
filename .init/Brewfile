@@ -18,6 +18,8 @@ install wget --enable-iri
 install git
 install node
 install mongodb
+install imagemagick
+install siege
 
 # Brew Cask for installing native apps
 tap phinze/homebrew-cask
