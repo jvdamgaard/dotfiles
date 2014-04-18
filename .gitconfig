@@ -1,5 +1,6 @@
 [user]
-    name = jvdamgaard
+    name = Jakob Viskum Damgaard
+    email = jakob.viskum.damgaard@gmail.com
 [filter "media"]
     clean = git-media-clean %f
     smudge = git-media-smudge %f

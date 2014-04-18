@@ -7,8 +7,8 @@ source ~/.init/.osx
 echo " "
 echo "# LANGUAGES"
 
-echo "  * Installing rvm"
-\curl -L https://get.rvm.io | bash
+echo "  * Installing rvm and ruby"
+\curl -sSL https://get.rvm.io | bash -s stable --ruby
 
 echo "  * Removing MacPorts"
 sudo port -fp uninstall installed
@@ -25,10 +25,6 @@ sudo rm -rf \
 ~/.macports
 
 reload
-
-echo "  * Installing ruby"
-rvm get stable
-rvm reload
 
 echo "  * Installing HomeBrew"
 ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go/install)"
@@ -62,6 +58,7 @@ brew cask install sublime-text3 2> /dev/null
 brew cask install imageoptim 2> /dev/null
 brew cask install utorrent 2> /dev/null
 brew cask install filezilla 2> /dev/null
+brew cask install hipchat 2> /dev/null
 
 # Quick look plugins
 brew cask install qlcolorcode 2> /dev/null
