@@ -34,8 +34,9 @@ brew bundle ~/.init/Brewfile
 
 echo "  * Install global npm's"
 npm config set prefix ~/npm
-sudo npm install -g bower doxx generator-webapp grunt-cli jitsu jscs jshint npm-check-updates yo yeoman node-inspector
+sudo npm install -g azure-cli bower doxx generator-webapp grunt-cli gulp jitsu jscs jshint npm-check-updates yo node-inspector
 
+azure account import "Visual Studio Premium med MSDN-7-22-2014-credentials.publishsettings"
 
 echo ""
 echo "# APPS"
@@ -59,6 +60,7 @@ brew cask install imageoptim 2> /dev/null
 brew cask install utorrent 2> /dev/null
 brew cask install filezilla 2> /dev/null
 brew cask install hipchat 2> /dev/null
+brew cask install atom 2> /dev/null
 
 # Quick look plugins
 brew cask install qlcolorcode 2> /dev/null

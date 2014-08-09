@@ -61,9 +61,9 @@ function update() {
     # Update npm packages
     if [ ${t} == "npm" ] || [ ${t} == "node" ] || [ ${t} == "all" ]; then
         echo "Updating npm"
-        sudo npm update npm -g
+        npm update npm -g
         echo "Updating all global npm packages"
-        sudo npm update -g
+        npm update -g
     fi
 
     # Update dot files
@@ -86,58 +86,46 @@ function update() {
         echo "Downloading Alfred 2 workflows"
 
         echo "Sublime Text"
-        download "https://raw.github.com/zenorocha/alfred-workflows/master/sublime-text/sublime-text.alfredworkflow" # sublime text
+        download "https://raw.githubusercontent.com/zenorocha/alfred-workflows/master/sublime-text/sublime-text.alfredworkflow" # sublime text
 
         echo "Package Manager"
-        download "https://raw.github.com/zenorocha/alfred-workflows/master/package-managers/package-managers.alfredworkflow" # package managers
+        download "https://raw.githubusercontent.com/zenorocha/alfred-workflows/master/package-managers/package-managers.alfredworkflow" # package managers
 
         echo "Can I Use"
-        download "https://raw.github.com/zenorocha/alfred-workflows/master/caniuse/caniuse.alfredworkflow" # can i use
+        download "https://raw.githubusercontent.com/zenorocha/alfred-workflows/master/caniuse/caniuse.alfredworkflow" # can i use
 
         echo "Colors"
-        download "https://raw.github.com/zenorocha/alfred-workflows/master/colors/colors.alfredworkflow" # colors
+        download "https://raw.githubusercontent.com/zenorocha/alfred-workflows/master/colors/colors.alfredworkflow" # colors
 
         echo "Dash"
-        download "https://raw.github.com/zenorocha/alfred-workflows/master/dash/dash.alfredworkflow" # dash
+        download "https://raw.githubusercontent.com/zenorocha/alfred-workflows/master/dash/dash.alfredworkflow" # dash
 
         echo "Github"
-        download "https://raw.github.com/zenorocha/alfred-workflows/master/github/github.alfredworkflow" # github
-
-        echo "Font-Awesome"
-        download "https://raw.github.com/ruedap/alfred2-font-awesome-workflow/master/Font%20Awesome.alfredworkflow" # font-awesome
-
-        echo "Wunderlist"
-        download "https://raw.github.com/sebietter/Wunderlist-2-for-Alfred/master/Wunderlist%202.alfredworkflow" # wunderlist
+        download "https://raw.githubusercontent.com/zenorocha/alfred-workflows/master/github/github.alfredworkflow" # github
 
         echo "Domainr"
-        download "https://raw.github.com/dingyi/Alfred-Workflows/master/Domainr/Domainr.alfredworkflow" # domainr
+        download "https://raw.githubusercontent.com/dingyi/Alfred-Workflows/master/Domainr/Domainr.alfredworkflow" # domainr
 
         echo "Encode/Decode"
-        download "https://raw.github.com/zenorocha/alfred-workflows/master/encode-decode/encode-decode.alfredworkflow" # encode/decode
+        download "https://raw.githubusercontent.com/zenorocha/alfred-workflows/master/encode-decode/encode-decode.alfredworkflow" # encode/decode
 
         echo "IP Address"
-        download "https://raw.github.com/zenorocha/alfred-workflows/master/ip-address/ip-address.alfredworkflow" #ip lookup
+        download "https://raw.githubusercontent.com/zenorocha/alfred-workflows/master/ip-address/ip-address.alfredworkflow" #ip lookup
 
         echo "Kill Process"
-        download "https://raw.github.com/zenorocha/alfred-workflows/master/kill-process/kill-process.alfredworkflow" # kill process
+        download "https://raw.githubusercontent.com/zenorocha/alfred-workflows/master/kill-process/kill-process.alfredworkflow" # kill process
 
         echo "iOs Simuator"
-        download "https://raw.github.com/zenorocha/alfred-workflows/master/ios-simulator/ios-simulator.alfredworkflow" # ios simulator
-
-        echo "Layout"
-        download "https://raw.github.com/untoldwind/alfred2-layout/master/Layout.alfredworkflow" # layout
+        download "https://raw.githubusercontent.com/zenorocha/alfred-workflows/master/ios-simulator/ios-simulator.alfredworkflow" # ios simulator
 
         echo "ALmost white theme"
-        download "http://f.cl.ly/items/352h1L0J3a0r2s2P3V2F/Almost%20white%20v2.1.alfredappearance"
+        download "http://f.cl.ly/items/352h1L0J3a0r2s2P3V2F/Almost white v2.1.alfredappearance"
 
         echo "Google Translate"
-        download "https://raw.github.com/thomashempel/AlfredGoogleTranslateWorkflow/master/GoogleTranslate.alfredworkflow"
-
-        echo "TinyPNG"
-        download "https://dl.dropboxusercontent.com/u/2377432/alfredv2/tinypng/TinyPNG.alfredworkflow"
+        download "https://raw.githubusercontent.com/thomashempel/AlfredGoogleTranslateWorkflow/master/GoogleTranslate.alfredworkflow"
 
         echo "Search Chrome Bookmarks"
-        download "https://raw.github.com/mdreizin/alfred-workflows/master/chrome-bookmarks/zip/chrome-bookmarks.alfredworkflow"
+        download "https://raw.githubusercontent.com/mdreizin/alfred-workflows/master/chrome-bookmarks/zip/chrome-bookmarks.alfredworkflow"
 
         echo "Reminders"
         download "https://dl.dropboxusercontent.com/u/103385/Reminders.alfredworkflow"
@@ -147,6 +135,12 @@ function update() {
 
         echo "Toggle WI-FI"
         download "https://github.com/aiyodk/Alfred-Extensions/raw/master/AlfredApp_2.x/Wi-Fi-Toggle/Wi-Fi-Toggle.alfredworkflow"
+
+        echo "Hash"
+        download "https://raw.githubusercontent.com/willfarrell/alfred-hash-workflow/master/Hash.alfredworkflow"
+
+        echo "Atom"
+        download "https://github.com/franzheidl/alfred-workflows/raw/master/open-with-atom/Open%20with%20Atom.alfredworkflow"
 
         open ~/Downloads
     fi

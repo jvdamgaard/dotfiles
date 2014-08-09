@@ -21,6 +21,7 @@ install mongodb
 install imagemagick
 install graphicsmagick
 install siege
+install fontforge --with-x
 
 # Brew Cask for installing native apps
 tap phinze/homebrew-cask
