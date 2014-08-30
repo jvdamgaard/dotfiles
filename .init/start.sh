@@ -44,9 +44,9 @@ echo "# APPS"
 echo "  * Install native apps"
 brew cask install dropbox 2> /dev/null
 brew cask install google-chrome 2> /dev/null
+brew cask install google-chrome-canary 2> /dev/null
 brew cask install firefox 2> /dev/null
 brew cask install vlc 2> /dev/null
-brew cask install wunderlist 2> /dev/null
 brew cask install github 2> /dev/null
 brew cask install spotify 2> /dev/null
 brew cask install dash 2> /dev/null
@@ -56,11 +56,12 @@ brew cask install skype 2> /dev/null
 brew cask install cheatsheet 2> /dev/null
 brew cask install fontprep 2> /dev/null
 brew cask install sublime-text3 2> /dev/null
-brew cask install imageoptim 2> /dev/null
 brew cask install utorrent 2> /dev/null
 brew cask install filezilla 2> /dev/null
 brew cask install hipchat 2> /dev/null
 brew cask install atom 2> /dev/null
+brew cask install parallels 2> /dev/null
+brew cask install adobe-creative-cloud 2> /dev/null
 
 # Quick look plugins
 brew cask install qlcolorcode 2> /dev/null
@@ -86,9 +87,6 @@ open "/Applications/Spotify.app"
 # "  * Sublime Text 3"
 # downloadAndOpen "http://c758482.r82.cf2.rackcdn.com/Sublime%20Text%20Build%203059.dmg"
 
-echo "  * Adove Creative Cloud"
-downloadAndOpen "https://ccmdls.adobe.com/AdobeProducts/KCCC/1/osx10/CreativeCloudInstaller.dmg"
-
 echo "  * Office"
 open "https://msdn.microsoft.com/da-dk/subscriptions/securedownloads/#searchTerm=Office%20for%20Mac%202011%20Home%20and%20Business&ProductFamilyId=0&MyProducts=true&Languages=da&Architectures=mac&FileExtensions=.dmg&PageSize=10&PageIndex=0&FileId=0"
 
@@ -103,6 +101,9 @@ echo ""
 echo "# APP SETTINGS"
 
 read -p "Install all downloaded applications and extensions. Press any key when finished. " -n 1
+
+echo "Link brew casks to Alfred"
+brew cask alfred link
 
 echo "  * Install X-Code CLI"
 xcode-select --install
@@ -125,6 +126,13 @@ echo "  * Sublime Text 3 Sync"
     rm -r ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User
     git clone git@github.com:jvdamgaard/st3-sync.git ~/Repos/st3-sync
     ln -s ~/Repos/st3-sync ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User
+)
+
+echo "  * Atom Sync"
+(
+    rm -r ~/.atom
+    git clone git@github.com:jvdamgaard/atom-sync.git ~/Repos/atom-sync
+    ln -s ~/Repos/atom-sync ~/.atom
 )
 
 read -p "Setup has finished. Your computer needs to be restarted before all changes will take effect. Press any key to restart. " -n 1

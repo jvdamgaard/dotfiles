@@ -62,6 +62,7 @@ function update() {
     if [ ${t} == "npm" ] || [ ${t} == "node" ] || [ ${t} == "all" ]; then
         echo "Updating npm"
         npm update npm -g
+        npm config set prefix ~/npm
         echo "Updating all global npm packages"
         npm update -g
     fi
@@ -119,7 +120,7 @@ function update() {
         download "https://raw.githubusercontent.com/zenorocha/alfred-workflows/master/ios-simulator/ios-simulator.alfredworkflow" # ios simulator
 
         echo "ALmost white theme"
-        download "http://f.cl.ly/items/352h1L0J3a0r2s2P3V2F/Almost white v2.1.alfredappearance"
+        download "http://f.cl.ly/items/352h1L0J3a0r2s2P3V2F/Almost%20white%20v2.1.alfredappearance"
 
         echo "Google Translate"
         download "https://raw.githubusercontent.com/thomashempel/AlfredGoogleTranslateWorkflow/master/GoogleTranslate.alfredworkflow"
@@ -141,6 +142,12 @@ function update() {
 
         echo "Atom"
         download "https://github.com/franzheidl/alfred-workflows/raw/master/open-with-atom/Open%20with%20Atom.alfredworkflow"
+
+        echo "Hidden files"
+        download "https://s3.amazonaws.com/f.cl.ly/items/443a062A071G3s121S31/Toggle%20Visibility%20of%20Hidden%20Files.alfredworkflow"
+
+        echo "Alfred theme"
+        download "https://dl.dropboxusercontent.com/u/6367958/Jakob.alfredappearance"
 
         open ~/Downloads
     fi

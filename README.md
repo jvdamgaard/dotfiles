@@ -3,12 +3,8 @@
 ## Installation
 
 ```bash
-$ cd ~/
-$ mkdir Repos
-$ cd Repos
-$ git clone https://github.com/jvdamgaard/dotfiles.git
-$ cd dotfiles
-$ source bootstrap.sh
+$ git clone https://github.com/jvdamgaard/dotfiles.git ~/Repos/dotfiles
+$ source ~/Repos/dotfiles/bootstrap.sh --force
 $ exec $SHELL -l
 $ source ~/.init/start.sh
 ```
@@ -18,5 +14,5 @@ Then restart computer.
 ## Update
 
 ```bash
-updateDotFiles
+$ update
 ```
