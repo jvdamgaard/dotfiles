@@ -8,6 +8,7 @@ alias .....="cd ../../../.."
 # Shortcuts for most used folders
 alias r="cd ~/Repos"
 alias d="cd ~/Dropbox"
+alias nettouk="cd /Volumes/C/Repos/nettouk-website/NettoUk.Website/"
 
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
@@ -52,7 +53,6 @@ command -v grunt > /dev/null && alias grunt="grunt --stack"
 # Apps
 alias g="gulp"
 alias a="atom"
-alias s-nettouk="subl /Volumes/C/Repos/nettouk-website/NettoUk.Website/"
 
 # Reload the shell (i.e. invoke as a login shell)
 alias reload="exec $SHELL -l"
