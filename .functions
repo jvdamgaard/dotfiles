@@ -35,11 +35,11 @@ function gz() {
     printf "gzip: %d bytes (%2.2f%%)\n" "$gzipsize" "$ratio"
 }
 
-# Install Grunt plugins and add them as `devDependencies` to `package.json`
+# Install Gulp plugins and add them as `devDependencies` to `package.json`
 # Usage: `gi contrib-watch contrib-uglify zopfli`
 function gi() {
     local IFS=,
-    eval npm install --save-dev grunt-{"$*"}
+    eval npm install --save-dev gulp-{"$*"}
 }
 
 # `s` with no arguments opens the current directory in Sublime Text, otherwise
