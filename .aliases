@@ -50,9 +50,9 @@ alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && k
 command -v grunt > /dev/null && alias grunt="grunt --stack"
 
 # Apps
-alias g='gulp'
-alias a='atom'
-alias s-nettouk = "subl /Volumes/C/Repos/nettouk-website/NettoUk.Website/"
+alias g="gulp"
+alias a="atom"
+alias s-nettouk="subl /Volumes/C/Repos/nettouk-website/NettoUk.Website/"
 
 # Reload the shell (i.e. invoke as a login shell)
 alias reload="exec $SHELL -l"
