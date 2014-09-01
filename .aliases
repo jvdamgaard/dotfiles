@@ -8,7 +8,8 @@ alias .....="cd ../../../.."
 # Shortcuts for most used folders
 alias r="cd ~/Repos"
 alias d="cd ~/Dropbox"
-alias nettouk="cd /Volumes/C/Repos/nettouk-website/NettoUk.Website/"
+
+alias nettouk="/Volumes/C/Repos/nettouk-website/NettoUk.Website/"
 
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
