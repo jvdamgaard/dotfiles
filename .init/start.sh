@@ -10,19 +10,19 @@ echo "# LANGUAGES"
 echo "  * Installing rvm and ruby"
 \curl -sSL https://get.rvm.io | bash -s stable --ruby
 
-echo "  * Removing MacPorts"
-sudo port -fp uninstall installed
-sudo rm -rf \
-/opt/local \
-/Applications/DarwinPorts \
-/Applications/MacPorts \
-/Library/LaunchDaemons/org.macports.* \
-/Library/Receipts/DarwinPorts*.pkg \
-/Library/Receipts/MacPorts*.pkg \
-/Library/StartupItems/DarwinPortsStartup \
-/Library/Tcl/darwinports1.0 \
-/Library/Tcl/macports1.0 \
-~/.macports
+# echo "  * Removing MacPorts"
+# sudo port -fp uninstall installed
+# sudo rm -rf \
+# /opt/local \
+# /Applications/DarwinPorts \
+# /Applications/MacPorts \
+# /Library/LaunchDaemons/org.macports.* \
+# /Library/Receipts/DarwinPorts*.pkg \
+# /Library/Receipts/MacPorts*.pkg \
+# /Library/StartupItems/DarwinPortsStartup \
+# /Library/Tcl/darwinports1.0 \
+# /Library/Tcl/macports1.0 \
+# ~/.macports
 
 reload
 
@@ -36,41 +36,13 @@ echo "  * Install global npm's"
 npm config set prefix ~/npm
 sudo npm install -g azure-cli bower doxx generator-webapp grunt-cli gulp jitsu jscs jshint npm-check-updates yo node-inspector
 
-azure account import "Visual Studio Premium med MSDN-7-22-2014-credentials.publishsettings"
+azure account import "~/.init/Visual Studio Premium med MSDN-7-22-2014-credentials.publishsettings"
 
 echo ""
 echo "# APPS"
 
-echo "  * Install native apps"
-brew cask install dropbox 2> /dev/null
-brew cask install google-chrome 2> /dev/null
-brew cask install google-chrome-canary 2> /dev/null
-brew cask install firefox 2> /dev/null
-brew cask install vlc 2> /dev/null
-brew cask install github 2> /dev/null
-brew cask install spotify 2> /dev/null
-brew cask install dash 2> /dev/null
-brew cask install alfred 2> /dev/null
-brew cask install shiftit 2> /dev/null
-brew cask install skype 2> /dev/null
-brew cask install cheatsheet 2> /dev/null
-brew cask install fontprep 2> /dev/null
-brew cask install sublime-text3 2> /dev/null
-brew cask install utorrent 2> /dev/null
-brew cask install filezilla 2> /dev/null
-brew cask install hipchat 2> /dev/null
-brew cask install atom 2> /dev/null
-brew cask install parallels 2> /dev/null
-brew cask install adobe-creative-cloud 2> /dev/null
-
-# Quick look plugins
-brew cask install qlcolorcode 2> /dev/null
-brew cask install qlstephen 2> /dev/null
-brew cask install qlmarkdown 2> /dev/null
-brew cask install quicklook-json 2> /dev/null
-brew cask install quicklook-csv 2> /dev/null
-brew cask install betterzipql 2> /dev/null
-brew cask install webp-quicklook 2> /dev/null
+echo "  * Installing Casks"
+brew bundle ~/.init/Caskfile
 
 downloadAndOpen "http://xquartz-dl.macosforge.org/SL/XQuartz-2.7.5.dmg"
 

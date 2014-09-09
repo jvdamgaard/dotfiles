@@ -103,7 +103,7 @@ defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebK
 echo ""
 echo "# EMAL.APP"
 
-echo "  * Copy email addresses as `foo@example.com` instead of `Foo Bar <foo@example.com>` in Mail.app"
+echo "  * Copy email addresses as foo@example.com instead of Foo Bar <foo@example.com> in Mail.app"
 defaults write com.apple.mail AddressesIncludeNameOnPasteboard -bool false
 
 echo "  * Disable inline attachments (just show the icons)"
@@ -117,10 +117,10 @@ echo "  * Only use UTF-8 in Terminal.app"
 defaults write com.apple.terminal StringEncodings -array 4
 
 echo "  * Use Tomorrow Nigth theme by default in Terminal.app"
-open "${HOME}/.init/Tomorrow Night.terminal"
-sleep 1 # Wait a bit to make sure the theme is loaded
-defaults write com.apple.terminal "Default Window Settings" -string "Jakob"
-defaults write com.apple.terminal "Startup Window Settings" -string "Jakob"
+#open "${HOME}/.init/Tomorrow Night.terminal"
+#sleep 1 # Wait a bit to make sure the theme is loaded
+#defaults write com.apple.terminal "Default Window Settings" -string "Jakob"
+#defaults write com.apple.terminal "Startup Window Settings" -string "Jakob"
 
 
 echo ""
