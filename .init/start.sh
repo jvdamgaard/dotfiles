@@ -7,6 +7,9 @@ source ~/.init/.osx
 echo " "
 echo "# LANGUAGES"
 
+echo "  * Install X-Code CLI"
+xcode-select --install
+
 echo "  * Installing rvm and ruby"
 \curl -sSL https://get.rvm.io | bash -s stable --ruby
 
@@ -36,15 +39,13 @@ echo "  * Install global npm's"
 npm config set prefix ~/npm
 sudo npm install -g azure-cli bower doxx generator-webapp grunt-cli gulp jitsu jscs jshint npm-check-updates yo node-inspector
 
-azure account import "~/.init/Visual Studio Premium med MSDN-7-22-2014-credentials.publishsettings"
-
 echo ""
 echo "# APPS"
 
 echo "  * Installing Casks"
 brew bundle ~/.init/Caskfile
 
-downloadAndOpen "http://xquartz-dl.macosforge.org/SL/XQuartz-2.7.5.dmg"
+downloadAndOpen "http://xquartz-dl.macosforge.org/SL/XQuartz-2.7.7.dmg"
 
 open "/Applications/Alfred 2.app"
 open "/Applications/CheatSheet.app"
@@ -52,9 +53,11 @@ open "/Applications/Dash.app"
 open "/Applications/Dropbox.app"
 open "/Applications/GitHub.app"
 open "/Applications/Google Chrome.app"
-open "/Applications/Dash.app"
 open "/Applications/Skype.app"
 open "/Applications/Spotify.app"
+open "/Applications/Color Maker.app"
+open "/Applications/ShiftIt.app"
+open "/Applications/Adobe Create Cloud.app"
 
 # "  * Sublime Text 3"
 # downloadAndOpen "http://c758482.r82.cf2.rackcdn.com/Sublime%20Text%20Build%203059.dmg"
@@ -65,29 +68,24 @@ open "https://msdn.microsoft.com/da-dk/subscriptions/securedownloads/#searchTerm
 echo "  * App Store Apps"
 open "/Applications/App Store.app"
 
-echo "  * Download Alfred App workflows"
-update alfred
-
-
 echo ""
 echo "# APP SETTINGS"
 
 read -p "Install all downloaded applications and extensions. Press any key when finished. " -n 1
 
-echo "Link brew casks to Alfred"
-brew cask alfred link
+echo "  * Set up Azure CLI"
+azure account import "~/Dropbox/Dokumenter/Licenser/Visual Studio Premium med MSDN-7-22-2014-credentials.publishsettings"
 
-echo "  * Install X-Code CLI"
-xcode-select --install
-
-open "/Applications/Color Maker.app"
-open "/Applications/ShiftIt.app"
+echo "  * Download Alfred App workflows"
+open "~/Dropbox/Dokumenter/Licenser/mac.rtf"
+update alfred
 
 echo "  * subl cli"
 sudo ln -s /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl /bin/subl
-subl
 
 echo "  * Sublime Text 3 - Package Control"
+subl
+sleep 10
 (
     cd ~/Library/Application\ Support/Sublime\ Text\ 3/Installed\ Packages
     curl -O -# "https://sublime.wbond.net/Package Control.sublime-package"
@@ -95,17 +93,21 @@ echo "  * Sublime Text 3 - Package Control"
 
 echo "  * Sublime Text 3 Sync"
 (
+    git clone https://github.com/jvdamgaard/st3-sync.git ~/Repos/st3-sync
     rm -r ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User
-    git clone git@github.com:jvdamgaard/st3-sync.git ~/Repos/st3-sync
     ln -s ~/Repos/st3-sync ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User
 )
 
 echo "  * Atom Sync"
+atom
+sleep 10
 (
+    git clone https://github.com/jvdamgaard/atom-sync.git ~/Repos/atom-sync
     rm -r ~/.atom
-    git clone git@github.com:jvdamgaard/atom-sync.git ~/Repos/atom-sync
     ln -s ~/Repos/atom-sync ~/.atom
 )
+
+open ~/Repos/dotfiles/.init/manuel-things-to-remember.txt
 
 read -p "Setup has finished. Your computer needs to be restarted before all changes will take effect. Press any key to restart. " -n 1
 sudo shutdown -r now

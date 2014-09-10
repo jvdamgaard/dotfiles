@@ -119,9 +119,6 @@ function update() {
         echo "iOs Simuator"
         download "https://raw.githubusercontent.com/zenorocha/alfred-workflows/master/ios-simulator/ios-simulator.alfredworkflow" # ios simulator
 
-        echo "ALmost white theme"
-        download "http://f.cl.ly/items/352h1L0J3a0r2s2P3V2F/Almost%20white%20v2.1.alfredappearance"
-
         echo "Google Translate"
         download "https://raw.githubusercontent.com/thomashempel/AlfredGoogleTranslateWorkflow/master/GoogleTranslate.alfredworkflow"
 
@@ -132,22 +129,22 @@ function update() {
         download "https://dl.dropboxusercontent.com/u/103385/Reminders.alfredworkflow"
 
         echo "MailTo"
-        download "https://github.com/packal/repository/raw/master/net.deanishe.alfred-mailto/mailto.alfredworkflow"
+        download "https://raw.githubusercontent.com/deanishe/alfred-mailto/master/MailTo.alfredworkflow"
 
         echo "Toggle WI-FI"
-        download "https://github.com/aiyodk/Alfred-Extensions/raw/master/AlfredApp_2.x/Wi-Fi-Toggle/Wi-Fi-Toggle.alfredworkflow"
+        download "https://raw.githubusercontent.com/aiyodk/Alfred-Extensions/master/AlfredApp_2.x/Wi-Fi-Toggle/Wi-Fi-Toggle.alfredworkflow"
 
         echo "Hash"
         download "https://raw.githubusercontent.com/willfarrell/alfred-hash-workflow/master/Hash.alfredworkflow"
 
         echo "Atom"
-        download "https://github.com/franzheidl/alfred-workflows/raw/master/open-with-atom/Open%20with%20Atom.alfredworkflow"
+        download "https://raw.githubusercontent.com/franzheidl/alfred-workflows/master/open-with-atom/Open%20with%20Atom.alfredworkflow"
 
         echo "Hidden files"
         download "https://s3.amazonaws.com/f.cl.ly/items/443a062A071G3s121S31/Toggle%20Visibility%20of%20Hidden%20Files.alfredworkflow"
 
         echo "Alfred theme"
-        download "https://dl.dropboxusercontent.com/u/6367958/Jakob.alfredappearance"
+        download "https://raw.githubusercontent.com/jvdamgaard/dotfiles/.init/Jakob.alfredappearance"
 
         open ~/Downloads
     fi

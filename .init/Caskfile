@@ -1,30 +1,31 @@
 # Native apps
-cask install dropbox 2> /dev/null
-cask install google-chrome 2> /dev/null
-cask install google-chrome-canary 2> /dev/null
-cask install firefox 2> /dev/null
-cask install vlc 2> /dev/null
-cask install github 2> /dev/null
-cask install spotify 2> /dev/null
-cask install dash 2> /dev/null
-cask install alfred 2> /dev/null
-cask install shiftit 2> /dev/null
-cask install skype 2> /dev/null
-cask install cheatsheet 2> /dev/null
-cask install fontprep 2> /dev/null
-cask install sublime-text3 2> /dev/null
-cask install utorrent 2> /dev/null
-cask install filezilla 2> /dev/null
-cask install hipchat 2> /dev/null
-cask install atom 2> /dev/null
-cask install parallels 2> /dev/null
-cask install adobe-creative-cloud 2> /dev/null
+cask install alfred
+cask alfred link
+cask install dropbox
+cask install google-chrome
+cask install google-chrome-canary
+cask install firefox
+cask install vlc
+cask install github
+cask install spotify
+cask install dash
+cask install shiftit
+cask install skype
+cask install cheatsheet
+cask install fontprep
+cask install sublime-text3
+cask install utorrent
+cask install filezilla
+cask install hipchat
+cask install atom
+cask install parallels
+cask install adobe-creative-cloud
 
 # Quick look plugins
-cask install qlcolorcode 2> /dev/null
-cask install qlstephen 2> /dev/null
-cask install qlmarkdown 2> /dev/null
-cask install quicklook-json 2> /dev/null
-cask install quicklook-csv 2> /dev/null
-cask install betterzipql 2> /dev/null
-cask install webp-quicklook 2> /dev/null
+cask install qlcolorcode
+cask install qlstephen
+cask install qlmarkdown
+cask install quicklook-json
+cask install quicklook-csv
+cask install betterzipql
+cask install webp-quicklook
