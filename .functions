@@ -80,12 +80,6 @@ function downloadAndOpen() {
     )
 }
 
-#Add spacer to dock
-function dockSpacer() {
-    defaults write com.apple.dock persistent-apps -array-add '{tile-data={}; tile-type="spacer-tile";}'
-    killall Dock
-}
-
 # Simple calculator
 function calc() {
     local result=""

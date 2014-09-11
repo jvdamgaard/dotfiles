@@ -22,6 +22,7 @@ install imagemagick
 install graphicsmagick
 install siege
 install fontforge --with-x
+install dockutil
 
 # Brew Cask for installing native apps
 tap phinze/homebrew-cask
