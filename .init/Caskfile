@@ -13,7 +13,7 @@ cask install shiftit
 cask install skype
 cask install cheatsheet
 cask install fontprep
-cask install sublime-text3
+cask install sublime-text
 cask install utorrent
 cask install filezilla
 cask install hipchat

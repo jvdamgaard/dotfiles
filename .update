@@ -9,6 +9,7 @@ function update() {
         echo "Update params:"
         echo " - all             : apdate all"
         echo " - alfred          : downlaod all Alfred 2 workflows for update"
+        echo " - dock            : update the Dock layout"
         echo " - dot / dotfiles  : update dot files"
         echo " - brew / homebrew : update all brews"
         echo " - gems / gem      : update all ruby gems"
@@ -17,7 +18,6 @@ function update() {
         echo " - ruby            : update ruby and gems"
         echo " - sublime         : update Sublime Text settings"
         echo " - system          : update Os X software"
-        echo " - dock            : update the Dock layout"
         echo "------------------------------------------------------------------"
         echo " "
     fi

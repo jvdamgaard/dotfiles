@@ -23,11 +23,7 @@ install graphicsmagick
 install siege
 install fontforge --with-x
 install dockutil
-
-# Brew Cask for installing native apps
-tap phinze/homebrew-cask
-install brew-cask
-tap caskroom/versions
+install caskroom/cask/brew-cask
 
 # Remove outdated versions from the cellar
 cleanup
