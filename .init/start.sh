@@ -45,8 +45,6 @@ echo "# APPS"
 echo "  * Installing Casks"
 brew bundle ~/.init/Caskfile
 
-downloadAndOpen "http://xquartz-dl.macosforge.org/SL/XQuartz-2.7.7.dmg"
-
 open "/Applications/Alfred 2.app"
 open "/Applications/CheatSheet.app"
 open "/Applications/Dash.app"
@@ -59,9 +57,6 @@ open "/Applications/Color Maker.app"
 open "/Applications/ShiftIt.app"
 open "/Applications/Adobe Create Cloud.app"
 
-# "  * Sublime Text 3"
-# downloadAndOpen "http://c758482.r82.cf2.rackcdn.com/Sublime%20Text%20Build%203059.dmg"
-
 echo "  * Office"
 open "https://msdn.microsoft.com/da-dk/subscriptions/securedownloads/#searchTerm=Office%20for%20Mac%202011%20Home%20and%20Business&ProductFamilyId=0&MyProducts=true&Languages=da&Architectures=mac&FileExtensions=.dmg&PageSize=10&PageIndex=0&FileId=0"
 
@@ -71,6 +66,7 @@ open "/Applications/App Store.app"
 echo ""
 echo "# APP SETTINGS"
 
+say "Install all downloaded applications and extensions."
 read -p "Install all downloaded applications and extensions. Press any key when finished. " -n 1
 
 echo "  * Set up Azure CLI"
@@ -107,6 +103,10 @@ sleep 10
     ln -s ~/Repos/atom-sync ~/.atom
 )
 
+echo "  * Set Dock layout"
+update dock
+
+echo "  * Manuel steps"
 open ~/Repos/dotfiles/.init/manuel-things-to-remember.txt
 
 read -p "Setup has finished. Your computer needs to be restarted before all changes will take effect. Press any key to restart. " -n 1
