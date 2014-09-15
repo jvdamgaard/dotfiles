@@ -7,11 +7,15 @@ config checkDefaultsOnLoad true
 config focusCheckWidthMax 3000
 config windowHintsShowIcons true
 config windowHintsIgnoreHiddenWindows false
-config windowHintsSpread true
-config windowHintsBackgroundColor [0,0,0,0.8]
-config windowHintsHeight 200
+config windowHintsSpread false
+config windowHintsBackgroundColor "0;0:0;0.8"
+config windowHintsFontColor "255;0;0;1.0"
+config windowHintsFontSize 60
+config windowHintsHeight 150
+config windowHintsWidth 150
 config windowHintsDuration 5
-config windowHintsOrder persist
+config windowHintsRoundedCornerSize 20
+# config windowHintsOrder persist
 
 # Set snapshots on start
 default 1monitor count:1
@@ -23,7 +27,7 @@ alias mon-external-1     1
 alias mon-external-2     2
 
 # Misc Aliases
-alias showNormalHint hint ASDFGHJKLQWERTYUIOPCVBN
+alias showNormalHint hint ASDFQWERZXCVTYUIGHJKBNM
 
 # App Aliases
 alias browser 'Google Chrome'
@@ -51,8 +55,8 @@ bind pad8 push top bar-resize:screenSizeY/2
 bind pad9 ${rightmost}
 bind pad+ throw next
 bind pad. focus behind
-bind pad/ activate-snapshot 1monitor
-bind pad/:ctrl snapshot 1monitor save-to-disk
+bind -:${hyber} activate-snapshot 1monitor
+bind -:${hyber}:ctrl snapshot 1monitor save-to-disk
 bind pad* activate-snapshot 3monitors
 bind pad*:ctrl snapshot 3monitors save-to-disk
 
