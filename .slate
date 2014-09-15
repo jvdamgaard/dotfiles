@@ -18,8 +18,10 @@ alias mon-external-2     2
 
 # Misc Aliases
 alias showNormalHint hint ASDFGHJKLQWERTYUIOPCVBN
-alias browser 'Google Chrome Canary'
-alias editor 'Sublime Text'
+
+# App Aliases
+alias browser 'Google Chrome'
+alias editor  'Sublime Text'
 
 # Abstract positions
 alias full          move screenOriginX;screenOriginY                  screenSizeX;screenSizeY
@@ -41,34 +43,6 @@ alias 2-full        move screenOriginX;screenOriginY screenSizeX;screenSizeY    
 alias 2-left        move screenOriginX;screenOriginY screenSizeX/2;screenSizeY                       ${mon-external-2}
 alias 2-right       move screenOriginX+screenSizeX/2;screenOriginY screenSizeX/2;screenSizeY         ${mon-external-2}
 
-# 3 Monitors layout
-# layout 2monitors 'iTerm':MAIN_FIRST                       ${2-rightbottom} | ${1-left}
-# layout 2monitors 'Safari':REPEAT                          ${1-full}
-# layout 2monitors 'Nightly':REPEAT                          ${1-full}
-# layout 2monitors 'Sublime Text 2':REPEAT              ${1-full}
-# layout 2monitors 'MacVim':REPEAT                      ${1-full}
-# layout 2monitors 'Mail':MAIN_FIRST                        ${2-left}
-# layout 2monitors 'Path Finder':MAIN_FIRST                 ${2-righttop}
-# layout 2monitors 'Xcode':REPEAT                           ${1-full}
-# layout 2monitors 'Eclipse':REPEAT                         ${1-full}
-# layout 2monitors 'iTunes':REPEAT                          ${1-full}
-
-# 1 Monitor layout
-# layout 1monitor 'iTerm':MAIN_FIRST                       ${1-right}
-# layout 1monitor 'Sublime Text 2':MAIN_FIRST              ${1-left}
-# layout 1monitor 'MacVim':MAIN_FIRST                      ${1-left}
-# layout 1monitor 'Safari':REPEAT                          ${1-full}
-# layout 1monitor 'Nightly':REPEAT                          ${1-full}
-# layout 1monitor 'Mail':MAIN_FIRST                        ${1-full}
-# layout 1monitor 'Path Finder':MAIN_FIRST                 ${1-full}
-# layout 1monitor 'Xcode':REPEAT                           ${1-full}
-# layout 1monitor 'Eclipse':REPEAT                         ${1-full}
-# layout 1monitor 'iTunes':REPEAT                          ${1-full}
-
-# Default Layouts
-# default 2monitors resolutions:${mon-laptop};${mon-samsung};
-# default 1monitor  resolutions:${mon-laptop}
-
 # Numpad location Bindings
 bind pad0 ${showNormalHint}
 bind pad1 ${leftless}
@@ -83,8 +57,11 @@ bind pad9 ${rightmost}
 bind padEnter grid padding:5 ${mon-laptop}:6,2 ${mon-external-1}:6,2 ${mon-external-2}:6,2
 bind pad+ throw next
 bind pad. focus behind
-bind pad* layout 3monitors
-bind pad/ layout 1monitor
+bind pad/ activate-snapshot 1monitors
+bind pad/:ctrl snapshot 1monitors save-to-disk
+bind pad* activate-snapshot 3monitors
+bind pad*:ctrl snapshot 3monitors save-to-disk
+# bind pad/ layout 1monitor
 
 bind e:cmd  ${showNormalHint}
 
@@ -95,25 +72,18 @@ bind e:cmd  ${showNormalHint}
 alias hyper f19
 
 # Location bindings
-bind t:${hyper} ${lefthalf}
-bind m:${hyper} ${full}
-bind s:${hyper} ${righthalf}
-bind r:${hyper} throw next
-
-# Resize Bindings
-#bind r:${hyper} ${leftmost}
-#bind g:${hyper} ${rightmost}
-
-# Focus Bindings
-bind right:${hyper}    focus right
-bind left:${hyper}     focus left
-bind up:${hyper}       focus up
-bind down:${hyper}     focus down
+bind down:${hyper}     throw next
+bind right:${hyper}    ${righthalf}
+bind left:${hyper}     ${lefthalf}
+bind up:${hyper}       ${full}
 
 # App bindings
-bind c:${hyper} focus ${browser}
-bind s:${hyper} focus ${editor}
+bind b:${hyper} focus ${browser}
+bind e:${hyper} focus ${editor}
 bind g:${hyper} focus 'GitHub'
 bind m:${hyper} focus 'Mail'
+bind h:${hyper} focus 'HipChat'
+bind c:${hyper} focus 'Calendar'
 bind t:${hyper} focus 'Terminal'
-bind f:${hyper} focus 'Finder'
+bind f:${hyper} focus 'Path Finder'
+bind s:${hyper} focus 'Spotify'
