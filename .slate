@@ -60,8 +60,8 @@ bind pad* activate-snapshot 3monitors
 bind pad*:ctrl snapshot 3monitors save-to-disk
 
 # Laptop snapshot
-bind -:${hyber} activate-snapshot 1monitor
-bind -:${hyber}:ctrl snapshot 1monitor save-to-disk
+bind 0:${hyber} activate-snapshot 1monitor
+bind 0:${hyber}:ctrl snapshot 1monitor save-to-disk
 
 # Slate switcher
 bind tab:cmd switch
