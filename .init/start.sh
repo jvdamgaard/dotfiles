@@ -106,6 +106,9 @@ sleep 10
 echo "  * Set Dock layout"
 update dock
 
+echo "  * Import seil setup"
+sh ~/.init/seil-import.sh
+
 echo "  * Manuel steps"
 open ~/Repos/dotfiles/.init/manuel-things-to-remember.txt
 
