@@ -7,9 +7,15 @@ config checkDefaultsOnLoad true
 config focusCheckWidthMax 3000
 config windowHintsShowIcons true
 config windowHintsIgnoreHiddenWindows false
-#config windowHintsDuration 5
 config windowHintsSpread true
-#config windowHintsOrder persist
+config windowHintsBackgroundColor [0,0,0,0.8]
+config windowHintsHeight 200
+config windowHintsDuration 5
+config windowHintsOrder persist
+
+# Set snapshots on start
+default 1monitor count:1
+default 3monitors count:3
 
 # Monitor Aliases
 alias mon-laptop         0
@@ -32,17 +38,6 @@ alias rightless     move screenOriginX+screenSizeX*0.6;screenOriginY  screenSize
 alias leftmost      move screenOriginX;screenOriginY                  screenSizeX*0.6;screenSizeY
 alias leftless      move screenOriginX;screenOriginY                  screenSizeX*0.4;screenSizeY
 
-# Concrete positions
-alias 0-full        move screenOriginX;screenOriginY screenSizeX;screenSizeY                         ${mon-laptop}
-alias 0-left        move screenOriginX;screenOriginY screenSizeX/2;screenSizeY                       ${mon-laptop}
-alias 0-right       move screenOriginX+screenSizeX/2;screenOriginY screenSizeX/2;screenSizeY         ${mon-laptop}
-alias 1-full        move screenOriginX;screenOriginY screenSizeX;screenSizeY                         ${mon-external-1}
-alias 1-left        move screenOriginX;screenOriginY screenSizeX/2;screenSizeY                       ${mon-external-1}
-alias 1-right       move screenOriginX+screenSizeX/2;screenOriginY screenSizeX/2;screenSizeY         ${mon-external-1}
-alias 2-full        move screenOriginX;screenOriginY screenSizeX;screenSizeY                         ${mon-external-2}
-alias 2-left        move screenOriginX;screenOriginY screenSizeX/2;screenSizeY                       ${mon-external-2}
-alias 2-right       move screenOriginX+screenSizeX/2;screenOriginY screenSizeX/2;screenSizeY         ${mon-external-2}
-
 # Numpad location Bindings
 bind pad0 ${showNormalHint}
 bind pad1 ${leftless}
@@ -54,14 +49,12 @@ bind pad6 ${righthalf}
 bind pad7 ${leftmost}
 bind pad8 push top bar-resize:screenSizeY/2
 bind pad9 ${rightmost}
-bind padEnter grid padding:5 ${mon-laptop}:6,2 ${mon-external-1}:6,2 ${mon-external-2}:6,2
 bind pad+ throw next
 bind pad. focus behind
-bind pad/ activate-snapshot 1monitors
-bind pad/:ctrl snapshot 1monitors save-to-disk
+bind pad/ activate-snapshot 1monitor
+bind pad/:ctrl snapshot 1monitor save-to-disk
 bind pad* activate-snapshot 3monitors
 bind pad*:ctrl snapshot 3monitors save-to-disk
-# bind pad/ layout 1monitor
 
 bind e:cmd  ${showNormalHint}
 
