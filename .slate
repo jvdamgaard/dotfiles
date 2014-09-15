@@ -8,12 +8,11 @@ config focusCheckWidthMax 3000
 config windowHintsShowIcons true
 config windowHintsIgnoreHiddenWindows false
 config windowHintsSpread true
-config windowHintsSpreadPadding 150
 config windowHintsBackgroundColor "0;0;0;0.6"
 config windowHintsFontColor "255;255;255;1.0"
 config windowHintsFontSize 60
-config windowHintsHeight 150
-config windowHintsWidth 150
+config windowHintsHeight 100
+config windowHintsWidth 100
 config windowHintsDuration 5
 config windowHintsRoundedCornerSize 20
 # config windowHintsOrder persist
