@@ -28,6 +28,7 @@ alias mon-external-2     2
 
 # Misc Aliases
 alias showNormalHint hint ASDFQWERZXCVTYUIGHJKBNM
+alias hyper f19
 
 # App Aliases
 alias browser 'Google Chrome'
@@ -55,18 +56,21 @@ bind pad8 push top bar-resize:screenSizeY/2
 bind pad9 ${rightmost}
 bind pad+ throw next
 bind pad. focus behind
-bind -:${hyber} activate-snapshot 1monitor
-bind -:${hyber}:ctrl snapshot 1monitor save-to-disk
 bind pad* activate-snapshot 3monitors
 bind pad*:ctrl snapshot 3monitors save-to-disk
+
+# Laptop snapshot
+bind -:${hyber} activate-snapshot 1monitor
+bind -:${hyber}:ctrl snapshot 1monitor save-to-disk
+
+# Slate switcher
+bind tab:cmd switch
 
 bind e:cmd  ${showNormalHint}
 
 # ======================================
 # The HYPER key
 # ======================================
-
-alias hyper f19
 
 # Location bindings
 bind down:${hyper}     throw next
