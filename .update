@@ -88,7 +88,7 @@ function update() {
         echo "Updating Dock"
         dockutil --remove all --no-restart
         dockutil --add "/Applications/Utilities/Terminal.app" --no-restart
-        dockutil --add "/Applications/Utilities/Terminal.app" --no-restart
+        dockutil --add "/Applications/iTerm.app" --no-restart
         dockSpacer
         dockutil --add "/Applications/Google Chrome Canary.app" --no-restart
         dockutil --add "/Applications/Google Chrome.app" --no-restart

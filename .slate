@@ -7,9 +7,10 @@ config checkDefaultsOnLoad true
 config focusCheckWidthMax 3000
 config windowHintsShowIcons true
 config windowHintsIgnoreHiddenWindows false
-config windowHintsSpread false
-config windowHintsBackgroundColor "0;0:0;0.8"
-config windowHintsFontColor "255;0;0;1.0"
+config windowHintsSpread true
+config windowHintsSpreadPadding 150
+config windowHintsBackgroundColor "0;0;0;0.6"
+config windowHintsFontColor "255;255;255;1.0"
 config windowHintsFontSize 60
 config windowHintsHeight 150
 config windowHintsWidth 150
@@ -60,8 +61,7 @@ bind pad* activate-snapshot 3monitors
 bind pad*:ctrl snapshot 3monitors save-to-disk
 
 # Laptop snapshot
-bind 0:${hyber} activate-snapshot 1monitor
-bind 0:${hyber}:ctrl snapshot 1monitor save-to-disk
+bind down:${hyper} snapshot 1monitor save-to-disk
 
 # Slate switcher
 bind tab:cmd switch
@@ -73,7 +73,6 @@ bind e:cmd  ${showNormalHint}
 # ======================================
 
 # Location bindings
-bind down:${hyper}     throw next
 bind right:${hyper}    ${righthalf}
 bind left:${hyper}     ${lefthalf}
 bind up:${hyper}       ${full}
@@ -85,6 +84,6 @@ bind g:${hyper} focus 'GitHub'
 bind m:${hyper} focus 'Mail'
 bind h:${hyper} focus 'HipChat'
 bind c:${hyper} focus 'Calendar'
-bind t:${hyper} focus 'Terminal'
-bind f:${hyper} focus 'Path Finder'
+bind t:${hyper} focus 'iTerm'
+bind f:${hyper} focus 'Finder'
 bind s:${hyper} focus 'Spotify'

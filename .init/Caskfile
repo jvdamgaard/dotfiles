@@ -11,6 +11,7 @@ cask install spotify
 cask install dash
 cask install slate
 cask install seil
+cask install iterm2
 cask install skype
 cask install cheatsheet
 cask install fontprep
