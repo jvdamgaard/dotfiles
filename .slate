@@ -70,7 +70,7 @@ alias 2-right       move screenOriginX+screenSizeX/2;screenOriginY screenSizeX/2
 # default 1monitor  resolutions:${mon-laptop}
 
 # Numpad location Bindings
-bind pad0 ${showHintsLeftHand}
+bind pad0 ${showNormalHint}
 bind pad1 ${leftless}
 bind pad2 push bottom bar-resize:screenSizeY/2
 bind pad3 ${rightless}
