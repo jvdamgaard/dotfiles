@@ -32,6 +32,9 @@ reload
 echo "  * Installing HomeBrew"
 ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go/install)"
 
+echo "  * Installing SASS"
+sudo gem install sass
+
 echo "  * Installing Brews"
 brew bundle ~/.init/Brewfile
 
