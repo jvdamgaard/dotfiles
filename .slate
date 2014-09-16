@@ -9,12 +9,14 @@ config windowHintsShowIcons true
 config windowHintsIgnoreHiddenWindows false
 config windowHintsSpread true
 config windowHintsBackgroundColor "0;0;0;0.6"
-config windowHintsFontColor "255;255;255;1.0"
+config windowHintsFontColor "0;255;0;1.0"
 config windowHintsFontSize 60
 config windowHintsHeight 100
 config windowHintsWidth 100
 config windowHintsDuration 5
 config windowHintsRoundedCornerSize 20
+config windowHintsSpreadPadding 10
+config windowHintsTopLeftY 100
 # config windowHintsOrder persist
 
 # Set snapshots on start
@@ -62,9 +64,7 @@ bind pad*:ctrl snapshot 3monitors save-to-disk
 # Laptop snapshot
 bind down:${hyper} snapshot 1monitor save-to-disk
 
-# Slate switcher
-bind tab:cmd switch
-
+# Hints
 bind e:cmd  ${showNormalHint}
 
 # ======================================
