@@ -13,20 +13,6 @@ xcode-select --install
 echo "  * Installing rvm and ruby"
 \curl -sSL https://get.rvm.io | bash -s stable --ruby
 
-# echo "  * Removing MacPorts"
-# sudo port -fp uninstall installed
-# sudo rm -rf \
-# /opt/local \
-# /Applications/DarwinPorts \
-# /Applications/MacPorts \
-# /Library/LaunchDaemons/org.macports.* \
-# /Library/Receipts/DarwinPorts*.pkg \
-# /Library/Receipts/MacPorts*.pkg \
-# /Library/StartupItems/DarwinPortsStartup \
-# /Library/Tcl/darwinports1.0 \
-# /Library/Tcl/macports1.0 \
-# ~/.macports
-
 reload
 
 echo "  * Installing HomeBrew"
@@ -58,18 +44,13 @@ open "/Applications/Google Chrome.app"
 open "/Applications/Google Chrome Canary.app"
 open "/Applications/Skype.app"
 open "/Applications/Spotify.app"
-<<<<<<< HEAD
 open "/Applications/Color Maker.app"
 open "/Applications/Slate.app"
 open "/Applications/Seil.app"
 open "/Applications/Adobe Create Cloud.app"
 open "/Applications/iTerm.app"
 open "/Applications/App Store.app"
-=======
-open "/Applications/Slate.app"
-open "/Applications/Adobe Create Cloud.app"
 open "/Applications/Karabiner.app"
->>>>>>> FETCH_HEAD
 
 echo "  * Office"
 open "https://msdn.microsoft.com/da-dk/subscriptions/securedownloads/#searchTerm=Office%20for%20Mac%202011%20Home%20and%20Business&ProductFamilyId=0&MyProducts=true&Languages=da&Architectures=mac&FileExtensions=.dmg&PageSize=10&PageIndex=0&FileId=0"
