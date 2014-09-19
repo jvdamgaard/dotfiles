@@ -23,6 +23,7 @@ cask install atom
 cask install parallels
 cask install adobe-creative-cloud
 cask install xquartz
+cask install karabiner
 
 # Quick look plugins
 cask install qlcolorcode

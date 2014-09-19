@@ -1,1 +1,2 @@
 - import iTerm settings
+- Karabiner: check "Remap caps lock to hyper"
