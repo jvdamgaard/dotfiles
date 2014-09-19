@@ -30,7 +30,7 @@ alias mon-external-2     2
 
 # Misc Aliases
 alias showNormalHint hint ASDFQWERZXCVTYUIGHJKBNM
-alias hyper f19
+alias hyper ctrl;shift;alt;cmd
 
 # App Aliases
 alias browser 'Google Chrome'
@@ -77,11 +77,14 @@ bind left:${hyper}     ${lefthalf}
 bind up:${hyper}       ${full}
 
 # App bindings
+bind w:${hyper} focus ${browser}
 bind b:${hyper} focus ${browser}
 bind e:${hyper} focus ${editor}
 bind g:${hyper} focus 'GitHub'
+bind d:${hyper} focus 'GitHub'
 bind m:${hyper} focus 'Mail'
 bind h:${hyper} focus 'HipChat'
+bind r:${hyper} focus 'HipChat'
 bind c:${hyper} focus 'Calendar'
 bind t:${hyper} focus 'iTerm'
 bind f:${hyper} focus 'Finder'
