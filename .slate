@@ -30,7 +30,7 @@ alias mon-external-2     2
 
 # Misc Aliases
 alias showNormalHint hint ASDFQWERZXCVTYUIGHJKBNM
-alias hyper f19
+alias hyper ctrl;shift;alt;cmd
 
 # App Aliases
 alias browser 'Google Chrome'
