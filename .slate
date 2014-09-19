@@ -21,12 +21,8 @@ config windowHintsTopLeftY 100
 
 # Set snapshots on start
 default 1monitor count:1
+default 2monitors count:2
 default 3monitors count:3
-
-# Monitor Aliases
-alias mon-laptop         0
-alias mon-external-1     1
-alias mon-external-2     2
 
 # Misc Aliases
 alias showNormalHint hint ASDFQWERZXCVTYUIGHJKBNM
@@ -58,11 +54,11 @@ bind pad8 push top bar-resize:screenSizeY/2
 bind pad9 ${rightmost}
 bind pad+ throw next
 bind pad. focus behind
-bind pad* activate-snapshot 3monitors
-bind pad*:ctrl snapshot 3monitors save-to-disk
 
-# Laptop snapshot
-bind down:${hyper} snapshot 1monitor save-to-disk
+# Save snapshots
+bind 1:${hyper} snapshot 1monitor save-to-disk
+bind 2:${hyper} snapshot 2monitors save-to-disk
+bind 3:${hyper} snapshot 3monitors save-to-disk
 
 # Hints
 bind e:cmd  ${showNormalHint}
