@@ -1,1 +1,3 @@
-- import iTerm settings
+- import iTerm settings (~/)
+- Launch slate at login
+- Set Google Chrome Canary as default browser in Safari

@@ -87,7 +87,6 @@ function update() {
     if [ ${t} == "dock" ] || [ ${t} == "all" ]; then
         echo "Updating Dock"
         dockutil --remove all --no-restart
-        dockutil --add "/Applications/Utilities/Terminal.app" --no-restart
         dockutil --add "/Applications/iTerm.app" --no-restart
         dockSpacer
         dockutil --add "/Applications/Google Chrome Canary.app" --no-restart
@@ -118,6 +117,7 @@ function update() {
         dockutil --add "~/Documents" --no-restart
         dockutil --add "~/Repos" --no-restart
         dockutil --add "~/Downloads" --no-restart
+        dockutil --add "~/Dropbox" --no-restart
         killall Dock
     fi
 

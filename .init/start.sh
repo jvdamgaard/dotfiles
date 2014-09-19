@@ -48,29 +48,32 @@ echo "# APPS"
 echo "  * Installing Casks"
 brew bundle ~/.init/Caskfile
 
+echo "  * Open apps for settings"
 open "/Applications/Alfred 2.app"
 open "/Applications/CheatSheet.app"
 open "/Applications/Dash.app"
 open "/Applications/Dropbox.app"
 open "/Applications/GitHub.app"
 open "/Applications/Google Chrome.app"
+open "/Applications/Google Chrome Canary.app"
 open "/Applications/Skype.app"
 open "/Applications/Spotify.app"
 open "/Applications/Color Maker.app"
-open "/Applications/ShiftIt.app"
+open "/Applications/Slate.app"
+open "/Applications/Seil.app"
 open "/Applications/Adobe Create Cloud.app"
+open "/Applications/iTerm.app"
+open "/Applications/App Store.app"
 
 echo "  * Office"
 open "https://msdn.microsoft.com/da-dk/subscriptions/securedownloads/#searchTerm=Office%20for%20Mac%202011%20Home%20and%20Business&ProductFamilyId=0&MyProducts=true&Languages=da&Architectures=mac&FileExtensions=.dmg&PageSize=10&PageIndex=0&FileId=0"
 
-echo "  * App Store Apps"
-open "/Applications/App Store.app"
+say "Install all downloaded applications and extensions."
+read -p "Install all downloaded applications and extensions. Press any key when finished. " -n 1
+
 
 echo ""
 echo "# APP SETTINGS"
-
-say "Install all downloaded applications and extensions."
-read -p "Install all downloaded applications and extensions. Press any key when finished. " -n 1
 
 echo "  * Set up Azure CLI"
 azure account import "~/Dropbox/Dokumenter/Licenser/Visual Studio Premium med MSDN-7-22-2014-credentials.publishsettings"
