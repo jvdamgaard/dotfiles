@@ -52,8 +52,17 @@ bind pad6 ${righthalf}
 bind pad7 ${leftmost}
 bind pad8 push top bar-resize:screenSizeY/2
 bind pad9 ${rightmost}
-bind pad+ throw next
-bind pad. focus behind
+
+# Non-numpad keyborads
+bind m:${hyper} ${leftless}
+bind ,:${hyper} push bottom bar-resize:screenSizeY/2
+bind .:${hyper} ${rightless}
+bind j:${hyper} ${lefthalf}
+bind k:${hyper} ${full}
+bind l:${hyper} ${righthalf}
+bind u:${hyper} ${leftmost}
+bind i:${hyper} push top bar-resize:screenSizeY/2
+bind o:${hyper} ${rightmost}
 
 # Save snapshots
 bind 1:${hyper} snapshot 1monitor save-to-disk
