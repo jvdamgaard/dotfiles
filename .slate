@@ -54,15 +54,15 @@ bind pad8 push top bar-resize:screenSizeY/2
 bind pad9 ${rightmost}
 
 # Non-numpad keyborads
-bind m:${hyper} ${leftless}
-bind ,:${hyper} push bottom bar-resize:screenSizeY/2
-bind .:${hyper} ${rightless}
-bind j:${hyper} ${lefthalf}
-bind k:${hyper} ${full}
-bind l:${hyper} ${righthalf}
-bind u:${hyper} ${leftmost}
-bind i:${hyper} push top bar-resize:screenSizeY/2
-bind o:${hyper} ${rightmost}
+bind j:${hyper} ${leftless}
+bind k:${hyper} push bottom bar-resize:screenSizeY/2
+bind l:${hyper} ${rightless}
+bind u:${hyper} ${lefthalf}
+bind i:${hyper} ${full}
+bind o:${hyper} ${righthalf}
+bind 7:${hyper} ${leftmost}
+bind 8:${hyper} push top bar-resize:screenSizeY/2
+bind 9:${hyper} ${rightmost}
 
 # Save snapshots
 bind 1:${hyper} snapshot 1monitor save-to-disk
@@ -88,6 +88,7 @@ bind e:${hyper} focus ${editor}
 bind g:${hyper} focus 'GitHub'
 bind d:${hyper} focus 'GitHub'
 bind m:${hyper} focus 'Mail'
+bind q:${hyper} focus 'Mail'
 bind h:${hyper} focus 'HipChat'
 bind r:${hyper} focus 'HipChat'
 bind c:${hyper} focus 'Calendar'
