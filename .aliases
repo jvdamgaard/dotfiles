@@ -54,6 +54,9 @@ command -v grunt > /dev/null && alias grunt="grunt --stack"
 alias g="gulp"
 alias a="atom"
 
+# Gulp shortcodes
+alias gw="gulp watch"
+
 # Reload the shell (i.e. invoke as a login shell)
 alias reload="exec $SHELL -l"
 

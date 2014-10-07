@@ -64,10 +64,15 @@ bind 7:${hyper} ${leftmost}
 bind 8:${hyper} push top bar-resize:screenSizeY/2
 bind 9:${hyper} ${rightmost}
 
+# Activate snapshot
+bind 1:${hyper} activate-snapshot 1monitor
+bind 2:${hyper} activate-snapshot 2monitors
+bind 3:${hyper} activate-snapshot 3monitors
+
 # Save snapshots
-bind 1:${hyper} snapshot 1monitor save-to-disk
-bind 2:${hyper} snapshot 2monitors save-to-disk
-bind 3:${hyper} snapshot 3monitors save-to-disk
+bind 4:${hyper} snapshot 1monitor save-to-disk
+bind 5:${hyper} snapshot 2monitors save-to-disk
+bind 6:${hyper} snapshot 3monitors save-to-disk
 
 # Hints
 bind e:cmd  ${showNormalHint}

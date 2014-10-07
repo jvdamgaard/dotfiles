@@ -65,7 +65,7 @@ function update() {
         npm update npm -g
         npm config set prefix ~/npm
         echo "Updating all global npm packages"
-        npm update -g
+        npm update -g azure-cli bower doxx generator-webapp grunt-cli gulp jitsu jscs jshint npm-check-updates yo node-inspector
     fi
 
     # Update dot files

@@ -39,7 +39,7 @@ function gz() {
 # Usage: `gi contrib-watch contrib-uglify zopfli`
 function gi() {
     local IFS=,
-    eval npm install --save-dev gulp-{"$*"}
+    eval npm install --save-dev gulp-"$*"
 }
 
 # `s` with no arguments opens the current directory in Sublime Text, otherwise
