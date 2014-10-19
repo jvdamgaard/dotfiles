@@ -96,6 +96,7 @@ function update() {
         dockSpacer
         dockutil --add "/Applications/GitHub.app" --no-restart
         dockutil --add "/Applications/Parallels Desktop.app" --no-restart
+        dockutil --add "/Applications/Microsoft Remote Desktop.app" --no-restart
         dockSpacer
         dockutil --add "/Applications/Adobe Fireworks CS6/Adobe Fireworks CS6.app" --no-restart
         dockSpacer
@@ -182,8 +183,11 @@ function update() {
         echo "Hidden files"
         download "https://s3.amazonaws.com/f.cl.ly/items/443a062A071G3s121S31/Toggle%20Visibility%20of%20Hidden%20Files.alfredworkflow"
 
+        echo "IMDB search"
+        download "https://raw.githubusercontent.com/packal/repository/master/com.targumanu.imdbsearch/imdb_search.alfredworkflow"
+
         echo "Alfred theme"
-        download "https://raw.githubusercontent.com/jvdamgaard/dotfiles/.init/Jakob.alfredappearance"
+        download "https://raw.githubusercontent.com/jvdamgaard/dotfiles/master/.init/Jakob.alfredappearance"
 
         open ~/Downloads
     fi
