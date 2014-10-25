@@ -26,6 +26,7 @@ source ~/.init/Brewfile.sh
 
 echo "  * Install global npm's"
 update npm
+npm install -g azure-cli bower generator-webapp grunt-cli gulp jscs jshint npm-check-updates yo node-inspector
 
 echo ""
 echo "# APPS"

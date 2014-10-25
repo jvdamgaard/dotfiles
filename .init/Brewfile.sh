@@ -17,7 +17,6 @@ brew install mongodb
 brew install imagemagick
 brew install graphicsmagick
 brew install siege
-brew install fontforge --with-x
 brew install dockutil
 
 # Remove outdated versions from the cellar
