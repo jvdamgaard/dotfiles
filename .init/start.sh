@@ -22,7 +22,7 @@ echo "  * Installing SASS"
 sudo gem install sass
 
 echo "  * Installing Brews"
-brew bundle ~/.init/Brewfile
+source ~/.init/Brewfile.sh
 
 echo "  * Install global npm's"
 update npm
@@ -31,25 +31,7 @@ echo ""
 echo "# APPS"
 
 echo "  * Installing Casks"
-brew bundle ~/.init/Caskfile
-
-echo "  * Open apps for settings"
-open "/Applications/Alfred 2.app"
-open "/Applications/CheatSheet.app"
-open "/Applications/Dash.app"
-open "/Applications/Dropbox.app"
-open "/Applications/GitHub.app"
-open "/Applications/Google Chrome.app"
-open "/Applications/Google Chrome Canary.app"
-open "/Applications/Skype.app"
-open "/Applications/Spotify.app"
-open "/Applications/Color Maker.app"
-open "/Applications/Slate.app"
-open "/Applications/Seil.app"
-open "/Applications/Adobe Create Cloud.app"
-open "/Applications/iTerm.app"
-open "/Applications/App Store.app"
-open "/Applications/Karabiner.app"
+source ~/.init/Caskfile.sh
 
 echo "  * Office"
 open "https://msdn.microsoft.com/da-dk/subscriptions/securedownloads/#searchTerm=Office%20for%20Mac%202011%20Home%20and%20Business&ProductFamilyId=0&MyProducts=true&Languages=da&Architectures=mac&FileExtensions=.dmg&PageSize=10&PageIndex=0&FileId=0"
