@@ -51,33 +51,6 @@ echo "  * Download Alfred App workflows"
 open "~/Dropbox/Dokumenter/Licenser/mac.rtf"
 update alfred
 
-echo "  * subl cli"
-sudo ln -s /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl /bin/subl
-
-echo "  * Sublime Text 3 - Package Control"
-subl
-sleep 10
-(
-    cd ~/Library/Application\ Support/Sublime\ Text\ 3/Installed\ Packages
-    curl -O -# "https://sublime.wbond.net/Package Control.sublime-package"
-)
-
-echo "  * Sublime Text 3 Sync"
-(
-    git clone https://github.com/jvdamgaard/st3-sync.git ~/Repos/st3-sync
-    rm -r ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User
-    ln -s ~/Repos/st3-sync ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User
-)
-
-echo "  * Atom Sync"
-atom
-sleep 10
-(
-    git clone https://github.com/jvdamgaard/atom-sync.git ~/Repos/atom-sync
-    rm -r ~/.atom
-    ln -s ~/Repos/atom-sync ~/.atom
-)
-
 echo "  * Set Dock layout"
 update dock
 
