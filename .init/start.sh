@@ -16,7 +16,7 @@ echo "  * Installing rvm and ruby"
 reload
 
 echo "  * Installing HomeBrew"
-ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go/install)"
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 echo "  * Installing SASS"
 sudo gem install sass
