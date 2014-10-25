@@ -9,7 +9,7 @@ brew install findutils
 brew install bash
 
 # Install wget with IRI support
-brew install wget --enable-iri
+brew install wget --with-iri
 
 brew install git
 brew install node

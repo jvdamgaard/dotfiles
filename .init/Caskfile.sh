@@ -15,18 +15,28 @@ open "/Applications/Google Chrome.app"
 brew cask install google-chrome-canary
 open "/Applications/Google Chrome Canary.app"
 
-brew cask install firefox
-brew cask install vlc
-brew cask install github
 brew cask install spotify
 open "/Applications/Spotify.app"
 
-brew cask install dash
+brew cask install github
+open "/Applications/GitHub.app"
+
 brew cask install slate
 open "/Applications/Slate.app"
 
 brew cask install seil
 open "/Applications/Seil.app"
+
+brew cask install karabiner
+open "/Applications/Karabiner.app"
+
+brew cask install adobe-creative-cloud
+# TODO: open installer
+
+brew cask install firefox
+brew cask install vlc
+
+brew cask install dash
 
 brew cask install iterm2
 brew cask install skype
@@ -37,10 +47,8 @@ brew cask install utorrent
 brew cask install filezilla
 brew cask install hipchat
 brew cask install atom
-brew cask install parallels
-brew cask install adobe-creative-cloud
+# brew cask install parallels
 brew cask install xquartz
-brew cask install karabiner
 
 # Quick look plugins
 brew cask install qlcolorcode
