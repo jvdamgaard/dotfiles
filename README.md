@@ -1,6 +1,8 @@
 # Jakobs dotfiles for osx
 
-## Installation
+## Fresh install
+
+[Fresh install guide](fresh-install-guide.md)
 
 ```bash
 $ git clone https://github.com/jvdamgaard/dotfiles.git ~/Repos/dotfiles
@@ -11,8 +13,8 @@ $ source ~/.init/start.sh
 
 Then restart computer.
 
-## Update
+## Keep computer up to date
 
 ```bash
-$ update
+$ update help
 ```

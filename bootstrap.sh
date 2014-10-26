@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
 function doIt() {
     rsync --exclude ".git/" --exclude ".DS_Store" --exclude "bootstrap.sh" \
-        --exclude "README.md" -av --no-perms . ~
-    cp ~/.init/private.xml ~/Library/Application\ Support/Karabiner -f
+        --exclude "README.md" --exclude ".init/" -av --no-perms . ~
     source ~/.bash_profile
 }
 

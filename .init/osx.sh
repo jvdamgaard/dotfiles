@@ -155,4 +155,4 @@ for app in "Dock" "Finder" "Mail" "Safari"; do
     killall "${app}" > /dev/null 2>&1
 done
 
-reload
+update dock

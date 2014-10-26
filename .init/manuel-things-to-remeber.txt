@@ -1,4 +1,0 @@
-- import iTerm settings (~/)
-- Launch slate at login
-- Set Google Chrome Canary as default browser in Safari
-- Karabiner: check "Remap caps lock to hyper"
