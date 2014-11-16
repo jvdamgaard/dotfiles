@@ -74,3 +74,6 @@ alias app-debug='node-debug app.js'
 # VM shortcuts
 alias vm-start="azure vm start itsjvd"
 alias vm-stop="azure vm shutdown itsjvd"
+
+# MongoDB
+alias start-mongo="mongod --fork --logpath /data/log/mongod.log"

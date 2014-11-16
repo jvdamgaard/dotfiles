@@ -14,6 +14,7 @@ echo "  * Mute the sound effects on boot"
 # mute on log out
 sudo chmod u+x ~/.bash/mute-on.sh
 sudo defaults write com.apple.loginwindow LogoutHook ~/.bash/mute-on.sh
+sudo nvram SystemAudioVolume=%80
 # mute on log in
 # sudo chmod u+x ~/.bash/mute-off.sh
 # sudo defaults write com.apple.loginwindow LoginHook ~/.bash/mute-off.sh

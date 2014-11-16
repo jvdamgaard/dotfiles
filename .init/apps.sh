@@ -11,59 +11,56 @@ gem install sass
 brew install coreutils
 brew install findutils
 brew install bash
+brew install lftp
 
 # Install wget with IRI support
 brew install wget --with-iri
 
 # Services
 brew install git
-brew install mongodb
 brew install imagemagick
 brew install graphicsmagick
 brew install siege
 brew install dockutil
+brew install redis
+brew install go
+
+# MongoDB
+brew install mongodb
+sudo mkdir -p /data/db
+sudo mkdir -p /data/log
+sudo chown jakob /data
+sudo chown jakob /data/db
+sudo chown jakob /data/log
 
 # Node
 brew install node
 npm config set prefix ~/npm
-npm install -g azure-cli bower generator-webapp grunt-cli gulp jscs jshint npm-check-updates yo node-inspector
-osascript -e 'display notification "When Dropbox has finished sync: azure account import ~/Dropbox/Dokumenter/Licenser/azure.publishsettings" with title "Azure"'
+npm install -g azure-cli bower generator-webapp grunt-cli gulp jscs jshint nodemon npm-check-updates yo node-inspector
 
 # Install caskroom
 brew install caskroom/cask/brew-cask
 brew tap caskroom/versions
 
-# xQuartz
-brew cask install xquartz
-
-# Alfred
-brew cask install alfred
-open "/Applications/Alfred 2.app"
-sleep 10
-cask alfred link
-# TODO: Open link to alfred license
-osascript -e 'display notification "License Alfred powerpack" with title "Alfred"'
-update alfred
-osascript -e 'display notification "Install alfred workflows" with title "Alfred"'
-
 # Dropbox
 brew cask install dropbox
 open "/Applications/Dropbox.app" # Sign in
-osascript -e 'display notification "Sign in" with title "Dropbox"'
+osascript -e 'display notification "Sign in with jakob_damgaard@hotmail.com" with title "Dropbox"'
+
+# xQuartz
+brew cask install xquartz
 
 # Fireworks
 brew cask install adobe-creative-cloud
 open "/opt/homebrew-cask/Caskroom/adobe-creative-cloud/latest/Creative Cloud Installer.app"
 osascript -e 'display notification "Install" with title "Fireworks"'
-# TODO: open license for fireworks
-osascript -e 'display notification "License" with title "Fireworks"'
 
 # Sublime Text 3
 brew cask install sublime-text3
 sudo ln -s /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl /bin/subl
 subl # Open sublime text
 # Package manager
-sleep 10
+sleep 5
 (
     cd ~/Library/Application\ Support/Sublime\ Text\ 3/Installed\ Packages
     curl -O -# "https://sublime.wbond.net/Package Control.sublime-package"
@@ -78,7 +75,7 @@ sleep 10
 # Atom
 brew cask install atom
 atom
-sleep 10
+sleep 5
 # Atom Sync
 (
     git clone https://github.com/jvdamgaard/atom-sync.git ~/Repos/atom-sync
@@ -90,7 +87,6 @@ sleep 10
 echo "Downloading Office 2011"
 download https://dl.dropboxusercontent.com/u/53998893/programmer/da_no_office_for_mac_home_and_business_2011_mac_4114798.dmg
 open ~/Downloads/da_no_office_for_mac_home_and_business_2011_mac_4114798.dmg
-# TODO: Open license
 
 # Google Chrome
 brew cask install google-chrome
@@ -125,19 +121,24 @@ open "/Applications/Seil.app"
 
 # Karabiner
 brew cask install karabiner
-cp ~/Repos/dotfiles/.init/private.xml ~/Library/Application\ Support/Karabiner -f # TODO: Is it working?
+cp ~/Repos/dotfiles/.init/private.xml ~/Library/Application\ Support/Karabiner -f
 open "/Applications/Karabiner.app"
 osascript -e 'display notification "Check `Remap caps lock to hyper`" with title "Karabiner"'
 
+# Alfred
+brew cask install alfred
+open "/Applications/Alfred 2.app"
+sleep 2
+cask alfred link
+update alfred
+osascript -e 'display notification "Sync with DropBox" with title "Alfred"'
+osascript -e 'display notification "Install alfred workflows" with title "Alfred"'
+
 # Dash
 brew cask install dash
-open "/Applications/Dash.app"
-# TODO: open license txt
-osascript -e 'display notification "License" with title "Dash"'
 
 # iTerm2
 brew cask install iterm2
-# TODO: Copy iTerm settings
 
 # Cheat Sheet
 brew cask install cheatsheet
@@ -153,11 +154,19 @@ brew cask install skype
 open "/Applications/Skype.app" # Sign in
 osascript -e 'display notification "Sign in with jvd.its@dsg.dk" with title "Skype"'
 
+# uTorrent
+brew cask install utorrent
+open /opt/homebrew-cask/Caskroom/utorrent/latest/uTorrent-Installer.app
+
+# 1password
+brew cask install onepassword
+open "/Applications/1Password 5.app"
+osascript -e 'display notification "Sync with DropBox" with title "1Password"'
+
 # Other apps
 brew cask install firefox
 brew cask install vlc
 brew cask install fontprep
-brew cask install utorrent
 brew cask install filezilla
 
 # Quick look plugins
@@ -171,3 +180,18 @@ brew cask install webp-quicklook
 
 # Remove outdated versions from the cellar
 brew cleanup
+
+# License software
+azure account import ~/Dropbox/Dokumenter/Licenser/azure.publishsettings
+
+open "/Applications/Adobe Fireworks CS6/Adobe Fireworks CS6.app"
+open ~/Dropbox/Dokumenter/Licenser/fireworks.txt
+
+open "/Applications/Microsoft Office 2011/Microsoft Word.app"
+open ~/Dropbox/Dokumenter/Licenser/office2011.txt
+
+open "/Applications/Alfred 2.app"
+open ~/Dropbox/Dokumenter/Licenser/alfred.txt
+
+open "/Applications/Dash.app"
+open ~/Dropbox/Dokumenter/Licenser/dash.txt
