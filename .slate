@@ -77,6 +77,9 @@ bind 6:${hyper} snapshot 3monitors save-to-disk
 # Hints
 bind e:cmd  ${showNormalHint}
 
+# Quick terminal
+bind space:ctrl focus 'Terminal'
+
 # ======================================
 # The HYPER key
 # ======================================
@@ -97,6 +100,6 @@ bind q:${hyper} focus 'Mail'
 bind h:${hyper} focus 'HipChat'
 bind r:${hyper} focus 'HipChat'
 bind c:${hyper} focus 'Calendar'
-bind t:${hyper} focus 'iTerm'
+bind t:${hyper} focus 'Terminal'
 bind f:${hyper} focus 'Finder'
 bind s:${hyper} focus 'Spotify'

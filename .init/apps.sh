@@ -137,9 +137,6 @@ osascript -e 'display notification "Install alfred workflows" with title "Alfred
 # Dash
 brew cask install dash
 
-# iTerm2
-brew cask install iterm2
-
 # Cheat Sheet
 brew cask install cheatsheet
 open "/Applications/CheatSheet.app" # Activate at login
