@@ -24,6 +24,7 @@ brew install siege
 brew install dockutil
 brew install redis
 brew install go
+brew install pandoc # Beautify markdown
 
 # MongoDB
 brew install mongodb
@@ -34,9 +35,11 @@ sudo chown jakob /data/db
 sudo chown jakob /data/log
 
 # Node
-brew install node
-npm config set prefix ~/npm
-npm install -g azure-cli bower generator-webapp grunt-cli gulp jscs jshint nodemon npm-check-updates yo node-inspector
+curl https://raw.githubusercontent.com/creationix/nvm/v0.20.0/install.sh | bash
+source ~/.nvm/nvm.sh
+nvm install stable
+nvm alias default stable
+npm install -g azure-cli bower generator-webapp grunt-cli gulp jscs jshint mocha nodemon npm-check-updates yo node-inspector
 
 # Install caskroom
 brew install caskroom/cask/brew-cask
@@ -54,6 +57,9 @@ brew cask install xquartz
 brew cask install adobe-creative-cloud
 open "/opt/homebrew-cask/Caskroom/adobe-creative-cloud/latest/Creative Cloud Installer.app"
 osascript -e 'display notification "Install" with title "Fireworks"'
+
+# Sketch
+brew cask install sketch
 
 # Sublime Text 3
 brew cask install sublime-text3
@@ -146,6 +152,9 @@ brew cask install hipchat
 open "/Applications/HipChat.app" # Sign in
 osascript -e 'display notification "Sign in with jakob.viskum.damgaard@gmail.com" with title "HipChat"'
 
+# Lync
+brew cask install microsoft-lync
+
 # Skype
 brew cask install skype
 open "/Applications/Skype.app" # Sign in
@@ -165,6 +174,8 @@ brew cask install firefox
 brew cask install vlc
 brew cask install fontprep
 brew cask install filezilla
+brew cask install xmarks-safari # Sync bookmarks to safari. Used for Alfred search
+brew cask install sketchup
 
 # Quick look plugins
 brew cask install qlcolorcode

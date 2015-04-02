@@ -95,10 +95,10 @@ function update() {
         dockutil --add "/Applications/Firefox.app" --no-restart
         dockSpacer
         dockutil --add "/Applications/GitHub.app" --no-restart
-        dockutil --add "/Applications/Parallels Desktop.app" --no-restart
         dockutil --add "/Applications/Microsoft Remote Desktop.app" --no-restart
         dockSpacer
         dockutil --add "/Applications/Adobe Fireworks CS6/Adobe Fireworks CS6.app" --no-restart
+        dockutil --add "/Applications/Sketch.app" --no-restart
         dockSpacer
         dockutil --add "/Applications/Reminders.app" --no-restart
         dockutil --add "/Applications/Mail.app" --no-restart
@@ -110,8 +110,8 @@ function update() {
         dockutil --add "/Applications/Microsoft Office 2011/Microsoft Word.app" --no-restart
         dockutil --add "/Applications/Microsoft Office 2011/Microsoft PowerPoint.app" --no-restart
         dockSpacer
-        dockutil --add "/Applications/Sublime Text.app" --no-restart
         dockutil --add "/Applications/Atom.app" --no-restart
+        dockutil --add "/Applications/Sublime Text.app" --no-restart
         dockSpacer
         dockutil --add "/Applications/Spotify.app" --no-restart
 
@@ -161,9 +161,6 @@ function update() {
 
         echo "Google Translate"
         download "https://raw.githubusercontent.com/thomashempel/AlfredGoogleTranslateWorkflow/master/GoogleTranslate.alfredworkflow"
-
-        echo "Search Chrome Bookmarks"
-        download "https://raw.githubusercontent.com/mdreizin/alfred-workflows/master/chrome-bookmarks/zip/chrome-bookmarks.alfredworkflow"
 
         echo "Reminders"
         download "https://dl.dropboxusercontent.com/u/103385/Reminders.alfredworkflow"

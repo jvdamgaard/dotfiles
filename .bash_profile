@@ -30,3 +30,6 @@ done
 
 # Load Z
 source ~/.bash/z.sh
+
+# Load nvm
+source ~/.nvm/nvm.sh
