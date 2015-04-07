@@ -54,16 +54,14 @@ function update() {
     # Update node
     if [ ${t} == "node" ] || [ ${t} == "all" ]; then
         echo "Updating node"
-        brew update
-        brew upgrade node
-        npm config set prefix ~/npm
+        nvm install stable
+        nvm alias default stable
     fi
 
     # Update npm packages
     if [ ${t} == "npm" ] || [ ${t} == "node" ] || [ ${t} == "all" ]; then
         echo "Updating npm"
         npm update npm -g
-        npm config set prefix ~/npm
         echo "Updating all global npm packages"
         npm update -g
     fi
