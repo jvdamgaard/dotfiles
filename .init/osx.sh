@@ -10,14 +10,19 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 echo ""
 echo "# GENERAL UI/UX"
 
-echo "  * Mute the sound effects on boot"
-# mute on log out
-sudo chmod u+x ~/.bash/mute-on.sh
-sudo defaults write com.apple.loginwindow LogoutHook ~/.bash/mute-on.sh
-sudo nvram SystemAudioVolume=%80
-# mute on log in
-# sudo chmod u+x ~/.bash/mute-off.sh
-# sudo defaults write com.apple.loginwindow LoginHook ~/.bash/mute-off.sh
+echo "  * Disable the sound effects on boot"
+sudo nvram SystemAudioVolume=" "
+
+echo "  * mute all sounds, incl volume change feedback"
+defaults write "com.apple.sound.beep.feedback" -int 0
+defaults write com.apple.systemsound 'com.apple.sound.beep.volume' -float 0
+defaults write "com.apple.systemsound" "com.apple.sound.uiaudio.enabled" -int 0
+
+echo "  * Set standby delay to 24 hours (default is 1 hour)"
+sudo pmset -a standbydelay 86400
+
+echo "  * Disable transparency in the menu bar and elsewhere on Yosemite"
+defaults write com.apple.universalaccess reduceTransparency -bool true
 
 echo "  * Menu bar: hide the Time Machine, Volume, User, and Bluetooth icons"
 for domain in ~/Library/Preferences/ByHost/com.apple.systemuiserver.*; do
@@ -137,10 +142,39 @@ echo "  * Only use UTF-8 in Terminal.app"
 defaults write com.apple.terminal StringEncodings -array 4
 
 echo "  * Use Tomorrow Nigth theme by default in Terminal.app"
-#open "${HOME}/.init/Tomorrow Night.terminal"
-#sleep 1 # Wait a bit to make sure the theme is loaded
-#defaults write com.apple.terminal "Default Window Settings" -string "Jakob"
-#defaults write com.apple.terminal "Startup Window Settings" -string "Jakob"
+# Use a modified version of the Solarized Dark theme by default in Terminal.app
+osascript <<EOD
+tell application "Terminal"
+    local allOpenedWindows
+    local initialOpenedWindows
+    local windowID
+    set themeName to "Tomorrow Night"
+    (* Store the IDs of all the open terminal windows. *)
+    set initialOpenedWindows to id of every window
+    (* Open the custom theme so that it gets added to the list
+       of available terminal themes (note: this will open two
+       additional terminal windows). *)
+    do shell script "open '$HOME/Repos/.init/" & themeName & ".terminal'"
+    (* Wait a little bit to ensure that the custom theme is added. *)
+    delay 1
+    (* Set the custom theme as the default terminal theme. *)
+    set default settings to settings set themeName
+    (* Get the IDs of all the currently opened terminal windows. *)
+    set allOpenedWindows to id of every window
+    repeat with windowID in allOpenedWindows
+	(* Close the additional windows that were opened in order
+	   to add the custom theme to the list of terminal themes. *)
+	if initialOpenedWindows does not contain windowID then
+	    close (every window whose id is windowID)
+	(* Change the theme for the initial opened terminal windows
+	   to remove the need to close them in order for the custom
+	   theme to be applied. *)
+	else
+	    set current settings of tabs of (every window whose id is windowID) to settings set themeName
+	end if
+    end repeat
+end tell
+EOD
 
 
 echo ""
@@ -157,3 +191,9 @@ for app in "Dock" "Finder" "Mail" "Safari"; do
 done
 
 update dock
+
+echo ""
+echo "# CHROME"
+
+echo " * Set Google CHrome Canary as default browser"
+open -a "Google Chrome Canary" --args --make-default-browser

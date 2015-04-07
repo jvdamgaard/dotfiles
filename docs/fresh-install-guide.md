@@ -2,7 +2,7 @@
 
 ## 1. Install dependencies
 
-Install ruby:
+Install ruby, homebrew and git:
 
 ```bash
 $ \curl -sSL https://get.rvm.io | bash -s stable --ruby
@@ -43,3 +43,19 @@ $ source ~/Repos/dotfiles/.init/apps.sh
 ```bash
 $ source ~/Repos/dotfiles/.init/osx.sh
 ```
+
+## 6. Activate hyper key
+
+1. Go to the System Preferences Keyboard pane and press the “Modifier Keys…” button and set Caps Lock to No Action.
+2. Open Karabiner and activate "Remap Caps Lock to Hyper"
+
+## 7. Sync settings
+
+1. Open Alfred App
+2. Under _Advanced_ choose _Set sync folder..._ and select `~/Dropbox/dokumenter/alfred-sync`
+
+## 8. Download Dash docs
+
+## 9. Change background images
+
+to `~/Dropbox/dokumenter/Background images`

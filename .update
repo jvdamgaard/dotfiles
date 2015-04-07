@@ -81,7 +81,7 @@ function update() {
         )
     fi
 
-    # Update sublime settings
+    # Update dock layout
     if [ ${t} == "dock" ] || [ ${t} == "all" ]; then
         echo "Updating Dock"
         dockutil --remove all --no-restart
@@ -95,7 +95,6 @@ function update() {
         dockutil --add "/Applications/GitHub.app" --no-restart
         dockutil --add "/Applications/Microsoft Remote Desktop.app" --no-restart
         dockSpacer
-        dockutil --add "/Applications/Adobe Fireworks CS6/Adobe Fireworks CS6.app" --no-restart
         dockutil --add "/Applications/Sketch.app" --no-restart
         dockSpacer
         dockutil --add "/Applications/Reminders.app" --no-restart

@@ -1,3 +1,9 @@
+# Ask for the administrator password upfront
+sudo -v
+
+# Keep-alive: update existing `sudo` time stamp until script has finished
+while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
+
 # Make sure we’re using the latest Homebrew
 brew update
 
@@ -48,15 +54,11 @@ brew tap caskroom/versions
 # Dropbox
 brew cask install dropbox
 open "/Applications/Dropbox.app" # Sign in
-osascript -e 'display notification "Sign in with jakob_damgaard@hotmail.com" with title "Dropbox"'
 
 # xQuartz
 brew cask install xquartz
 
 # Fireworks
-brew cask install adobe-creative-cloud
-open "/opt/homebrew-cask/Caskroom/adobe-creative-cloud/latest/Creative Cloud Installer.app"
-osascript -e 'display notification "Install" with title "Fireworks"'
 
 # Sketch
 brew cask install sketch
@@ -96,34 +98,20 @@ open ~/Downloads/da_no_office_for_mac_home_and_business_2011_mac_4114798.dmg
 
 # Google Chrome
 brew cask install google-chrome
-open "/Applications/Google Chrome.app" # Sign in
-osascript -e 'display notification "Sign in" with title "Google Chrome"'
-
-# Google Chrome Canary
 brew cask install google-chrome-canary
-open "/Applications/Google Chrome Canary.app" # Sign in
-osascript -e 'display notification "Sign in" with title "Google Chrome Canary"'
 
 # Spotify
 brew cask install spotify
-open "/Applications/Spotify.app" # Sign in
-osascript -e 'display notification "Sign in" with title "Spotify"'
 
 # GitHub
 brew cask install github
-open "/Applications/GitHub.app" # Sign in
-osascript -e 'display notification "Sign in" with title "GitHub"'
 
 # Slate
 brew cask install slate
-open "/Applications/Slate.app"
-# TODO: what should be done with slate?
 
 # Seil
 brew cask install seil
 source ~/Repos/dotfiles/.init/seil-import.sh
-open "/Applications/Seil.app"
-# TODO: Should the user do anything with seil?
 
 # Karabiner
 brew cask install karabiner
@@ -191,15 +179,3 @@ brew cleanup
 
 # License software
 azure account import ~/Dropbox/Dokumenter/Licenser/azure.publishsettings
-
-open "/Applications/Adobe Fireworks CS6/Adobe Fireworks CS6.app"
-open ~/Dropbox/Dokumenter/Licenser/fireworks.txt
-
-open "/Applications/Microsoft Office 2011/Microsoft Word.app"
-open ~/Dropbox/Dokumenter/Licenser/office2011.txt
-
-open "/Applications/Alfred 2.app"
-open ~/Dropbox/Dokumenter/Licenser/alfred.txt
-
-open "/Applications/Dash.app"
-open ~/Dropbox/Dokumenter/Licenser/dash.txt
