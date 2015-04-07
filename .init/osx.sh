@@ -154,7 +154,7 @@ tell application "Terminal"
     (* Open the custom theme so that it gets added to the list
        of available terminal themes (note: this will open two
        additional terminal windows). *)
-    do shell script "open '$HOME/Repos/.init/" & themeName & ".terminal'"
+    do shell script "open '$HOME/Repos/dotfiles/.init/" & themeName & ".terminal'"
     (* Wait a little bit to ensure that the custom theme is added. *)
     delay 1
     (* Set the custom theme as the default terminal theme. *)
@@ -186,14 +186,19 @@ defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
 echo "  * Disable local Time Machine backups"
 hash tmutil &> /dev/null && sudo tmutil disablelocal
 
-for app in "Dock" "Finder" "Mail" "Safari"; do
-    killall "${app}" > /dev/null 2>&1
-done
+echo ""
+echo "# DOCK"
 
+echo " * Dock layout"
 update dock
 
 echo ""
 echo "# CHROME"
 
-echo " * Set Google CHrome Canary as default browser"
+echo " * Set Google Chrome Canary as default browser"
 open -a "Google Chrome Canary" --args --make-default-browser
+
+echo "# RESTART AFFECTED APPS"
+for app in "Dock" "Finder" "Mail" "Safari"; do
+    killall "${app}" > /dev/null 2>&1
+done
