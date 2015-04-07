@@ -23,3 +23,8 @@ source ~/Repos/dotfiles/.init/osx.sh
 
 # Open docs
 open https://github.com/jvdamgaard/dotfiles/blob/master/docs/fresh-install-guide.md
+
+open "/Applications/Karabiner.app"
+open "/Applications/Alfred Preferences.app"
+open "/Applications/Dash.app"
+open "/Applications/System Preferences.app"
