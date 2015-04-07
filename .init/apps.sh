@@ -23,7 +23,7 @@ brew install lftp
 brew install wget --with-iri
 
 # Services
-brew install git
+# brew install git # already installed
 brew install imagemagick
 brew install graphicsmagick
 brew install siege
@@ -51,20 +51,52 @@ npm install -g azure-cli bower generator-webapp grunt-cli gulp jscs jshint mocha
 brew install caskroom/cask/brew-cask
 brew tap caskroom/versions
 
-# Dropbox
-brew cask install dropbox
-open "/Applications/Dropbox.app" # Sign in
-
-# xQuartz
+# Casks
+brew cask install dropbox && open "/Applications/Dropbox.app" # Sign in
+brew cask install 1password
 brew cask install xquartz
-
-# Fireworks
-
-# Sketch
+# brew cask install adobe-creative-cloud
 brew cask install sketch
-
-# Sublime Text 3
 brew cask install sublime-text3
+brew cask install atom
+brew cask install google-chrome
+brew cask install google-chrome-canary
+brew cask install spotify
+brew cask install github
+brew cask install slate
+brew cask install seil
+brew cask install karabiner
+brew cask install alfred
+brew cask install dash
+brew cask install cheatsheet
+brew cask install hipchat
+# brew cask install lync
+brew cask install skype
+brew cask install utorrent && open /opt/homebrew-cask/Caskroom/utorrent/latest/uTorrent-Installer.app
+brew cask install onepassword
+brew cask install firefox
+brew cask install vlc
+# brew cask install fontprep
+brew cask install filezilla
+# brew cask install xmarks-safari # Sync bookmarks to safari. Used for Alfred search
+brew cask install sketchup
+open https://itunes.apple.com/us/app/microsoft-remote-desktop/id715768417
+
+# Quick look plugins
+brew cask install qlcolorcode
+brew cask install qlstephen
+brew cask install qlmarkdown
+brew cask install quicklook-json
+brew cask install quicklook-csv
+brew cask install betterzipql
+brew cask install webp-quicklook
+
+# Office
+echo "Downloading Office 2011"
+download https://dl.dropboxusercontent.com/u/53998893/programmer/da_no_office_for_mac_home_and_business_2011_mac_4114798.dmg
+open ~/Downloads/da_no_office_for_mac_home_and_business_2011_mac_4114798.dmg
+
+# Sync sublime settings
 sudo ln -s /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl /bin/subl
 subl # Open sublime text
 # Package manager
@@ -80,8 +112,7 @@ sleep 5
     ln -s ~/Repos/st3-sync ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User
 )
 
-# Atom
-brew cask install atom
+# Sync atom settings
 atom
 sleep 5
 # Atom Sync
@@ -91,91 +122,17 @@ sleep 5
     ln -s ~/Repos/atom-sync ~/.atom
 )
 
-# Office
-echo "Downloading Office 2011"
-download https://dl.dropboxusercontent.com/u/53998893/programmer/da_no_office_for_mac_home_and_business_2011_mac_4114798.dmg
-open ~/Downloads/da_no_office_for_mac_home_and_business_2011_mac_4114798.dmg
-
-# Google Chrome
-brew cask install google-chrome
-brew cask install google-chrome-canary
-
-# Spotify
-brew cask install spotify
-
-# GitHub
-brew cask install github
-
-# Slate
-brew cask install slate
-
-# Seil
-brew cask install seil
+# Seil settings
 source ~/Repos/dotfiles/.init/seil-import.sh
 
-# Karabiner
-brew cask install karabiner
+# Karabiner settings
 cp ~/Repos/dotfiles/.init/private.xml ~/Library/Application\ Support/Karabiner -f
-open "/Applications/Karabiner.app"
-osascript -e 'display notification "Check `Remap caps lock to hyper`" with title "Karabiner"'
 
 # Alfred
-brew cask install alfred
-open "/Applications/Alfred 2.app"
-sleep 2
 cask alfred link
-update alfred
-osascript -e 'display notification "Sync with DropBox" with title "Alfred"'
-osascript -e 'display notification "Install alfred workflows" with title "Alfred"'
 
-# Dash
-brew cask install dash
-
-# Cheat Sheet
-brew cask install cheatsheet
-open "/Applications/CheatSheet.app" # Activate at login
-
-# HipChat
-brew cask install hipchat
-open "/Applications/HipChat.app" # Sign in
-osascript -e 'display notification "Sign in with jakob.viskum.damgaard@gmail.com" with title "HipChat"'
-
-# Lync
-brew cask install microsoft-lync
-
-# Skype
-brew cask install skype
-open "/Applications/Skype.app" # Sign in
-osascript -e 'display notification "Sign in with jvd.its@dsg.dk" with title "Skype"'
-
-# uTorrent
-brew cask install utorrent
-open /opt/homebrew-cask/Caskroom/utorrent/latest/uTorrent-Installer.app
-
-# 1password
-brew cask install onepassword
-open "/Applications/1Password 5.app"
-osascript -e 'display notification "Sync with DropBox" with title "1Password"'
-
-# Other apps
-brew cask install firefox
-brew cask install vlc
-brew cask install fontprep
-brew cask install filezilla
-brew cask install xmarks-safari # Sync bookmarks to safari. Used for Alfred search
-brew cask install sketchup
-
-# Quick look plugins
-brew cask install qlcolorcode
-brew cask install qlstephen
-brew cask install qlmarkdown
-brew cask install quicklook-json
-brew cask install quicklook-csv
-brew cask install betterzipql
-brew cask install webp-quicklook
+# Azure settings
+azure account import ~/Dropbox/Dokumenter/Licenser/azure.publishsettings
 
 # Remove outdated versions from the cellar
 brew cleanup
-
-# License software
-azure account import ~/Dropbox/Dokumenter/Licenser/azure.publishsettings
