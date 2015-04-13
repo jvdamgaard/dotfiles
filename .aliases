@@ -8,7 +8,6 @@ alias .....="cd ../../../.."
 # Shortcuts for most used folders
 alias r="cd ~/Repos"
 alias d="cd ~/Dropbox"
-alias nettouk="cd /Volumes/C/Repos/nettouk-website/NettoUk.Website/"
 
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
@@ -56,6 +55,11 @@ alias a="atom"
 
 # Gulp shortcodes
 alias gw="gulp watch"
+alias gs="gulp serve"
+alias gb="gulp build"
+alias gt="gulp test"
+alias gd="gulp deploy"
+alias gc="gulp coverage"
 
 # Reload the shell (i.e. invoke as a login shell)
 alias reload="exec $SHELL -l"
@@ -67,7 +71,7 @@ command -v npm > /dev/null && alias npme="npm --registry http://registry.npmjs.e
 alias tst='gulp test'
 alias tdd='gulp tdd'
 alias cov='gulp coverage'
-alias tst-debug='node-inspector & mocha --debug-brk --recursive & open "http://127.0.0.1:8080/debug?port=5858"'
+alias tst-debug='node-debug $(which gulp) test'
 alias app='npm start'
 alias app-debug='node-debug app.js'
 

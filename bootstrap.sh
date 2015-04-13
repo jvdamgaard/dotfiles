@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 function doIt() {
     rsync --exclude ".git/" --exclude ".DS_Store" --exclude "bootstrap.sh" \
-        --exclude "README.md" --exclude ".init/" -av --no-perms . ~
+        --exclude "README.md" --exclude ".init/" --exclude "docs/" \
+        -av --no-perms . ~
     source ~/.bash_profile
 }
 

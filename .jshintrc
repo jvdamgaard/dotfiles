@@ -18,14 +18,12 @@
     "dojo": false,
 
     "predef": [ // Custom globals.
-        "Modernizr",
         "describe",
         "it",
         "before",
         "beforeEach",
         "after",
-        "afterEach",
-        "sinon"
+        "afterEach"
     ],
 
 
@@ -33,6 +31,8 @@
     "debug": false, // Allow debugger statements e.g. browser breakpoints.
     "devel": false, // Allow developments statements e.g. `console.log();`.
 
+    // ECMAScript 6.
+    "esnext": true,
 
     // ECMAScript 5.
     "strict": false, // Require `use strict` pragma  in every file.
