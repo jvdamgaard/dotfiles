@@ -27,7 +27,7 @@
     "disallowKeywords": ["with"],
     "disallowMultipleLineBreaks": true,
     "validateQuoteMarks": "'",
-    "validateIndentation": 4,
+    "validateIndentation": 2,
     "disallowMixedSpacesAndTabs": true,
     "disallowTrailingWhitespace": true,
     "disallowKeywordsOnNewLine": ["else"],

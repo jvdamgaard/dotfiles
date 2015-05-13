@@ -12,6 +12,7 @@ brew upgrade
 
 # SASS
 gem install sass
+gem install scss-lint
 
 # Core
 brew install coreutils

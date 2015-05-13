@@ -76,5 +76,5 @@
     "white": false, // Check against strict whitespace and indentation rules.
     "quotmark": "single", // Require quotmarks to be single
     "smarttabs": true, // Do not use tabs for indention
-    "indent": 4 // Specify indentation spacing
+    "indent": 2 // Specify indentation spacing
 }
