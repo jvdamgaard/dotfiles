@@ -18,35 +18,37 @@ gem install scss-lint
 brew install coreutils
 brew install findutils
 brew install bash
-brew install lftp
+# brew install lftp
 
 # Install wget with IRI support
-brew install wget --with-iri
+# brew install wget --with-iri
 
 # Services
 # brew install git # already installed
-brew install imagemagick
-brew install graphicsmagick
-brew install siege
+# brew install imagemagick
+# brew install graphicsmagick
+# brew install siege
 brew install dockutil
 brew install redis
-brew install go
-brew install pandoc # Beautify markdown
+# brew install go
+# brew install pandoc # Beautify markdown
 
 # MongoDB
-brew install mongodb
-sudo mkdir -p /data/db
-sudo mkdir -p /data/log
-sudo chown jakob /data
-sudo chown jakob /data/db
-sudo chown jakob /data/log
+# brew install mongodb
+# sudo mkdir -p /data/db
+# sudo mkdir -p /data/log
+# sudo chown jakob /data
+# sudo chown jakob /data/db
+# sudo chown jakob /data/log
 
 # Node
-curl https://raw.githubusercontent.com/creationix/nvm/v0.20.0/install.sh | bash
-source ~/.nvm/nvm.sh
+brew install nvm
+source $(brew --prefix nvm)/nvm.sh
+nvm install 0.10.32
+nvm install iojs
 nvm install stable
 nvm alias default stable
-npm install -g azure-cli bower generator-webapp grunt-cli gulp jscs jshint mocha nodemon npm-check-updates yo node-inspector
+npm install -g azure-cli generator-gulp-webapp gulp jscs jshint mocha nodemon npm-check-updates yo node-inspector
 
 # Install caskroom
 brew install caskroom/cask/brew-cask
@@ -55,7 +57,7 @@ brew tap caskroom/versions
 # Casks
 brew cask install dropbox && open "/Applications/Dropbox.app" # Sign in
 brew cask install 1password
-brew cask install xquartz
+# brew cask install xquartz
 # brew cask install adobe-creative-cloud
 brew cask install sketch
 brew cask install sublime-text3
@@ -72,16 +74,16 @@ brew cask install dash
 brew cask install cheatsheet
 brew cask install hipchat
 # brew cask install lync
-brew cask install skype
-brew cask install utorrent && open /opt/homebrew-cask/Caskroom/utorrent/latest/uTorrent-Installer.app
-brew cask install onepassword
+# brew cask install skype
+brew cask install utorrent && open /opt/homebrew-cask/Caskroom/utorrent/latest/uTorrent.app
+# brew cask install onepassword
 brew cask install firefox
 brew cask install vlc
 # brew cask install fontprep
 brew cask install filezilla
 # brew cask install xmarks-safari # Sync bookmarks to safari. Used for Alfred search
-brew cask install sketchup
-open https://itunes.apple.com/us/app/microsoft-remote-desktop/id715768417
+# brew cask install sketchup
+# open https://itunes.apple.com/us/app/microsoft-remote-desktop/id715768417
 
 # Quick look plugins
 brew cask install qlcolorcode
@@ -93,44 +95,34 @@ brew cask install betterzipql
 brew cask install webp-quicklook
 
 # Office
-echo "Downloading Office 2011"
-download https://dl.dropboxusercontent.com/u/53998893/programmer/da_no_office_for_mac_home_and_business_2011_mac_4114798.dmg
-open ~/Downloads/da_no_office_for_mac_home_and_business_2011_mac_4114798.dmg
+# echo "Downloading Office 2011"
+# download https://dl.dropboxusercontent.com/u/53998893/programmer/da_no_office_for_mac_home_and_business_2011_mac_4114798.dmg
+# open ~/Downloads/da_no_office_for_mac_home_and_business_2011_mac_4114798.dmg
 
 # Sync sublime settings
-sudo ln -s /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl /bin/subl
-subl # Open sublime text
-# Package manager
-sleep 5
-(
-    cd ~/Library/Application\ Support/Sublime\ Text\ 3/Installed\ Packages
-    curl -O -# "https://sublime.wbond.net/Package Control.sublime-package"
-)
-# Sync
-(
-    git clone https://github.com/jvdamgaard/st3-sync.git ~/Repos/st3-sync
-    rm -r ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User
-    ln -s ~/Repos/st3-sync ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User
-)
+# sudo ln -s /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl /bin/subl
+# subl # Open sublime text
+# # Package manager
+# sleep 5
+# (
+#     cd ~/Library/Application\ Support/Sublime\ Text\ 3/Installed\ Packages
+#     curl -O -# "https://sublime.wbond.net/Package Control.sublime-package"
+# )
+# # Sync
+# (
+#     git clone https://github.com/jvdamgaard/st3-sync.git ~/Repos/st3-sync
+#     rm -r ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User
+#     ln -s ~/Repos/st3-sync ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User
+# )
 
 # Sync atom settings
-atom
-sleep 5
-# Atom Sync
-(
-    git clone https://github.com/jvdamgaard/atom-sync.git ~/Repos/atom-sync
-    rm -r ~/.atom
-    ln -s ~/Repos/atom-sync ~/.atom
-)
+apm install sync-settings
 
 # Seil settings
 source ~/Repos/dotfiles/.init/seil-import.sh
 
 # Karabiner settings
-cp ~/Repos/dotfiles/.init/private.xml ~/Library/Application\ Support/Karabiner -f
-
-# Alfred
-cask alfred link
+sudo cp -f ~/Repos/dotfiles/.init/private.xml ~/Library/Application\ Support/Karabiner
 
 # Azure settings
 azure account import ~/Dropbox/Dokumenter/Licenser/azure.publishsettings

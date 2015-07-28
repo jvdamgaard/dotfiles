@@ -51,7 +51,6 @@ command -v grunt > /dev/null && alias grunt="grunt --stack"
 
 # Apps
 alias g="gulp"
-alias a="atom"
 
 # Gulp shortcodes
 alias gw="gulp watch"

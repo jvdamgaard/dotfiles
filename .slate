@@ -30,7 +30,7 @@ alias hyper ctrl;shift;alt;cmd
 
 # App Aliases
 alias browser 'Google Chrome'
-alias editor  'Sublime Text'
+alias editor  'Atom'
 
 # Abstract positions
 alias full          move screenOriginX;screenOriginY                  screenSizeX;screenSizeY
@@ -102,5 +102,5 @@ bind r:${hyper} focus 'HipChat'
 bind c:${hyper} focus 'Calendar'
 bind t:${hyper} focus 'Terminal'
 bind f:${hyper} focus 'Finder'
-bind s:${hyper} focus 'Spotify'
+bind s:${hyper} focus 'Sketch'
 bind a:${hyper} focus 'Messages'

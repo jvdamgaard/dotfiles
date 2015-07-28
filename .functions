@@ -42,13 +42,13 @@ function gi() {
     eval npm install --save-dev gulp-"$*"
 }
 
-# `s` with no arguments opens the current directory in Sublime Text, otherwise
+# `a` with no arguments opens the current directory in Atom, otherwise
 # opens the given location
-function s() {
+function a() {
     if [ $# -eq 0 ]; then
-        subl . --add
+        atom .
     else
-        subl "$@" --add
+        atom "$@"
     fi
 }
 

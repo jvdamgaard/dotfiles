@@ -93,7 +93,7 @@ function update() {
         dockutil --add "/Applications/Firefox.app" --no-restart
         dockSpacer
         dockutil --add "/Applications/GitHub.app" --no-restart
-        dockutil --add "/Applications/Microsoft Remote Desktop.app" --no-restart
+        # dockutil --add "/Applications/Microsoft Remote Desktop.app" --no-restart
         dockSpacer
         dockutil --add "/Applications/Sketch.app" --no-restart
         dockSpacer
@@ -104,11 +104,11 @@ function update() {
         dockutil --add "/Applications/Messages.app" --no-restart
         dockutil --add "/Applications/HipChat.app" --no-restart
         dockSpacer
-        dockutil --add "/Applications/Microsoft Office 2011/Microsoft Word.app" --no-restart
-        dockutil --add "/Applications/Microsoft Office 2011/Microsoft PowerPoint.app" --no-restart
-        dockSpacer
+        # dockutil --add "/Applications/Microsoft Office 2011/Microsoft Word.app" --no-restart
+        # dockutil --add "/Applications/Microsoft Office 2011/Microsoft PowerPoint.app" --no-restart
+        # dockSpacer
         dockutil --add "/Applications/Atom.app" --no-restart
-        dockutil --add "/Applications/Sublime Text.app" --no-restart
+        # dockutil --add "/Applications/Sublime Text.app" --no-restart
         dockSpacer
         dockutil --add "/Applications/Spotify.app" --no-restart
 
