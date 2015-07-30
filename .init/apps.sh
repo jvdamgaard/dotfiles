@@ -60,6 +60,7 @@ brew cask install 1password
 # brew cask install xquartz
 # brew cask install adobe-creative-cloud
 brew cask install sketch
+brew cask install sketch-toolbox
 brew cask install sublime-text3
 brew cask install atom
 brew cask install google-chrome
