@@ -77,14 +77,14 @@ brew cask install hipchat
 # brew cask install lync
 # brew cask install skype
 brew cask install utorrent && open /opt/homebrew-cask/Caskroom/utorrent/latest/uTorrent.app
-# brew cask install onepassword
-brew cask install firefox
+brew cask install firefoxs
 brew cask install vlc
+brew cask install slack
 # brew cask install fontprep
 brew cask install filezilla
 # brew cask install xmarks-safari # Sync bookmarks to safari. Used for Alfred search
 # brew cask install sketchup
-# open https://itunes.apple.com/us/app/microsoft-remote-desktop/id715768417
+open https://itunes.apple.com/us/app/microsoft-remote-desktop/id715768417
 
 # Quick look plugins
 brew cask install qlcolorcode
