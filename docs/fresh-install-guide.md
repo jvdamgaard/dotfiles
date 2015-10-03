@@ -77,4 +77,4 @@ to `~/Dropbox/dokumenter/Background images`
 
 ## 12. Terminal theme
 
-Use `~/Repos/dotfiles/.init/Monokai.terminal` as default theme
+Use `~/Repos/dotfiles/.init/MaterialDark.terminal` as default theme
