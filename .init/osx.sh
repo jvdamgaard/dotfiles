@@ -18,34 +18,54 @@ defaults write "com.apple.sound.beep.feedback" -int 0
 defaults write com.apple.systemsound 'com.apple.sound.beep.volume' -float 0
 defaults write "com.apple.systemsound" "com.apple.sound.uiaudio.enabled" -int 0
 
-# echo "  * Set standby delay to 24 hours (default is 1 hour)"
-# sudo pmset -a standbydelay 86400
+echo "  * Set standby delay to 24 hours (default is 1 hour)"
+sudo pmset -a standbydelay 86400
 
 # echo "  * Disable transparency in the menu bar and elsewhere on Yosemite"
 # defaults write com.apple.universalaccess reduceTransparency -bool true
 
-# echo "  * Menu bar: hide the Time Machine, Volume, User, and Bluetooth icons"
-# for domain in ~/Library/Preferences/ByHost/com.apple.systemuiserver.*; do
-#     defaults write "${domain}" dontAutoLoad -array \
-#         "/System/Library/CoreServices/Menu Extras/TimeMachine.menu" \
-#         "/System/Library/CoreServices/Menu Extras/Volume.menu" \
-#         "/System/Library/CoreServices/Menu Extras/User.menu"
-# done
-# defaults write com.apple.systemuiserver menuExtras -array \
-#     "/System/Library/CoreServices/Menu Extras/Bluetooth.menu" \
-#     "/System/Library/CoreServices/Menu Extras/AirPort.menu" \
-#     "/System/Library/CoreServices/Menu Extras/Battery.menu" \
-#     "/System/Library/CoreServices/Menu Extras/Clock.menu"
+# Disable transparency in the menu bar and elsewhere on Yosemite
+defaults write com.apple.universalaccess reduceTransparency -bool true
+
+# Menu bar: hide the Time Machine, Volume, and User icons
+for domain in ~/Library/Preferences/ByHost/com.apple.systemuiserver.*; do
+	defaults write "${domain}" dontAutoLoad -array \
+		"/System/Library/CoreServices/Menu Extras/TimeMachine.menu" \
+		"/System/Library/CoreServices/Menu Extras/Volume.menu" \
+		"/System/Library/CoreServices/Menu Extras/User.menu"
+done
+defaults write com.apple.systemuiserver menuExtras -array \
+	"/System/Library/CoreServices/Menu Extras/Bluetooth.menu" \
+	"/System/Library/CoreServices/Menu Extras/AirPort.menu" \
+	"/System/Library/CoreServices/Menu Extras/Battery.menu" \
+	"/System/Library/CoreServices/Menu Extras/Clock.menu"
 
 echo "  * Disable the “Are you sure you want to open this application?” dialog"
 defaults write com.apple.LaunchServices LSQuarantine -bool false
 
+echo "  * Save to disk (not to iCloud) by default"
+defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
 
-# echo " "
-# echo "# SSD SPECIFIC TWEAKS"
-#
-# echo "  * Disable the sudden motion sensor as it’s not useful for SSDs"
-# sudo pmset -a sms 0
+echo "  * Disable the “Are you sure you want to open this application?” dialog"
+defaults write com.apple.LaunchServices LSQuarantine -bool false
+
+echo "  * Reveal IP address, hostname, OS version, etc. when clicking the clock in the login window"
+sudo defaults write /Library/Preferences/com.apple.loginwindow AdminHostInfo HostName
+
+echo "  * Check for software updates daily, not just once per week"
+defaults write com.apple.SoftwareUpdate ScheduleFrequency -int 1
+
+echo " "
+echo "# SSD SPECIFIC TWEAKS"
+
+echo "  * Disable local Time Machine snapshots"
+sudo tmutil disablelocal
+
+echo "  * Disable hibernation (speeds up entering sleep mode)"
+sudo pmset -a hibernatemode 0
+
+echo "  * Disable the sudden motion sensor as it’s not useful for SSDs"
+sudo pmset -a sms 0
 
 
 echo " "
@@ -57,6 +77,24 @@ defaults write 'com.apple.keyboard.modifiermapping.1452-566-0' -array '<dict><ke
 echo "  * Disable the caps lock key on external keyboards"
 defaults write 'com.apple.keyboard.modifiermapping.1452-544-0' -array '<dict><key>HIDKeyboardModifierMappingDst</key><integer>-1</integer><key>HIDKeyboardModifierMappingSrc</key><integer>0</integer></dict>'
 
+echo "  * Automatically illuminate built-in MacBook keyboard in low light"
+defaults write com.apple.BezelServices kDim -bool true
+
+echo "  * Turn off keyboard illumination when computer is not used for 5 minutes"
+defaults write com.apple.BezelServices kDimTime -int 300
+
+
+echo " "
+echo "# SCREEN"
+
+echo "  * Save screenshots to the downloads folder"
+defaults write com.apple.screencapture location ~/Downloads/
+
+echo "  * Save screenshots in PNG format (other options: BMP, GIF, JPG, PDF, TIFF)"
+defaults write com.apple.screencapture type -string "png"
+
+echo "  * Hide all desktop icons because who need 'em'"
+defaults write com.apple.finder CreateDesktop -bool false
 
 echo ""
 echo "# TRACKPAD"
@@ -82,6 +120,9 @@ echo "# FINDER"
 echo "  * Finder: show all filename extensions"
 defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 
+echo "  * Finder: show status bar"
+defaults write com.apple.finder ShowStatusBar -bool true
+
 echo "  * Use list view in all Finder windows by default"
 defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
 
@@ -94,12 +135,21 @@ defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
 echo "  * Allow text selection in the Quick Look window"
 defaults write com.apple.finder QLEnableTextSelection -bool true
 
+echo "  * When performing a search, search the current folder by default"
+defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
+
 
 echo ""
 echo "# DOCK"
 
 echo "  * Set the icon size of Dock items to 36 pixels"
 defaults write com.apple.dock tilesize -int 36
+
+echo " * Dock layout"
+update dock
+
+echo ""
+echo "# SPACES"
 
 echo "  * Don’t automatically rearrange Spaces based on most recent use"
 defaults write com.apple.dock mru-spaces -bool false
@@ -141,41 +191,6 @@ echo "# TERMINAL"
 echo "  * Only use UTF-8 in Terminal.app"
 defaults write com.apple.terminal StringEncodings -array 4
 
-# echo "  * Use Tomorrow Nigth theme by default in Terminal.app"
-# # Use a modified version of the Solarized Dark theme by default in Terminal.app
-# osascript <<EOD
-# tell application "Terminal"
-#     local allOpenedWindows
-#     local initialOpenedWindows
-#     local windowID
-#     set themeName to "Tomorrow Night"
-#     (* Store the IDs of all the open terminal windows. *)
-#     set initialOpenedWindows to id of every window
-#     (* Open the custom theme so that it gets added to the list
-#        of available terminal themes (note: this will open two
-#        additional terminal windows). *)
-#     do shell script "open '$HOME/Repos/dotfiles/.init/" & themeName & ".terminal'"
-#     (* Wait a little bit to ensure that the custom theme is added. *)
-#     delay 1
-#     (* Set the custom theme as the default terminal theme. *)
-#     set default settings to settings set themeName
-#     (* Get the IDs of all the currently opened terminal windows. *)
-#     set allOpenedWindows to id of every window
-#     repeat with windowID in allOpenedWindows
-# 	(* Close the additional windows that were opened in order
-# 	   to add the custom theme to the list of terminal themes. *)
-# 	if initialOpenedWindows does not contain windowID then
-# 	    close (every window whose id is windowID)
-# 	(* Change the theme for the initial opened terminal windows
-# 	   to remove the need to close them in order for the custom
-# 	   theme to be applied. *)
-# 	else
-# 	    set current settings of tabs of (every window whose id is windowID) to settings set themeName
-# 	end if
-#     end repeat
-# end tell
-# EOD
-
 
 echo ""
 echo "# TIME MACHINE"
@@ -186,17 +201,21 @@ defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
 echo "  * Disable local Time Machine backups"
 hash tmutil &> /dev/null && sudo tmutil disablelocal
 
-echo ""
-echo "# DOCK"
-
-echo " * Dock layout"
-update dock
 
 echo ""
 echo "# CHROME"
 
 echo " * Set Google Chrome Canary as default browser"
 open -a "Google Chrome Canary" --args --make-default-browser
+
+
+echo ""
+echo "# OTHER APPS"
+
+echo "  * Enable access for assistive devices"
+echo -n 'a' | sudo tee /private/var/db/.AccessibilityAPIEnabled > /dev/null 2>&1
+sudo chmod 444 /private/var/db/.AccessibilityAPIEnabled
+
 
 echo "# RESTART AFFECTED APPS"
 for app in "Dock" "Finder" "Mail" "Safari"; do
