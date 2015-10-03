@@ -42,10 +42,9 @@ brew install redis
 # sudo chown jakob /data/log
 
 # Node
-brew install nvm
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.28.0/install.sh | bash
 source $(brew --prefix nvm)/nvm.sh
 nvm install 0.10.32
-nvm install iojs
 nvm install stable
 nvm alias default stable
 npm install -g azure-cli generator-gulp-webapp gulp jscs jshint mocha nodemon npm-check-updates yo node-inspector
@@ -66,7 +65,7 @@ brew cask install atom
 brew cask install google-chrome
 brew cask install google-chrome-canary
 brew cask install spotify
-brew cask install github
+brew cask install github-desktop
 brew cask install slate
 brew cask install seil
 brew cask install karabiner
@@ -84,7 +83,7 @@ brew cask install slack
 brew cask install filezilla
 # brew cask install xmarks-safari # Sync bookmarks to safari. Used for Alfred search
 # brew cask install sketchup
-open https://itunes.apple.com/us/app/microsoft-remote-desktop/id715768417
+# open https://itunes.apple.com/us/app/microsoft-remote-desktop/id715768417
 
 # Quick look plugins
 brew cask install qlcolorcode
@@ -93,12 +92,7 @@ brew cask install qlmarkdown
 brew cask install quicklook-json
 brew cask install quicklook-csv
 brew cask install betterzipql
-brew cask install webp-quicklook
-
-# Office
-# echo "Downloading Office 2011"
-# download https://dl.dropboxusercontent.com/u/53998893/programmer/da_no_office_for_mac_home_and_business_2011_mac_4114798.dmg
-# open ~/Downloads/da_no_office_for_mac_home_and_business_2011_mac_4114798.dmg
+brew cask install webpquicklook
 
 # Sync sublime settings
 # sudo ln -s /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl /bin/subl
@@ -120,10 +114,11 @@ brew cask install webp-quicklook
 apm install sync-settings
 
 # Seil settings
+open /Applications/Seil.app
 source ~/Repos/dotfiles/.init/seil-import.sh
 
 # Karabiner settings
-sudo cp -f ~/Repos/dotfiles/.init/private.xml ~/Library/Application\ Support/Karabiner
+sudo cp -f ~/Repos/dotfiles/.init/private.xml /Karabiner
 
 # Azure settings
 azure account import ~/Dropbox/Dokumenter/Licenser/azure.publishsettings

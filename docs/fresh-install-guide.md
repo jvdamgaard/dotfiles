@@ -61,24 +61,19 @@ $ source ~/Repos/dotfiles/.init/osx.sh
 
 Alfred:
 
-1. Open Alfred App
+1. Insert Powerpack license from 1Password
 2. Under _Advanced_ choose _Set sync folder..._ and select `~/Dropbox/dokumenter/alfred-sync`
 
 Atom:
 
-1. Open Atom
-2. Get sync settings from 1password
-3. Restore
+1. Add sync settings from 1password
+2. Restore
 
 ## 9. Download Dash docs
 
 ## 10. Change background images
 
 to `~/Dropbox/dokumenter/Background images`
-
-## 11. Setup Karabiner and slate
-
-TBD
 
 ## 12. Terminal theme
 
