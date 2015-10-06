@@ -56,6 +56,8 @@ function update() {
         echo "Updating node"
         nvm install stable
         nvm alias default stable
+        echo "Installing global modules"
+        npm install -g azure-cli generator-gulp-webapp gulp jscs jshint mocha nodemon npm-check-updates yo node-inspector eslint
     fi
 
     # Update npm packages

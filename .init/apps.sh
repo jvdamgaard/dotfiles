@@ -45,9 +45,7 @@ brew install redis
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.28.0/install.sh | bash
 source $(brew --prefix nvm)/nvm.sh
 nvm install 0.10.32
-nvm install stable
-nvm alias default stable
-npm install -g azure-cli generator-gulp-webapp gulp jscs jshint mocha nodemon npm-check-updates yo node-inspector
+update node
 
 # Install caskroom
 brew install caskroom/cask/brew-cask
