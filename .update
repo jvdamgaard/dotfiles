@@ -54,9 +54,10 @@ function update() {
     # Update node
     if [ ${t} == "node" ] || [ ${t} == "all" ]; then
         echo "Updating node"
-        nvm uninstall stable
+        local PREV_NODE_VERSION=`node -v`
         nvm install stable
         nvm alias default stable
+        nvm uninstall $PREV_NODE_VERSION
     fi
 
     # Update npm packages

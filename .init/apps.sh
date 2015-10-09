@@ -42,10 +42,12 @@ brew install redis
 # sudo chown jakob /data/log
 
 # Node
-curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.28.0/install.sh | bash
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.29.0/install.sh | bash
 source ~/.nvm/nvm.sh
 nvm install 0.10.32
-update node
+nvm install stable
+nvm alias default stable
+update npm
 
 # Install caskroom
 brew install caskroom/cask/brew-cask
@@ -108,15 +110,20 @@ brew cask install webpquicklook
 #     ln -s ~/Repos/st3-sync ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User
 # )
 
+# Karabiner settings
+sudo cp -f ~/Repos/dotfiles/.init/private.xml ~/Library/Application\ Support/Karabiner/
+
 # Sync atom settings
 apm install sync-settings
 
 # Seil settings
 open /Applications/Seil.app
-source ~/Repos/dotfiles/.init/seil-import.sh
+open /Applications/Karabiner.app
 
-# Karabiner settings
-sudo cp -f ~/Repos/dotfiles/.init/private.xml /Karabiner
+open /Applications/Slack.app
+open /Applications/Atom.app
+
+source ~/Repos/dotfiles/.init/seil-import.sh
 
 # Azure settings
 azure account import ~/Dropbox/Dokumenter/Licenser/azure.publishsettings
