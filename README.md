@@ -2,16 +2,7 @@
 
 ## Fresh install
 
-[Fresh install guide](fresh-install-guide.md)
-
-```bash
-$ git clone https://github.com/jvdamgaard/dotfiles.git ~/Repos/dotfiles
-$ source ~/Repos/dotfiles/bootstrap.sh --force
-$ exec $SHELL -l
-$ source ~/.init/start.sh
-```
-
-Then restart computer.
+[Fresh install guide](https://github.com/jvdamgaard/dotfiles/blob/master/docs/fresh-install-guide.md)
 
 ## Keep computer up to date
 

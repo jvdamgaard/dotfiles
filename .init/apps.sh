@@ -11,8 +11,8 @@ brew update
 brew upgrade
 
 # SASS
-gem install sass
-gem install scss-lint
+sudo gem install sass
+sudo gem install scss-lint
 
 # Core
 brew install coreutils
@@ -43,7 +43,7 @@ brew install redis
 
 # Node
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.28.0/install.sh | bash
-source $(brew --prefix nvm)/nvm.sh
+source ~/.nvm/nvm.sh
 nvm install 0.10.32
 update node
 
@@ -74,7 +74,7 @@ brew cask install hipchat
 # brew cask install lync
 # brew cask install skype
 brew cask install utorrent && open /opt/homebrew-cask/Caskroom/utorrent/latest/uTorrent.app
-brew cask install firefoxs
+brew cask install firefox
 brew cask install vlc
 brew cask install slack
 # brew cask install fontprep

@@ -57,15 +57,18 @@ function update() {
         nvm uninstall stable
         nvm install stable
         nvm alias default stable
-        echo "Installing global modules"
-        npm install -g azure-cli generator-gulp-webapp gulp jscs jshint mocha nodemon npm-check-updates yo node-inspector eslint
     fi
 
     # Update npm packages
-    if [ ${t} == "npm" ] || [ ${t} == "all" ]; then
+    if [ ${t} == "npm" ] || [ ${t} == "node" ] || [ ${t} == "all" ]; then
+
         echo "Updating npm"
         npm update npm -g
-        echo "Updating all global npm packages"
+
+        echo "Installing global modules"
+        npm install -g azure-cli generator-gulp-webapp gulp jscs jshint mocha nodemon npm-check-updates yo node-inspector eslint
+
+        echo "Updating global npm modules"
         npm update -g
     fi
 
