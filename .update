@@ -54,6 +54,7 @@ function update() {
     # Update node
     if [ ${t} == "node" ] || [ ${t} == "all" ]; then
         echo "Updating node"
+        nvm uninstall stable
         nvm install stable
         nvm alias default stable
         echo "Installing global modules"
@@ -61,7 +62,7 @@ function update() {
     fi
 
     # Update npm packages
-    if [ ${t} == "npm" ] || [ ${t} == "node" ] || [ ${t} == "all" ]; then
+    if [ ${t} == "npm" ] || [ ${t} == "all" ]; then
         echo "Updating npm"
         npm update npm -g
         echo "Updating all global npm packages"
