@@ -80,6 +80,12 @@ function downloadAndOpen() {
     )
 }
 
+# Download website with all assets
+function downloadWebsite() {
+    wget -E -H -k -K -p -k $1
+}
+
+
 #Add spacer to dock
 function dockSpacer() {
     defaults write com.apple.dock persistent-apps -array-add '{tile-data={}; tile-type="spacer-tile";}'

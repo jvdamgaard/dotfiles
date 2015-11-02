@@ -29,6 +29,7 @@ brew install bash
 # brew install graphicsmagick
 # brew install siege
 brew install dockutil
+brew install unsplash-walpaper
 brew install redis
 # brew install go
 # brew install pandoc # Beautify markdown

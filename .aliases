@@ -53,6 +53,8 @@ alias hidedesktop="defaults write com.apple.finder CreateDesktop -bool false && 
 alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
 
 # Apps
+alias cask="brew cask"
+
 alias g="gulp"
 
 # Gulp shortcodes
