@@ -29,7 +29,6 @@ brew install bash
 # brew install graphicsmagick
 # brew install siege
 brew install dockutil
-brew install unsplash-walpaper
 brew install redis
 # brew install go
 # brew install pandoc # Beautify markdown
@@ -59,6 +58,7 @@ brew cask install dropbox && open "/Applications/Dropbox.app" # Sign in
 brew cask install 1password
 # brew cask install xquartz
 # brew cask install adobe-creative-cloud
+brew cask install axure-rp-pro
 brew cask install sketch
 brew cask install sketch-toolbox
 brew cask install sublime-text3
@@ -74,6 +74,7 @@ brew cask install alfred
 brew cask install dash
 brew cask install cheatsheet
 brew cask install hipchat
+brew cask install unsplash-wallpaper
 # brew cask install lync
 # brew cask install skype
 brew cask install utorrent && open /opt/homebrew-cask/Caskroom/utorrent/latest/uTorrent.app
