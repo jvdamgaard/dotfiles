@@ -104,7 +104,7 @@ function update() {
         dockutil --add "/Applications/HipChat.app" --no-restart
         dockSpacer
         dockutil --add "/Applications/GitHub Desktop.app" --no-restart
-        dockutil --add "/Applications/Atom.app" --no-restart
+        dockutil --add "/Applications/Sublime Text.app" --no-restart
         dockSpacer
         dockutil --add "/Applications/Sketch.app" --no-restart
         dockutil --add "/Applications/Flinto.app" --no-restart

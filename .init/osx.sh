@@ -13,6 +13,9 @@ echo "# GENERAL UI/UX"
 echo "  * Disable the sound effects on boot"
 sudo nvram SystemAudioVolume=" "
 
+echo "  * Disable screensaver on login screen"
+sudo defaults write /Library/Preferences/com.apple.screensaver loginWindowIdleTime 0
+
 echo "  * mute all sounds, incl volume change feedback"
 defaults write "com.apple.sound.beep.feedback" -int 0
 defaults write com.apple.systemsound 'com.apple.sound.beep.volume' -float 0
