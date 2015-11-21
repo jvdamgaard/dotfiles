@@ -67,10 +67,7 @@ function update() {
         npm update npm -g
 
         echo "Installing global modules"
-        npm install -g azure-cli generator-gulp-webapp gulp jscs jshint mocha nodemon npm-check-updates yo node-inspector eslint
-
-        echo "Updating global npm modules"
-        npm update -g
+        npm install -g eslint gulp jscs jshint nodemon npm-check yo node-inspector
     fi
 
     # Update dot files
