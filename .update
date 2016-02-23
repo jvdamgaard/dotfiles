@@ -95,10 +95,12 @@ function update() {
         dockutil --add "/Applications/Google Chrome Canary.app" --no-restart
         dockSpacer
         dockutil --add "/Applications/Mail.app" --no-restart
+        dockutil --add "/Applications/Microsoft Outlook.app" --no-restart
         dockutil --add "/Applications/Calendar.app" --no-restart
         dockutil --add "/Applications/Notes.app" --no-restart
+        dockSpacer
         dockutil --add "/Applications/Messages.app" --no-restart
-        dockutil --add "/Applications/HipChat.app" --no-restart
+        dockutil --add "/Applications/Slack.app" --no-restart
         dockSpacer
         dockutil --add "/Applications/GitHub Desktop.app" --no-restart
         dockutil --add "/Applications/Sublime Text.app" --no-restart

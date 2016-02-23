@@ -18,6 +18,7 @@ sudo gem install scss-lint
 brew install coreutils
 brew install findutils
 brew install bash
+brew install homebrew/science/vips
 # brew install lftp
 
 # Install wget with IRI support
