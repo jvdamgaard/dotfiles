@@ -68,7 +68,7 @@ brew cask install google-chrome
 brew cask install google-chrome-canary
 brew cask install spotify
 brew cask install github-desktop
-brew cask install slate
+brew cask install mattr-slate
 brew cask install seil
 brew cask install karabiner
 brew cask install alfred

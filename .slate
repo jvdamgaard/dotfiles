@@ -8,16 +8,17 @@ config focusCheckWidthMax 3000
 config windowHintsShowIcons true
 config windowHintsIgnoreHiddenWindows false
 config windowHintsSpread true
-config windowHintsBackgroundColor "0;0;0;0.6"
-config windowHintsFontColor "0;255;0;1.0"
+config windowHintsBackgroundColor "0;0;0;0.5"
+config windowHintsFontColor "0;0;0;1.0"
 config windowHintsFontSize 60
-config windowHintsHeight 100
-config windowHintsWidth 100
 config windowHintsDuration 5
-config windowHintsRoundedCornerSize 20
-config windowHintsSpreadPadding 10
+config windowHintsSpreadPadding 20
+config windowHintsOrder "persist"
+config windowHintsSpreadSearchWidth 500
+config windowHintsSpreadSearchHeight 100
 config windowHintsTopLeftY 100
-# config windowHintsOrder persist
+config windowHintsTopLeftX 200
+config windowHintsRoundedCornerSize 20
 
 # Set snapshots on start
 default 1monitor count:1
