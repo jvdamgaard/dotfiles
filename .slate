@@ -31,7 +31,7 @@ alias hyper ctrl;shift;alt;cmd
 
 # App Aliases
 alias browser 'Google Chrome'
-alias editor  'Atom'
+alias editor  'Sublime Text'
 
 # Abstract positions
 alias full          move screenOriginX;screenOriginY                  screenSizeX;screenSizeY
@@ -42,8 +42,7 @@ alias rightless     move screenOriginX+screenSizeX*0.6;screenOriginY  screenSize
 alias leftmost      move screenOriginX;screenOriginY                  screenSizeX*0.6;screenSizeY
 alias leftless      move screenOriginX;screenOriginY                  screenSizeX*0.4;screenSizeY
 
-# Numpad location Bindings
-bind pad0 ${showNormalHint}
+# Numpad location Bindings (resize windows)
 bind pad1 ${leftless}
 bind pad2 push bottom bar-resize:screenSizeY/2
 bind pad3 ${rightless}
@@ -54,7 +53,7 @@ bind pad7 ${leftmost}
 bind pad8 push top bar-resize:screenSizeY/2
 bind pad9 ${rightmost}
 
-# Non-numpad keyborads
+# Non-numpad keyboards
 bind j:${hyper} ${leftless}
 bind k:${hyper} push bottom bar-resize:screenSizeY/2
 bind l:${hyper} ${rightless}
@@ -77,6 +76,7 @@ bind 6:${hyper} snapshot 3monitors save-to-disk
 
 # Hints
 bind e:cmd  ${showNormalHint}
+bind pad0   ${showNormalHint}
 
 # Quick terminal
 bind space:ctrl focus 'Terminal'
@@ -98,8 +98,8 @@ bind g:${hyper} focus 'GitHub'
 bind d:${hyper} focus 'GitHub'
 bind m:${hyper} focus 'Mail'
 bind q:${hyper} focus 'Mail'
-bind h:${hyper} focus 'HipChat'
-bind r:${hyper} focus 'HipChat'
+bind h:${hyper} focus 'Slack'
+bind r:${hyper} focus 'Slack'
 bind c:${hyper} focus 'Calendar'
 bind t:${hyper} focus 'Terminal'
 bind f:${hyper} focus 'Finder'

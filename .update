@@ -2,7 +2,7 @@
 function update() {
     local t="${1:-help}"
 
-    # Update home brew
+    # Help
     if [ ${t} == "help" ]; then
         echo " "
         echo "------------------------------------------------------------------"
@@ -16,7 +16,6 @@ function update() {
         echo " - node            : update node and all global npm's"
         echo " - npm             : update all global node packages"
         echo " - ruby            : update ruby and gems"
-        echo " - sublime         : update Sublime Text settings"
         echo " - system          : update Os X software"
         echo "------------------------------------------------------------------"
         echo " "
@@ -62,27 +61,14 @@ function update() {
 
     # Update npm packages
     if [ ${t} == "npm" ] || [ ${t} == "node" ] || [ ${t} == "all" ]; then
-
-        echo "Updating npm"
-        npm update npm -g
-
         echo "Installing global modules"
-        npm install -g eslint eslint-plugin-react eslint-config-airbnb nodemon yo node-inspector esformatter esformatter-jsx webpack
+        npm install -g eslint eslint-plugin-react eslint-config-airbnb nodemon yo node-inspector gulp webpack
     fi
 
     # Update dot files
     if [ ${t} == "dot" ] || [ ${t} == "dotfiles" ] || [ ${t} == "all" ]; then
         echo "Updating dot files"
         source ~/Repos/dotfiles/bootstrap.sh --force
-    fi
-
-    # Update sublime settings
-    if [ ${t} == "sublime" ] || [ ${t} == "all" ]; then
-        echo "Updating Sublime Text settings"
-        (
-            cd ~/Repos/st3-sync
-            git pull
-        )
     fi
 
     # Update dock layout
@@ -107,6 +93,7 @@ function update() {
         dockSpacer
         dockutil --add "/Applications/Sketch.app" --no-restart
         dockutil --add "/Applications/Flinto.app" --no-restart
+        dockutil --add "/Applications/Zeplin.app" --no-restart
         dockSpacer
         dockutil --add "/Applications/Spotify.app" --no-restart
         dockSpacer

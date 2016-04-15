@@ -54,22 +54,9 @@ alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && k
 
 # Apps
 alias cask="brew cask"
-
 alias g="gulp"
 
-# Gulp shortcodes
-alias gw="gulp watch"
-alias gs="gulp serve"
-alias gb="gulp build"
-alias gt="gulp test"
-alias tst="gulp test"
-alias tdd="gulp tdd"
 alias npm-refresh="rm -rf node_modules && npm install"
-alias stg="npm run styleguide"
 
 # Reload the shell (i.e. invoke as a login shell)
 alias reload="exec $SHELL -l"
-
-# VM shortcuts
-alias vm-start="azure vm start itsjvd"
-alias vm-stop="azure vm shutdown itsjvd"

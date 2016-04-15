@@ -45,7 +45,6 @@ brew install redis
 # Node
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.29.0/install.sh | bash
 source ~/.nvm/nvm.sh
-nvm install 0.10.32
 nvm install stable
 nvm alias default stable
 update npm
@@ -59,11 +58,11 @@ brew cask install dropbox && open "/Applications/Dropbox.app" # Sign in
 brew cask install 1password
 # brew cask install xquartz
 # brew cask install adobe-creative-cloud
-brew cask install axure-rp-pro
+# brew cask install axure-rp-pro
 brew cask install sketch
 brew cask install sketch-toolbox
 brew cask install sublime-text3
-brew cask install atom
+# brew cask install atom
 brew cask install google-chrome
 brew cask install google-chrome-canary
 brew cask install spotify
@@ -74,7 +73,7 @@ brew cask install karabiner
 brew cask install alfred
 brew cask install dash
 brew cask install cheatsheet
-brew cask install hipchat
+# brew cask install hipchat
 brew cask install unsplash-wallpaper
 # brew cask install lync
 # brew cask install skype
@@ -83,7 +82,7 @@ brew cask install firefox
 brew cask install vlc
 brew cask install slack
 # brew cask install fontprep
-brew cask install filezilla
+# brew cask install filezilla
 # brew cask install xmarks-safari # Sync bookmarks to safari. Used for Alfred search
 # brew cask install sketchup
 # open https://itunes.apple.com/us/app/microsoft-remote-desktop/id715768417
@@ -117,19 +116,19 @@ brew cask install webpquicklook
 sudo cp -f ~/Repos/dotfiles/.init/private.xml ~/Library/Application\ Support/Karabiner/
 
 # Sync atom settings
-apm install sync-settings
+# apm install sync-settings
 
 # Seil settings
 open /Applications/Seil.app
 open /Applications/Karabiner.app
 
 open /Applications/Slack.app
-open /Applications/Atom.app
+# open /Applications/Atom.app
 
 source ~/Repos/dotfiles/.init/seil-import.sh
 
 # Azure settings
-azure account import ~/Dropbox/Dokumenter/Licenser/azure.publishsettings
+# azure account import ~/Dropbox/Dokumenter/Licenser/azure.publishsettings
 
 # Remove outdated versions from the cellar
 brew cleanup

@@ -35,23 +35,6 @@ function gz() {
     printf "gzip: %d bytes (%2.2f%%)\n" "$gzipsize" "$ratio"
 }
 
-# Install Gulp plugins and add them as `devDependencies` to `package.json`
-# Usage: `gi contrib-watch contrib-uglify zopfli`
-function gi() {
-    local IFS=,
-    eval npm install --save-dev gulp-"$*"
-}
-
-# `a` with no arguments opens the current directory in Atom, otherwise
-# opens the given location
-function a() {
-    if [ $# -eq 0 ]; then
-        atom .
-    else
-        atom "$@"
-    fi
-}
-
 # `s` with no arguments opens the current directory in Sublime Text, otherwise
 # opens the given location
 function s() {
@@ -80,7 +63,7 @@ function download() {
     )
 }
 
-# Download file
+# Download file and open it
 function downloadAndOpen() {
     (
         cd ~/Downloads/
@@ -99,22 +82,4 @@ function downloadWebsite() {
 #Add spacer to dock
 function dockSpacer() {
     defaults write com.apple.dock persistent-apps -array-add '{tile-data={}; tile-type="spacer-tile";}'
-}
-
-# Simple calculator
-function calc() {
-    local result=""
-    result="$(printf "scale=10;$*\n" | bc --mathlib | tr -d '\\\n')"
-    #                       └─ default (when `--mathlib` is used) is 20
-    #
-    if [[ "$result" == *.* ]]; then
-        # improve the output for decimal numbers
-        printf "$result" |
-        sed -e 's/^\./0./'        `# add "0" for cases like ".5"` \
-            -e 's/^-\./-0./'      `# add "0" for cases like "-.5"`\
-            -e 's/0*$//;s/\.$//'   # remove trailing zeros
-    else
-        printf "$result"
-    fi
-    printf "\n"
 }

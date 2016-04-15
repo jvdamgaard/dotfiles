@@ -24,9 +24,6 @@ defaults write "com.apple.systemsound" "com.apple.sound.uiaudio.enabled" -int 0
 echo "  * Set standby delay to 24 hours (default is 1 hour)"
 sudo pmset -a standbydelay 86400
 
-# echo "  * Disable transparency in the menu bar and elsewhere on Yosemite"
-# defaults write com.apple.universalaccess reduceTransparency -bool true
-
 # Disable transparency in the menu bar and elsewhere on Yosemite
 defaults write com.apple.universalaccess reduceTransparency -bool true
 
@@ -48,9 +45,6 @@ defaults write com.apple.LaunchServices LSQuarantine -bool false
 
 echo "  * Save to disk (not to iCloud) by default"
 defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
-
-echo "  * Disable the “Are you sure you want to open this application?” dialog"
-defaults write com.apple.LaunchServices LSQuarantine -bool false
 
 echo "  * Reveal IP address, hostname, OS version, etc. when clicking the clock in the login window"
 sudo defaults write /Library/Preferences/com.apple.loginwindow AdminHostInfo HostName
