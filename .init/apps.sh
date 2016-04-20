@@ -43,10 +43,10 @@ brew install redis
 # sudo chown jakob /data/log
 
 # Node
-curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.29.0/install.sh | bash
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.0/install.sh | bash
 source ~/.nvm/nvm.sh
-nvm install stable
-nvm alias default stable
+nvm install 4
+nvm alias default 4
 update npm
 
 # Install caskroom
@@ -55,12 +55,15 @@ brew tap caskroom/versions
 
 # Casks
 brew cask install dropbox && open "/Applications/Dropbox.app" # Sign in
-brew cask install 1password
+brew cask install 1password && open "/Applications/1password 5.app"
+open "https://support.office.com/en-us/article/Download-and-install-or-reinstall-Office-2016-for-Mac-299c3f95-3551-4e60-a9cf-7380457d8e37"
 # brew cask install xquartz
 # brew cask install adobe-creative-cloud
 # brew cask install axure-rp-pro
 brew cask install sketch
 brew cask install sketch-toolbox
+brew cask install zeplin
+open "https://www.flinto.com/mac/download"
 brew cask install sublime-text3
 # brew cask install atom
 brew cask install google-chrome
@@ -74,10 +77,11 @@ brew cask install alfred
 brew cask install dash
 brew cask install cheatsheet
 # brew cask install hipchat
-brew cask install unsplash-wallpaper
+# brew cask install unsplash-wallpaper
+https://itunes.apple.com/us/app/irvue-unsplash-wallpapers/id1039633667?mt=12
 # brew cask install lync
 # brew cask install skype
-brew cask install utorrent && open /opt/homebrew-cask/Caskroom/utorrent/latest/uTorrent.app
+brew cask install utorrent
 brew cask install firefox
 brew cask install vlc
 brew cask install slack
