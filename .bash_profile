@@ -32,4 +32,4 @@ done
 source ~/.bash/z.sh
 
 # Load nvm
-source ~/.nvm/nvm.sh
+source $(brew --prefix nvm)/nvm.sh
