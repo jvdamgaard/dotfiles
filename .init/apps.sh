@@ -10,18 +10,18 @@ brew cask install 1password && open "/Applications/1Password 6.app"
 # brew cask install xquartz
 # brew cask install adobe-creative-cloud
 # brew cask install axure-rp-pro
-brew cask install sketch && open "/Applications/Sketch.app"
-brew cask install sketch-toolbox && open "/Applications/Sketch Toolbox.app"
+brew cask install sketch
+brew cask install sketch-toolbox
 brew cask install zeplin
 brew cask install sublime-text3
 # brew cask install atom
-brew cask install google-chrome && open "/Applications/Google Chrome.app"
-brew cask install google-chrome-canary && open "/Applications/Google Chrome Canary.app"
+brew cask install google-chrome
+brew cask install google-chrome-canary
 brew cask install spotify
 brew cask install github-desktop
-brew cask install mattr-slate && open "/Applications/Slate.app"
-brew cask install seil && open "/Applications/Seil.app"
-brew cask install karabiner && open "/Applications/Karabiner.app"
+brew cask install mattr-slate
+brew cask install seil
+brew cask install karabiner
 brew cask install alfred
 brew cask install dash
 brew cask install cheatsheet
@@ -32,7 +32,7 @@ brew cask install cheatsheet
 brew cask install utorrent
 brew cask install firefox
 brew cask install vlc
-brew cask install slack && open "/Applications/Slack.app"
+brew cask install slack
 # brew cask install fontprep
 # brew cask install filezilla
 # brew cask install xmarks-safari # Sync bookmarks to safari. Used for Alfred search
