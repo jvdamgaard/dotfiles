@@ -61,8 +61,11 @@ function update() {
 
     # Update npm packages
     if [ ${t} == "npm" ] || [ ${t} == "node" ] || [ ${t} == "all" ]; then
+        echo "Updating NPM"
+        npm i -g npm
+
         echo "Installing global modules"
-        npm install -g eslint eslint-plugin-react eslint-plugin-jsx-a11y eslint-config-airbnb nodemon yo node-inspector gulp webpack
+        npm install -g eslint-config-airbnb eslint-plugin-import eslint-plugin-react eslint-plugin-jsx-a11y eslint nodemon yo node-inspector gulp webpack
     fi
 
     # Update dot files
