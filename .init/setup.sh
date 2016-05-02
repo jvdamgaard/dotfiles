@@ -12,5 +12,8 @@ source ~/Repos/dotfiles/.init/seil-import.sh
 # Azure settings
 # azure account import ~/Dropbox/Dokumenter/Licenser/azure.publishsettings
 
+# Install global npm packages
+update npm
+
 # Remove outdated versions from the cellar
 brew cleanup
