@@ -68,6 +68,14 @@ Alfred:
 1. Insert Powerpack license from 1Password
 2. Under _Advanced_ choose _Set sync folder..._ and select `~/Dropbox/dokumenter/alfred-sync`
 
+Sublime Text:
+
+1. [Install Package Control](https://packagecontrol.io/installation)
+2. Open Package Control and download Sync Settings
+3. Open Sync Settings on "Sublime Text" > "Preferences" > "Package Settings" > "Sync Settings" > "Settings - User"
+4. Copy/paste settings from 1Password
+5. Restart Sublime Text a couple of times :-)
+
 ## 12. Download Dash docs
 
 - Chai
