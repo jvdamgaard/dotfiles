@@ -39,7 +39,7 @@ function gz() {
 # opens the given location
 function s() {
     if [ $# -eq 0 ]; then
-        subl .
+        subl . --add
     else
         subl "$@"
     fi
