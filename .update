@@ -65,7 +65,7 @@ function update() {
         npm install -g npm
 
         echo "Installing global modules"
-        npm install -g eslint-config-airbnb eslint-plugin-import eslint-plugin-react eslint-plugin-jsx-a11y eslint nodemon yo node-inspector stylelint-config-standard gulp webpack
+        npm install -g eslint-config-airbnb eslint-plugin-import eslint-plugin-react eslint-plugin-jsx-a11y eslint nodemon yo node-inspector stylelint-config-standard gulp webpack updtr
     fi
 
     # Update dot files
