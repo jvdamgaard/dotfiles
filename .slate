@@ -27,7 +27,7 @@ default 3monitors count:3
 
 # Misc Aliases
 alias showNormalHint hint ASDFQWERZXCVTYUIGHJKBNM
-alias hyper ctrl;shift;alt;cmd
+alias hyper ctrl;alt;cmd
 
 # App Aliases
 alias browser 'Google Chrome'

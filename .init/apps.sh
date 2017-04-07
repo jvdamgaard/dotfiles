@@ -13,15 +13,15 @@ brew cask install 1password && open "/Applications/1Password 6.app"
 brew cask install sketch
 brew cask install sketch-toolbox
 brew cask install zeplin
-brew cask install sublime-text3
+brew cask install sublime-text
 # brew cask install atom
 brew cask install google-chrome
 brew cask install google-chrome-canary
 brew cask install spotify
 brew cask install github-desktop
 brew cask install mattr-slate
-brew cask install seil
-brew cask install karabiner
+# brew cask install seil
+# brew cask install karabiner
 brew cask install alfred
 brew cask install dash
 brew cask install cheatsheet
@@ -29,9 +29,9 @@ brew cask install cheatsheet
 # brew cask install unsplash-wallpaper
 # brew cask install lync
 # brew cask install skype
-brew cask install utorrent
-brew cask install firefox
-brew cask install vlc
+# brew cask install utorrent
+# brew cask install firefox
+# brew cask install vlc
 brew cask install slack
 # brew cask install fontprep
 # brew cask install filezilla
@@ -41,4 +41,4 @@ brew cask install slack
 
 open "https://support.office.com/en-us/article/Download-and-install-or-reinstall-Office-2016-for-Mac-299c3f95-3551-4e60-a9cf-7380457d8e37"
 open "https://itunes.apple.com/us/app/irvue-unsplash-wallpapers/id1039633667?mt=12"
-open "https://www.flinto.com/mac/download"
+# open "https://www.flinto.com/mac/download"

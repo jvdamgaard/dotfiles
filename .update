@@ -54,8 +54,8 @@ function update() {
     if [ ${t} == "node" ] || [ ${t} == "all" ]; then
         echo "Updating node"
         local PREV_NODE_VERSION=`node -v`
-        nvm install stable
-        nvm alias default stable
+        nvm install node
+        nvm alias default node
         nvm uninstall $PREV_NODE_VERSION
     fi
 
@@ -65,7 +65,16 @@ function update() {
         npm install -g npm
 
         echo "Installing global modules"
-        npm install -g eslint-config-airbnb eslint-plugin-import eslint-plugin-react eslint-plugin-jsx-a11y eslint nodemon yo node-inspector stylelint-config-standard gulp webpack updtr
+        npm install -g eslint
+        npm install -g eslint-plugin-import
+        npm install -g eslint-plugin-react
+        npm install -g eslint-plugin-jsx-a11y
+        npm install -g eslint-config-airbnb
+        npm install -g nodemon
+        npm install -g yo
+        npm install -g node-inspector
+        npm install -g stylelint
+        npm install -g stylelint-config-standard
     fi
 
     # Update dot files
@@ -81,10 +90,10 @@ function update() {
         dockutil --remove all --no-restart
         dockutil --add "/Applications/Utilities/Terminal.app" --no-restart
         dockSpacer
+        dockutil --add "/Applications/Google Chrome.app" --no-restart
         dockutil --add "/Applications/Google Chrome Canary.app" --no-restart
         dockSpacer
         dockutil --add "/Applications/Mail.app" --no-restart
-        dockutil --add "/Applications/Microsoft Outlook.app" --no-restart
         dockutil --add "/Applications/Calendar.app" --no-restart
         dockutil --add "/Applications/Notes.app" --no-restart
         dockSpacer
@@ -95,7 +104,6 @@ function update() {
         dockutil --add "/Applications/Sublime Text.app" --no-restart
         dockSpacer
         dockutil --add "/Applications/Sketch.app" --no-restart
-        dockutil --add "/Applications/Flinto.app" --no-restart
         dockutil --add "/Applications/Zeplin.app" --no-restart
         dockSpacer
         dockutil --add "/Applications/Spotify.app" --no-restart

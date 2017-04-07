@@ -14,18 +14,18 @@ brew upgrade
 brew install nvm
 mkdir ~/.nvm
 source $(brew --prefix nvm)/nvm.sh
-nvm install 4
-nvm alias default 4
+nvm install node
+nvm alias default node
 
 # SASS
-sudo gem install sass
-sudo gem install scss-lint
+# sudo gem install sass
+# sudo gem install scss-lint
 
 # Core
 brew install coreutils
 brew install findutils
 brew install bash
-brew install homebrew/science/vips
+# brew install homebrew/science/vips
 # brew install lftp
 
 # Install wget with IRI support

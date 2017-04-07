@@ -40,24 +40,13 @@ $ source ~/Repos/dotfiles/.init/utils.sh
 $ source ~/Repos/dotfiles/.init/apps.sh
 ```
 
-## 8. Initial setups
-
-```bash
-$ source ~/Repos/dotfiles/.init/setup.sh
-```
-
 ## 9. Update osx settings
 
 ```bash
 $ source ~/Repos/dotfiles/.init/osx.sh
 ```
 
-## 10. Activate hyper key
-
-1. Go to the System Preferences Keyboard pane and press the “Modifier Keys…” button and set Caps Lock to No Action.
-2. Open Karabiner and activate "Remap Caps Lock to Hyper"
-
-## 11. Sync settings
+## 10. Sync settings
 
 1password:
 
@@ -76,22 +65,8 @@ Sublime Text:
 4. Copy/paste settings from 1Password
 5. Restart Sublime Text a couple of times :-)
 
-## 12. Download Dash docs
+## 11. Download Dash docs
 
-- Chai
-- CSS
-- Express
-- HTML
-- JavaScript
-- Lo-Dash
-- Markdown
-- MomentJS
-- NodeJS
-- React
-- Redis
-- SASS
-- Sinon
-
-## 13. Terminal theme
+## 12. Terminal theme
 
 Use `~/Repos/dotfiles/.init/MaterialDark.terminal` as default theme
