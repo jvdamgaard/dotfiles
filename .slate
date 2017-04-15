@@ -75,7 +75,6 @@ bind 5:${hyper} snapshot 2monitors save-to-disk
 bind 6:${hyper} snapshot 3monitors save-to-disk
 
 # Hints
-bind e:cmd  ${showNormalHint}
 bind pad0   ${showNormalHint}
 
 # Quick terminal

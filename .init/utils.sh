@@ -17,6 +17,8 @@ source $(brew --prefix nvm)/nvm.sh
 nvm install node
 nvm alias default node
 
+brew install yarn
+
 # SASS
 # sudo gem install sass
 # sudo gem install scss-lint

@@ -56,6 +56,3 @@ alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && k
 alias cask="brew cask"
 
 alias npm-refresh="rm -rf node_modules && npm install"
-
-# Reload the shell (i.e. invoke as a login shell)
-alias reload="exec $SHELL -l"
