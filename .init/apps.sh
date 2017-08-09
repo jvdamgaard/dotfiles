@@ -30,6 +30,7 @@ brew cask install cheatsheet
 # brew cask install lync
 # brew cask install skype
 # brew cask install utorrent
+brew cask install tunnelbear
 # brew cask install firefox
 # brew cask install vlc
 brew cask install slack
@@ -39,6 +40,6 @@ brew cask install slack
 # brew cask install sketchup
 # open https://itunes.apple.com/us/app/microsoft-remote-desktop/id715768417
 
-open "https://support.office.com/en-us/article/Download-and-install-or-reinstall-Office-2016-for-Mac-299c3f95-3551-4e60-a9cf-7380457d8e37"
+open "https://portal.office.com/OLS/MySoftware.aspx"
 open "https://itunes.apple.com/us/app/irvue-unsplash-wallpapers/id1039633667?mt=12"
 # open "https://www.flinto.com/mac/download"
