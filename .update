@@ -91,7 +91,7 @@ function update() {
         dockutil --add "/Applications/Utilities/Terminal.app" --no-restart
         dockSpacer
         dockutil --add "/Applications/Google Chrome.app" --no-restart
-        dockutil --add "/Applications/Google Chrome Canary.app" --no-restart
+        # dockutil --add "/Applications/Google Chrome Canary.app" --no-restart
         dockSpacer
         dockutil --add "/Applications/Mail.app" --no-restart
         dockutil --add "/Applications/Calendar.app" --no-restart
@@ -105,6 +105,7 @@ function update() {
         dockSpacer
         dockutil --add "/Applications/Sketch.app" --no-restart
         dockutil --add "/Applications/Zeplin.app" --no-restart
+        dockutil --add "/Applications/Abstract.app" --no-restart
         dockSpacer
         dockutil --add "/Applications/Spotify.app" --no-restart
         dockSpacer

@@ -11,12 +11,12 @@ brew cask install 1password && open "/Applications/1Password 6.app"
 # brew cask install adobe-creative-cloud
 # brew cask install axure-rp-pro
 brew cask install sketch
-brew cask install sketch-toolbox
+# brew cask install sketch-toolbox
 brew cask install zeplin
 brew cask install sublime-text
 # brew cask install atom
 brew cask install google-chrome
-brew cask install google-chrome-canary
+# brew cask install google-chrome-canary
 brew cask install spotify
 brew cask install github-desktop
 brew cask install mattr-slate
@@ -37,7 +37,7 @@ brew cask install slack
 # brew cask install fontprep
 # brew cask install filezilla
 # brew cask install xmarks-safari # Sync bookmarks to safari. Used for Alfred search
-# brew cask install sketchup
+brew cask install sketchup
 # open https://itunes.apple.com/us/app/microsoft-remote-desktop/id715768417
 
 open "https://portal.office.com/OLS/MySoftware.aspx"
