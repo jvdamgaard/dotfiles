@@ -14,6 +14,7 @@ brew cask install sketch
 # brew cask install sketch-toolbox
 brew cask install zeplin
 brew cask install sublime-text
+brew cask install visual-studio-code
 # brew cask install atom
 brew cask install google-chrome
 # brew cask install google-chrome-canary
