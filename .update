@@ -67,10 +67,7 @@ function update() {
         echo "Installing global modules"
         npm install -g eslint
         npm install -g eslint-plugin-import
-        npm install -g eslint-plugin-react
-        npm install -g eslint-plugin-jsx-a11y
-        npm install -g eslint-config-airbnb
-        npm install -g nodemon
+        npm install -g eslint-config-airbnb-base
         npm install -g yo
         npm install -g node-inspector
         npm install -g stylelint

@@ -55,4 +55,6 @@ alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && k
 # Apps
 alias cask="brew cask"
 
-alias npm-refresh="rm -rf node_modules && npm install"
+alias npm-refresh="rm -rf node_modules && rm package-lock.json && npm install"
+
+alias chrome-no-cors="open -a Google\ Chrome --args --disable-web-security --user-data-dir"
