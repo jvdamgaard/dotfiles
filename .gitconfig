@@ -92,9 +92,6 @@
     pushInsteadOf = "git://gist.github.com/"
 [url "git://gist.github.com/"]
     insteadOf = "gist:"
-
-[push]
-    default = matching
 [filter "lfs"]
 	required = true
 	clean = git-lfs clean -- %f
