@@ -61,15 +61,10 @@ function update() {
 
     # Update npm packages
     if [ ${t} == "npm" ] || [ ${t} == "node" ] || [ ${t} == "all" ]; then
-        echo "Updating NPM"
-        npm install -g npm
-
         echo "Installing global modules"
         npm install -g eslint
         npm install -g eslint-plugin-import
         npm install -g eslint-config-airbnb-base
-        npm install -g yo
-        npm install -g node-inspector
         npm install -g stylelint
         npm install -g stylelint-config-standard
     fi
