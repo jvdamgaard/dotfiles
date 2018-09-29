@@ -1,5 +1,5 @@
 # Make Sublime Text the default editor
-export EDITOR='code'
+export EDITOR='subl -w'
 
 # NVM
 export NVM_DIR=~/.nvm
